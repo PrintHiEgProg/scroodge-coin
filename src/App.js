@@ -27,7 +27,7 @@ function App() {
   });
   const [countTrueMax, setcountTrueMax] = useState(() => {
     const savedcountTrueMax = localStorage.getItem("countTrueMax");
-    return savedcountTrueMax !== null ? parseInt(savedcountTrueMax, 1000) : 1000;
+    return savedcountTrueMax !== null ? parseInt(savedcountTrueMax, 1000) : 10;
   });
   const [levelMoreClicks, setLevelMoreClicks] = useState(() => {
     const savedLevelMoreClicks = localStorage.getItem("levelMoreClicks");
@@ -60,7 +60,7 @@ function App() {
       lastUpdateTime !== null &&
       Date.now() - parseInt(lastUpdateTime, 10) < 24 * 60 * 60 * 1000
     ) {
-      return Math.max(parseInt(savedCountTrue, 10), 0);
+      return Math.max(parseInt(savedCountTrue, 1000), 0);
     } else {
       return countTrueMax;
     }
@@ -85,7 +85,7 @@ function App() {
           return countTrueMax; // Reset timer to 10
         }
       });
-    }, 1000);
+    }, 10);
 
     return () => clearInterval(interval);
   }, [count, countTrue]);
@@ -104,7 +104,7 @@ function App() {
       setCanClick(false);
       setTimeout(() => {
         setCanClick(true);
-      }, 10000);
+      }, 1000);
     }
   };
 
@@ -122,7 +122,7 @@ function App() {
     // Имитация загрузки данных (можете заменить этот setTimeout на реальную логику загрузки)
     setTimeout(() => {
       setLoading(false); // После завершения загрузки устанавливаем loading в false
-    }, 3000); // Пример: имитация загрузки в течение 3 секунд
+    }, 30); // Пример: имитация загрузки в течение 3 секунд
 
     // Здесь можно добавить логику для загрузки данных с сервера или другие операции
   }, []);
