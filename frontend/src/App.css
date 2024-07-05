@@ -1,0 +1,394 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+* {
+  -ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none; 
+}
+
+.App {
+  height: 100vh;
+  background-color: rgb(37, 105, 168); /* Черный фон */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  -ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none; 
+}
+
+.NavBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none; 
+  bottom: 0;
+}
+.Main {
+  height: 100vh;
+}
+
+.Boost {
+  height: 100vh;
+}
+
+.Task {
+  height: 100vh;
+}
+
+.RefLink {
+  height: 100vh;
+}
+
+.Loading-page {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://i.postimg.cc/XJfjwd38/temp-Imagem3z-Mky.avif);
+}
+
+.title {
+  padding-top: 10vh;
+  color: #ffffff; /* Белый цвет текста */
+  text-align: center;
+  font-size: 6vh; /* Размер шрифта зависит от высоты экрана */
+  margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.count-click {
+  color: #ffffff;
+  text-align: center;
+  font-size: 5vh; /* Больший размер шрифта для счетчика */
+  margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.coin-btn {
+  width: 100%; /* Ширина кнопки равна ширине контейнера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  
+}
+
+.coin-button {
+  width: 60vw; /* Ширина кнопки в процентах от ширины экрана */
+  height: 60vw; /* Высота кнопки равна ширине для сохранения круглой формы */
+  max-width: 270px; /* Максимальная ширина кнопки */
+  max-height: 270px; /* Максимальная высота кнопки */
+  overflow: hidden; /* Скрываем выходящие за пределы круга части */
+  background-color: black; /* Цвет фона кнопки */
+  border: none; /* Убираем границу */
+  padding: 0; /* Убираем внутренние отступы */
+  cursor: pointer; /* Курсор в виде указателя */
+  background-image: url(https://i.postimg.cc/CdpBgyZm/temp-Image3-IX8-Ss.avif);
+  background-size: contain;
+  border-radius: 50%; /* Круглая форма */
+  display: block; /* Убираем лишние отступы вокруг изображения */
+  -o-object-fit: cover;
+     object-fit: cover;
+  
+}
+
+.img-boobs {
+  width: 100%; /* Заполняет ширину контейнера */
+  height: auto; /* Высота автоматически регулируется для сохранения пропорций */
+  border-radius: 50%; /* Круглая форма */
+  display: block; /* Убираем лишние отступы вокруг изображения */
+  -o-object-fit: cover;
+     object-fit: cover; /* Обеспечивает полное покрытие круга, обрезая лишнее */
+}
+
+.box-progress {
+  text-align: center;
+  width: 60vw; /* Ширина кнопки в процентах от ширины экрана */
+  height: 60vw; /* Высота кнопки равна ширине для сохранения круглой формы */
+  max-width: 270px; /* Максимальная ширина кнопки */
+  max-height: 50px; /* Максимальная высота кнопки */
+  background: #3e92cc;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.coin-progress {
+  margin-top: 15px;  
+  text-align: center;
+  width: 0%;
+  max-width: 90%;
+  height: 5px;
+  color: #ffffff;
+  background-color: #ffee01;
+  transition: width 0.3s ease;
+  border: 0;
+}
+
+.sum-true {
+  color: #ffffff;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.nav-bar-btn-box {
+  bottom: 0;
+  position: fixed;
+  display: flex;
+        justify-content: space-around;
+        align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 60vw; /* Ширина кнопки в процентах от ширины экрана */
+  height: 60vw; /* Высота кнопки равна ширине для сохранения круглой формы */
+  max-width: 270px; /* Максимальная ширина кнопки */
+  max-height: 80px; /* Максимальная высота кнопки */
+  background: #ffffff;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.nav-btn {
+  display: inline;
+}
+
+.btn-description {
+  text-decoration: none;
+}
+
+
+
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 0;
+    }
+
+    .icon {
+      margin-top: 8px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        
+    }
+
+    
+
+
+
+.home {
+  background-image: url(https://i.postimg.cc/pLw8ZsVK/temp-Imagee-Om-PJG.avif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}
+
+.boost {
+  background-image: url(https://i.postimg.cc/pL47BMnk/temp-Imagexhab-Wr.avif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.task {
+  background-image: url(https://i.postimg.cc/KzyHd7fM/temp-Image-GVZB90.avif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.reflink {
+  background-image: url(https://i.postimg.cc/0N1nQkSg/temp-Image7-Pk-ROM.avif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.icon-description {
+  font-size: 15px;
+}
+
+.catalog {
+  text-align: center;
+  padding-bottom: 20vh;
+}
+
+
+.card {
+  width: 60vw;
+  height: 60vw;
+  max-width: 300px;
+  max-height: 100px;
+  background: #ffffff;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 1px 1px 1px 1px;
+  margin-bottom: 10px;
+  
+}
+
+.card-text {
+text-align: right;
+padding-right: 5%;
+padding-top: 5%;
+}
+
+.card-hr {
+  margin-top: 10%;
+  width: 100%;
+  height: 3px;
+  border: 0;
+  background-color: black;
+}
+
+.card-footer {
+  display: flex;
+}
+
+.card-level {
+  text-align: left;
+  padding-left: 5%;
+  color: black;
+}
+
+.card-price {
+  text-align: right;
+  padding-left: 60%;
+}
+
+.card-money {
+  width: 20px;
+  height: 20px;
+  background-image: url(https://i.postimg.cc/CdpBgyZm/temp-Image3-IX8-Ss.avif);
+  background-size: contain;
+  border-radius: 50%; /* Круглая форма */
+  display: block; /* Убираем лишние отступы вокруг изображения */
+}
+
+.task-card {
+  width: 60vw;
+  height: 60vw;
+  max-width: 300px;
+  max-height: 100px;
+  background: #ffffff;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 1px 1px 1px 1px;
+  margin-bottom: 10px;
+}
+
+.task-text {
+  text-align: right;
+  padding-right: 5%;
+  padding-top: 5%;
+}
+
+.task-hr {
+  margin-top: 10%;
+  width: 100%;
+  height: 3px;
+  border: 0;
+  background-color: black;
+}
+
+.task-footer {
+  display: flex;
+}
+
+.task-level {
+  text-align: left;
+  padding-left: 5%;
+  color: black;
+}
+
+.task-price {
+  text-align: right;
+  padding-left: 60%;
+}
+
+.task-money {
+  width: 20px;
+  height: 20px;
+  background-image: url(https://i.postimg.cc/CdpBgyZm/temp-Image3-IX8-Ss.avif);
+  background-size: contain;
+  border-radius: 50%; /* Круглая форма */
+  display: block; /* Убираем лишние отступы вокруг изображения */
+}
+
+.loading-wheel {
+  text-align: center;
+   margin-top: 10vh;
+    width: 20vh;
+    -webkit-animation-name: rotation;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotation;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -o-animation-name: rotation;
+    -o-animation-duration: 3s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    animation-name: rotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+ 
+@-webkit-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@-moz-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@-o-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(720deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
