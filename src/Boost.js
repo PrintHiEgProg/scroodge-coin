@@ -8,6 +8,9 @@ function Boost({
   moreEnergy,
   priceMoreEnergy,
   levelMoreEnergy,
+  MoreCountTrueBonus,
+  levelMoreCountTrueBonus,
+  priceMoreCountTrueBonus
 }) {
   return (
     <div className="Boost">
@@ -34,6 +37,18 @@ function Boost({
           <div className="card-footer">
             <div className="card-level">{levelMoreEnergy} lv</div>
             <div className="card-price">{priceMoreEnergy}</div>
+            <div className="card-money"></div>
+          </div>
+        </div>
+        <div className="card" onClick={MoreCountTrueBonus}>
+          <div className="card-img"></div>
+          <div className="card-text">
+            <b>more +enegry</b>
+          </div>
+          <hr className="card-hr" />
+          <div className="card-footer">
+            <div className="card-level">{levelMoreCountTrueBonus} lv</div>
+            <div className="card-price">{priceMoreCountTrueBonus}</div>
             <div className="card-money"></div>
           </div>
         </div>

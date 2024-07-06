@@ -25,7 +25,7 @@ function App() {
   const [levelMoreEnergy, setLevelMoreEnergy] = useState(0);
   const [levelTgChannel1, setLevelTgChannel1] = useState(0);
   const [levelTgPremium, setlevelTgPremium] = useState(0);
-  const [levelMoreTrueBonus, setLevelCountTrueBonus] = useState(0)
+  const [levelMoreCountTrueBonus, setLevelMoreCountTrueBonus] = useState(0)
   const [countTrue, setCountTrue] = useState(1000);
   const [canClick, setCanClick] = useState(true);
 
@@ -40,6 +40,7 @@ function App() {
   });
 
   
+
 
   const handleClick = () => {
     if (canClick) {
@@ -166,10 +167,10 @@ function App() {
     }
   }
 
-  const priceMoreCountTrueBonus = 10;
+  const priceMoreCountTrueBonus = 1000;
   const MoreCountTrueBonus =() => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    if (levelMoreTrueBonus === 10) {
+    if (levelMoreCountTrueBonus === 10) {
       alert("Max level 🔝");
     } else {
       if (
@@ -178,7 +179,7 @@ function App() {
         if (count >= priceMoreCountTrueBonus) {
           setCount(count - priceMoreCountTrueBonus);
           setCountTrueBonus(countTrueBonus + 1);
-          setLevelMoreEnergy(levelMoreEnergy + 1);
+          setLevelMoreCountTrueBonus(levelMoreCountTrueBonus + 1);
           alert("Thanks for the purchase ✅");
         } else {
           alert("Insufficient funds ❌");
@@ -233,7 +234,7 @@ function App() {
                   priceMoreEnergy={priceMoreEnergy}
                   levelMoreEnergy={levelMoreEnergy}
                   MoreCountTrueBonus={MoreCountTrueBonus}
-                  levelMoreTrueBonus={levelMoreTrueBonus}
+                  levelMoreCountTrueBonus={levelMoreCountTrueBonus}
                   priceMoreCountTrueBonus={priceMoreCountTrueBonus}
                 />
               }
