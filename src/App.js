@@ -25,6 +25,7 @@ function App() {
   const [levelMoreEnergy, setLevelMoreEnergy] = useState(0);
   const [levelTgChannel1, setLevelTgChannel1] = useState(0);
   const [levelTgPremium, setlevelTgPremium] = useState(0);
+  const [levelMoreTrueBonus, setLevelCountTrueBonus] = useState(0)
   const [countTrue, setCountTrue] = useState(1000);
   const [canClick, setCanClick] = useState(true);
 
@@ -36,7 +37,7 @@ function App() {
     }, 3000); 
 
     return () => clearInterval(interval);
-  }, [countTrue, countTrueMax]);
+  });
 
   
 
@@ -127,11 +128,11 @@ function App() {
     } else {
       if (
         window.confirm(
-          "If you have Telegram premium you get +1000 coins.\nTo execute?"
+          "If you have Telegram premium you get +20000 coins.\nTo execute?"
         )
       ) {
         if (tg.initDataUnsafe.user.is_premium) {
-          setCount(count + 1000);
+          setCount(count + 20000);
           setlevelTgPremium(levelTgPremium + 1);
           alert("Yoooo!\nCongratulations on buying TG Premium! ⭐️");
         } else {
@@ -140,28 +141,51 @@ function App() {
       }
     }
   };
-// Пример использования функции
-const chatId = userId; // ID чата пользователя
-const channelId = '@deanon_team_blog'; // Имя пользователя канала (с @)
-const botToken = '7479871537:AAGBtlmjXEH1ObKP_0zQKVCx4CusyW7PGbY'; // Токен вашего Telegram бота
-const linkTgChannel1 =
-  "https://api.telegram.org/bot{botToken}/getChatMember?chat_id={channelId}&user_id={chatId}";
-  const TgChannel1 = async (chatId, channelId, botToken) => {
-    try {
-        const response = await axios.get(linkTgChannel1);
-        
-        if (response.data.ok && response.data.result.status === 'member') {
-            alert('Пользователь подписан на канал');
-            // Здесь можно выполнить дополнительные действия
-        } else {
-            alert('Пользователь не подписан на канал');
-            // Здесь можно выполнить другие действия
-        }
-    } catch (error) {
-        console.error('Ошибка при проверке подписки:', error);
-    }
-};
 
+  const TgChannel1 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelTgChannel1 === 1) {
+      alert("You have already completed this task ✅");
+    } else {
+      //тут должна быть проверка
+      if (
+        window.confirm(
+          "If you subscribe to the TG channel, you get +20,000 coins. To execute?"
+        )
+      ) {
+        tg.openTelegramLink("https://t.me/deanon_team_blog")
+        if (false) { //здесь вместо false должен быть вывод проверки
+          setCount(count + 20000);
+          setLevelTgChannel1(levelTgChannel1 + 1);
+          alert("You are subscribed to the channel! ✅");
+        } else {
+        alert("You are not subscribed to the channel 😔");
+      }
+        
+      } 
+    }
+  }
+
+  const priceMoreCountTrueBonus = 10;
+  const MoreCountTrueBonus =() => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelMoreTrueBonus === 10) {
+      alert("Max level 🔝");
+    } else {
+      if (
+        window.confirm("Here you can buy more energy to be charged.\nBuy it?")
+      ) {
+        if (count >= priceMoreCountTrueBonus) {
+          setCount(count - priceMoreCountTrueBonus);
+          setCountTrueBonus(countTrueBonus + 1);
+          setLevelMoreEnergy(levelMoreEnergy + 1);
+          alert("Thanks for the purchase ✅");
+        } else {
+          alert("Insufficient funds ❌");
+        }
+      }
+    }
+  }
 
 
 
@@ -208,6 +232,9 @@ const linkTgChannel1 =
                   moreEnergy={moreEnergy}
                   priceMoreEnergy={priceMoreEnergy}
                   levelMoreEnergy={levelMoreEnergy}
+                  MoreCountTrueBonus={MoreCountTrueBonus}
+                  levelMoreTrueBonus={levelMoreTrueBonus}
+                  priceMoreCountTrueBonus={priceMoreCountTrueBonus}
                 />
               }
             />
