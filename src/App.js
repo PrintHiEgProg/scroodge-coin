@@ -39,25 +39,7 @@ function App() {
     return () => clearInterval(interval);
   });
 
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
-
-  useEffect(() => {
-    // Update network status
-    const handleStatusChange = () => {
-      setIsOnline(navigator.onLine);
-    };
-
-    // Listen to the online status
-    
-
-    // Listen to the offline status
-    window.alert("Пропало соединение", handleStatusChange);
-
-    
-    return () => {
-      alert("Пропало соединение")
-    };
-  }, [isOnline]);
+  
 
 
   const handleClick = () => {
