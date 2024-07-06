@@ -27,7 +27,7 @@ function App() {
   });
   const [countTrueMax, setcountTrueMax] = useState(() => {
     const savedcountTrueMax = localStorage.getItem("countTrueMax");
-    return savedcountTrueMax !== null ? parseInt(savedcountTrueMax, 10) : 10;
+    return savedcountTrueMax !== null ? parseInt(savedcountTrueMax, 10) : 1000;
   });
   const [levelMoreClicks, setLevelMoreClicks] = useState(() => {
     const savedLevelMoreClicks = localStorage.getItem("levelMoreClicks");
@@ -73,34 +73,19 @@ function App() {
     localStorage.setItem("count", count.toString());
     localStorage.setItem("countTrue", countTrue.toString());
     localStorage.setItem("lastUpdateTime", Date.now().toString());
-    localStorage.setItem("countBonus", countBonus);
-    localStorage.setItem("countTrueMax", countTrueMax);
-    localStorage.setItem("levelMoreClicks", levelMoreClicks);
-    localStorage.setItem("levelMoreEnergy", levelMoreEnergy);
-    localStorage.setItem("levelTgChannel1", levelTgChannel1);
-    localStorage.setItem("levelTgPremium", levelTgPremium);
-    localStorage.setItem("levelTgChannel1", levelTgChannel1);
-  }, [count, countTrue, countBonus, levelMoreClicks, levelMoreEnergy, levelTgChannel1, levelTgPremium, priceMoreClicks, priceMoreEnergy]); 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimer((prevTimer) => {
-        if (prevTimer > 0) {
-          return prevTimer - 1;
-        } else {
-          setCountTrue((prevCountTrue) =>
-            Math.min(prevCountTrue + 1, canClick)
-          );
-          return countTrueMax; // Reset timer to 10
+    
+      const interval = setInterval(() => {
+        if (countTrue < countTrueMax) {
+          setCountTrue((prevCountTrue) => prevCountTrue + 1);
         }
-      });
-    }, 10);
+      }, 3000); // Интервал в миллисекундах (три секунды)
 
-    return () => clearInterval(interval);
-  }, [count, countTrue]);
+      return () => clearInterval(interval);
+    }, [countTrue, countTrueMax]);
 
   
-    
+
   const handleClick = () => {
     if (canClick) {
       setCount(count + countBonus);
