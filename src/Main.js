@@ -12,7 +12,7 @@ function Main({count, countTrue, handleClick, canClick}) {
           onClick={handleClick}
           disabled={!canClick || countTrue === 0}
         >
-          ...
+          
         </button>
       </div>
       <div className="box-progress">

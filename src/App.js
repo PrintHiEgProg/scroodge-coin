@@ -17,72 +17,26 @@ function App() {
   const tg = window.Telegram.WebApp;
   const userId = tg.initDataUnsafe.user.id;
 
-  const [count, setCount] = useState(() => {
-    const savedCount = localStorage.getItem("count");
-    return savedCount !== null ? parseInt(savedCount, 10) : 0;
-  });
-  const [countBonus, setCountBonus] = useState(() => {
-    const savedCountBonus = localStorage.getItem("countBonus");
-    return savedCountBonus !== null ? parseInt(savedCountBonus, 10) : 1;
-  });
-  const [countTrueMax, setcountTrueMax] = useState(() => {
-    const savedcountTrueMax = localStorage.getItem("countTrueMax");
-    return savedcountTrueMax !== null ? parseInt(savedcountTrueMax, 10) : 1000;
-  });
-  const [levelMoreClicks, setLevelMoreClicks] = useState(() => {
-    const savedLevelMoreClicks = localStorage.getItem("levelMoreClicks");
-    return savedLevelMoreClicks !== null
-      ? parseInt(savedLevelMoreClicks, 10)
-      : 0;
-  });
-  const [levelMoreEnergy, setLevelMoreEnergy] = useState(() => {
-    const savedLevelMoreEnergy = localStorage.getItem("levelMoreEnergy");
-    return savedLevelMoreEnergy !== null
-      ? parseInt(savedLevelMoreEnergy, 10)
-      : 0;
-  });
-  const [levelTgChannel1, setLevelTgChannel1] = useState(() => {
-    const savedLevelTgChannel1 = localStorage.getItem("levelTgChannel1");
-    return savedLevelTgChannel1 !== null
-      ? parseInt(savedLevelTgChannel1, 10)
-      : 0;
-  });
-  const [levelTgPremium, setlevelTgPremium] = useState(() => {
-    const savedLevelTgPremium = localStorage.getItem("levelTgPremium");
-    return savedLevelTgPremium !== null ? parseInt(savedLevelTgPremium, 10) : 0;
-  });
-  const [countTrue, setCountTrue] = useState(() => {
-    const savedCountTrue = localStorage.getItem("countTrue");
-    const lastUpdateTime = localStorage.getItem("lastUpdateTime");
-
-    if (
-      savedCountTrue !== null &&
-      lastUpdateTime !== null &&
-      Date.now() - parseInt(lastUpdateTime, 10) < 24 * 60 * 60 * 1000
-    ) {
-      return Math.max(parseInt(savedCountTrue, 1000), 0);
-    } else {
-      return countTrueMax;
-    }
-  });
-
-  const [timer, setTimer] = useState(300);
+  const [count, setCount] = useState(0);
+  const [countBonus, setCountBonus] = useState(1);
+  const [countTrueMax, setcountTrueMax] = useState(1000);
+  const [countTrueBonus, setCountTrueBonus] = useState(1);
+  const [levelMoreClicks, setLevelMoreClicks] = useState(0);
+  const [levelMoreEnergy, setLevelMoreEnergy] = useState(0);
+  const [levelTgChannel1, setLevelTgChannel1] = useState(0);
+  const [levelTgPremium, setlevelTgPremium] = useState(0);
+  const [countTrue, setCountTrue] = useState(1000);
   const [canClick, setCanClick] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem("count", count.toString());
-    localStorage.setItem("countTrue", countTrue.toString());
-    localStorage.setItem("lastUpdateTime", Date.now().toString());
+    const interval = setInterval(() => {
+      if (countTrue < countTrueMax) {
+        setCountTrue((prevCount) => prevCount + countTrueBonus);
+      }
+    }, 3000); 
 
-    
-      const interval = setInterval(() => {
-        if (countTrue < countTrueMax) {
-          setCountTrue((prevCountTrue) => prevCountTrue + 1);
-        }
-      }, 3000); // Интервал в миллисекундах (три секунды)
-
-      return () => clearInterval(interval);
-    }, [countTrue, countTrueMax]);
+    return () => clearInterval(interval);
+  }, [countTrue, countTrueMax]);
 
   
 
@@ -176,7 +130,7 @@ function App() {
           "If you have Telegram premium you get +1000 coins.\nTo execute?"
         )
       ) {
-        if (tg.initDataUnsafe.user.isPremium) {
+        if (tg.initDataUnsafe.user.is_premium) {
           setCount(count + 1000);
           setlevelTgPremium(levelTgPremium + 1);
           alert("Yoooo!\nCongratulations on buying TG Premium! ⭐️");
