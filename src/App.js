@@ -39,7 +39,25 @@ function App() {
     return () => clearInterval(interval);
   });
 
-  
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    // Update network status
+    const handleStatusChange = () => {
+      setIsOnline(navigator.onLine);
+    };
+
+    // Listen to the online status
+    
+
+    // Listen to the offline status
+    window.alert("Пропало соединение", handleStatusChange);
+
+    
+    return () => {
+      alert("Пропало соединение")
+    };
+  }, [isOnline]);
 
 
   const handleClick = () => {
@@ -149,25 +167,25 @@ function App() {
       alert("You have already completed this task ✅");
     } else {
       //тут должна быть проверка
-      if (
-        window.confirm(
-          "If you subscribe to the TG channel, you get +20,000 coins. To execute?"
-        )
-      ) {
-        tg.openTelegramLink("https://t.me/deanon_team_blog")
-        if (false) { //здесь вместо false должен быть вывод проверки
-          setCount(count + 20000);
-          setLevelTgChannel1(levelTgChannel1 + 1);
-          alert("You are subscribed to the channel! ✅");
-        } else {
-        alert("You are not subscribed to the channel 😔");
+      if (false) {
+        //здесь вместо false должен быть вывод проверки
+        setCount(count + 20000);
+        setLevelTgChannel1(levelTgChannel1 + 1);
+        alert("You are subscribed to the channel! ✅");
+      } else {
+        if (
+          window.confirm(
+            "If you subscribe to the TG channel, you get +20,000 coins. To execute?"
+          )
+        ) {
+          tg.openTelegramLink("https://t.me/deanon_team_blog");
+        } 
       }
-        
-      } 
+      
     }
   }
 
-  const priceMoreCountTrueBonus = 1000;
+  const priceMoreCountTrueBonus = 100;
   const MoreCountTrueBonus =() => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreCountTrueBonus === 10) {
