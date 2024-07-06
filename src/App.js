@@ -140,49 +140,31 @@ function App() {
       }
     }
   };
-
-  const TgChannel1 = () => {
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    const [isSubscribed, setIsSubscribed] = useState(false);
-    const navigate = useNavigate();
-    if (levelTgChannel1 === 1) {
-      alert("You have already completed this task ✅");
-    } else {
-      const checkSubsciption = async () => {
-        try {
-          //endpoint api
-
-          const response = await axios.get("https://api.server.com/check-sub");
-          if (response.data.subscribed) {
-            setIsSubscribed(true);
-
-            const currentCount =
-              parseInt(localStorage.getItem("count"), 10) || 0;
-
-            localStorage.setItem("count", currentCount + 20000);
-            alert(
-              "спасибо за выполнения задания, нам важно ваше присутствие с нами"
-            );
-            setLevelTgChannel1(levelMoreEnergy + 1);
-          } else {
-            if (
-              window.confirm(
-                "Subscribe to the telegram channel and get +20,000 coins. To execute?"
-              )
-            ) {
-              //выполнение задания
-
-              const handleSubscribe = () => {
-                tg.openTelegramLink("https://t.me/deanon_team_blog", "_blank"); //ссылка на тгк
-              };
-            }
-          }
-        } catch (error) {
-          console.error("watafak", error);
+// Пример использования функции
+const chatId = userId; // ID чата пользователя
+const channelId = '@deanon_team_blog'; // Имя пользователя канала (с @)
+const botToken = '7479871537:AAGBtlmjXEH1ObKP_0zQKVCx4CusyW7PGbY'; // Токен вашего Telegram бота
+const linkTgChannel1 =
+  "https://api.telegram.org/bot{botToken}/getChatMember?chat_id={channelId}&user_id={chatId}";
+  const TgChannel1 = async (chatId, channelId, botToken) => {
+    try {
+        const response = await axios.get(linkTgChannel1);
+        
+        if (response.data.ok && response.data.result.status === 'member') {
+            alert('Пользователь подписан на канал');
+            // Здесь можно выполнить дополнительные действия
+        } else {
+            alert('Пользователь не подписан на канал');
+            // Здесь можно выполнить другие действия
         }
-      };
+    } catch (error) {
+        console.error('Ошибка при проверке подписки:', error);
     }
-  };
+};
+
+
+
+
 
   return (
     <div className="App">
