@@ -168,7 +168,7 @@ function App() {
   }
 
   const priceMoreCountTrueBonus = 100;
-  const MoreCountTrueBonus =() => {
+  const MoreCountTrueBonus = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreCountTrueBonus === 10) {
       alert("Max level 🔝");
