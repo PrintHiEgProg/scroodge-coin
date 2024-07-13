@@ -19,7 +19,7 @@ function Boost({
   levelFactoryHotel,
   FactoryBank,
   priceFactoryBank,
-  levelFactoryBank
+  levelFactoryBank,
 }) {
   return (
     <div className="Boost">

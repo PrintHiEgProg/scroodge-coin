@@ -44,12 +44,12 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (countTrue < countTrueMax) {
-        setCountTrue((prevCountTrue) => prevCountTrue + countTrueBonus);
+        setCountTrue((prevCount) => prevCount + countTrueBonus);
       }
-    }, 3000); 
+    }, 3000);
 
     return () => clearInterval(interval);
-  });
+  }, [countTrue]);
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -59,7 +59,7 @@ function App() {
     }, 1000);
 
     return () => clearInterval(interval);
-  });
+  }, [count]);
   
 
 
@@ -241,6 +241,7 @@ function App() {
     if (levelJoinGame === 1) {
       alert("You have already completed this task ✅");
     } else {
+      setLevelJoinGame(levelJoinGame + 1)
       setCount(count + 10000)
       alert("Welcome to the game!!! You get +10000 coins. 🎁");
     }
