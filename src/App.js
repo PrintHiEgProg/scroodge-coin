@@ -53,7 +53,7 @@ function App() {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      if (factoryBonus > 1) {
+      if (factoryBonus > 0) {
         setCount((prevCount) => prevCount + factoryBonus)
       }
     }, 1000);
