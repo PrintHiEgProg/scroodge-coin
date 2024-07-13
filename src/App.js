@@ -25,20 +25,41 @@ function App() {
   const [levelMoreEnergy, setLevelMoreEnergy] = useState(0);
   const [levelTgChannel1, setLevelTgChannel1] = useState(0);
   const [levelTgPremium, setlevelTgPremium] = useState(0);
-  const [levelMoreCountTrueBonus, setLevelMoreCountTrueBonus] = useState(0)
+  const [levelMoreCountTrueBonus, setLevelMoreCountTrueBonus] = useState(0);
+  const [levelFactoryShoes, setLevelFactoryShoes] = useState(0);
+  const [levelFactoryHotel, setLevelFactoryHotel] = useState(0);
+  const [levelFactoryBank, setLevelFactoryBank] = useState(0);
+  const [levelJoinGame, setLevelJoinGame] = useState(0);
   const [countTrue, setCountTrue] = useState(1000);
   const [canClick, setCanClick] = useState(true);
+  const [priceMoreClicks, setPriceMoreClicks] = useState(1000);
+  const [priceMoreEnergy, setPriceMoreEnergy] = useState(2000);
+  const [priceMoreCountTrueBonus, setPriceMoreCountTrueBonus] = useState(3000);
+  const [priceFactoryShoes, setPriceFactoryShoes] = useState(5000);
+  const [priceFactoryHotel, setPriceFactoryHotel] = useState(10000);
+  const [priceFactoryBank, setPriceFactoryBank] = useState(100000)
+  const [factoryBonus, setFactoryBonus] = useState(0);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (countTrue < countTrueMax) {
-        setCountTrue((prevCount) => prevCount + countTrueBonus);
+        setCountTrue((prevCountTrue) => prevCountTrue + countTrueBonus);
       }
     }, 3000); 
 
     return () => clearInterval(interval);
   });
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (factoryBonus > 1) {
+        setCount((prevCount) => prevCount + factoryBonus)
+      }
+    }, 1000);
 
+    return () => clearInterval(interval);
+  });
   
 
 
@@ -80,7 +101,7 @@ function App() {
   }, []);
 
   //Boosts
-  const priceMoreClicks = 1;
+  
   const moreClicks = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreClicks === 10) {
@@ -91,8 +112,9 @@ function App() {
       ) {
         if (count >= priceMoreClicks) {
           setCount(count - priceMoreClicks);
-          setCountBonus(countBonus * 2);
+          setCountBonus(countBonus + 1);
           setLevelMoreClicks(levelMoreClicks + 1);
+          setPriceMoreClicks(priceMoreClicks + 1000)
           alert("Thanks for the purchase ✅");
         } else {
           alert("Insufficient funds ❌");
@@ -101,7 +123,7 @@ function App() {
     }
   };
 
-  const priceMoreEnergy = 10;
+  
   const moreEnergy = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreEnergy === 7) {
@@ -113,6 +135,7 @@ function App() {
           setCountTrue(countTrue + 1000);
           setcountTrueMax(countTrueMax + 1000);
           setLevelMoreEnergy(levelMoreEnergy + 1);
+          setPriceMoreEnergy(priceMoreEnergy + 1000)
           alert("Thanks for the purchase ✅");
         } else {
           alert("Insufficient funds ❌");
@@ -121,7 +144,108 @@ function App() {
     }
   };
 
+  const MoreCountTrueBonus = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelMoreCountTrueBonus === 10) {
+      alert("Max level 🔝");
+    } else {
+      if (
+        window.confirm("Here you can buy more energy to be charged.\nBuy it?")
+      ) {
+        if (count >= priceMoreCountTrueBonus) {
+          setCount(count - priceMoreCountTrueBonus);
+          setCountTrueBonus(countTrueBonus + 1);
+          setLevelMoreCountTrueBonus(levelMoreCountTrueBonus + 1);
+          setPriceMoreCountTrueBonus(priceMoreCountTrueBonus + 2000);
+          alert("Thanks for the purchase ✅");
+        } else {
+          alert("Insufficient funds ❌");
+        }
+      }
+    }
+  };
+
+  
+  const FactoryShoes = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelFactoryShoes === 5) {
+      alert("Max level 🔝");
+    } else {
+      if (
+        window.confirm(
+          "By buying a shoe factory, you will receive +1 coins every 10 seconds.\nBuy it?"
+        )
+      ) {
+        if (count >= priceFactoryShoes) {
+          setCount(count - priceFactoryShoes);
+          setLevelFactoryShoes(levelFactoryShoes + 1);
+          setFactoryBonus(factoryBonus + 1);
+          setPriceFactoryShoes(priceFactoryShoes + 1000);
+        } else {
+          alert("Insufficient funds ❌");
+        }
+      }
+    }
+  };
+
+  const FactoryHotel = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelFactoryHotel === 5) {
+      alert("Max level 🔝");
+    } else {
+      if (
+        window.confirm(
+          "By buying a shoe factory, you will receive +2 coins every 1 seconds.\nBuy it?"
+        )
+      ) {
+        if (count >= priceFactoryHotel) {
+          setCount(count - priceFactoryHotel);
+          setLevelFactoryHotel(levelFactoryHotel + 1);
+          setFactoryBonus(factoryBonus + 2);
+          setPriceFactoryHotel(priceFactoryHotel + 1000);
+        } else {
+          alert("Insufficient funds ❌");
+        }
+      }
+    }
+  };
+
+  const FactoryBank = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelFactoryBank === 5) {
+      alert("Max level 🔝");
+    } else {
+      if (
+        window.confirm(
+          "By buying a shoe factory, you will receive +5 coins every 1 seconds.\nBuy it?"
+        )
+      ) {
+        if (count >= priceFactoryBank) {
+          setCount(count - priceFactoryBank);
+          setLevelFactoryBank(levelFactoryBank + 1);
+          setFactoryBonus(factoryBonus + 1);
+          setPriceFactoryBank(priceFactoryBank + 1000);
+        } else {
+          alert("Insufficient funds ❌");
+        }
+      }
+    }
+  };
+
+  
+
   //Tasks
+
+  const JoinGame = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelJoinGame === 1) {
+      alert("You have already completed this task ✅");
+    } else {
+      setCount(count + 10000)
+      alert("Welcome to the game!!! You get +10000 coins. 🎁");
+    }
+  }
+
   const TgPremium = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelTgPremium === 1) {
@@ -167,28 +291,8 @@ function App() {
     }
   }
 
-  const priceMoreCountTrueBonus = 100;
-  const MoreCountTrueBonus = () => {
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    if (levelMoreCountTrueBonus === 10) {
-      alert("Max level 🔝");
-    } else {
-      if (
-        window.confirm("Here you can buy more energy to be charged.\nBuy it?")
-      ) {
-        if (count >= priceMoreCountTrueBonus) {
-          setCount(count - priceMoreCountTrueBonus);
-          setCountTrueBonus(countTrueBonus + 1);
-          setLevelMoreCountTrueBonus(levelMoreCountTrueBonus + 1);
-          alert("Thanks for the purchase ✅");
-        } else {
-          alert("Insufficient funds ❌");
-        }
-      }
-    }
-  }
-
-
+  
+  
 
 
   return (
@@ -223,19 +327,28 @@ function App() {
               }
             />
             <Route
-              path="/boost"
-              element={
-                <Boost
-                  count={count}
-                  moreClicks={moreClicks}
-                  priceMoreClicks={priceMoreClicks}
-                  levelMoreClicks={levelMoreClicks}
-                  moreEnergy={moreEnergy}
-                  priceMoreEnergy={priceMoreEnergy}
-                  levelMoreEnergy={levelMoreEnergy}
-                  MoreCountTrueBonus={MoreCountTrueBonus}
-                  levelMoreCountTrueBonus={levelMoreCountTrueBonus}
-                  priceMoreCountTrueBonus={priceMoreCountTrueBonus}
+                path="/boost"
+                element={
+                  <Boost
+                    count={count}
+                    moreClicks={moreClicks}
+                    priceMoreClicks={priceMoreClicks}
+                    levelMoreClicks={levelMoreClicks}
+                    moreEnergy={moreEnergy}
+                    priceMoreEnergy={priceMoreEnergy}
+                    levelMoreEnergy={levelMoreEnergy}
+                    MoreCountTrueBonus={MoreCountTrueBonus}
+                    levelMoreCountTrueBonus={levelMoreCountTrueBonus}
+                    priceMoreCountTrueBonus={priceMoreCountTrueBonus}
+                    FactoryShoes={FactoryShoes}
+                    priceFactoryShoes={priceFactoryShoes}
+                    levelFactoryShoes={levelFactoryShoes}
+                    FactoryHotel={FactoryHotel}
+                    priceFactoryHotel={FactoryHotel}
+                    levelFactoryHotel={levelFactoryHotel}
+                    FactoryBank={FactoryBank}
+                    priceFactoryBank={priceFactoryBank}
+                    levelFactoryBank={levelFactoryBank}
                 />
               }
             />
