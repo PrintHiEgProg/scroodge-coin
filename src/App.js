@@ -253,7 +253,7 @@ function App() {
     } else {
       if (
         window.confirm(
-          "If you have Telegram premium you get +20000 coins.\nTo execute?"
+          "If you have Telegram premium you get +20,000 coins.\nTo execute?"
         )
       ) {
         if (tg.initDataUnsafe.user.is_premium) {
@@ -281,7 +281,7 @@ function App() {
       } else {
         if (
           window.confirm(
-            "If you subscribe to the TG channel, you get +20,000 coins. To execute?"
+            "If you subscribe to the TG channel, you get +10,000 coins. To execute?"
           )
         ) {
           tg.openTelegramLink("https://t.me/deanon_team_blog");

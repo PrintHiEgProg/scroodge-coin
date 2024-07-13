@@ -20,18 +20,6 @@ function Task({ JoinGame, TgPremium, TgChannel1 }) {
         <div className="task-card" onClick={TgPremium}>
           <div className="task-img"></div>
           <div className="task-text">
-            <b>Join Game</b>
-          </div>
-          <hr className="task-hr" />
-          <div className="task-footer">
-            <div className="task-level"></div>
-            <div className="task-price">+10K</div>
-            <div className="task-money"></div>
-          </div>
-        </div>
-        <div className="task-card" onClick={TgPremium}>
-          <div className="task-img"></div>
-          <div className="task-text">
             <b>Get Tg Premium</b>
           </div>
           <hr className="task-hr" />
