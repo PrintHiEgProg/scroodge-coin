@@ -354,7 +354,7 @@ function App() {
             />
             <Route
               path="/task"
-              element={<Task TgPremium={TgPremium} TgChannel1={TgChannel1} />}
+                element={<Task JoinGame={JoinGame} TgPremium={TgPremium} TgChannel1={TgChannel1} />}
             />
             <Route path="/link" element={<RefLink userId={userId} />} />
           </Routes>
