@@ -87,7 +87,8 @@ function App() {
     };
 
     const handleOffline = () => {
-      alert("No connection");
+      alert("No connection network");
+      window.location.reload(); 
     };
 
     // Добавляем обработчики событий
@@ -97,7 +98,8 @@ function App() {
     // Проверка начального состояния
     if (!navigator.onLine) {
       alert("No connection network");
-      
+      window.location.reload(); 
+
     }
 
     // Убираем обработчики событий при размонтировании компонента
