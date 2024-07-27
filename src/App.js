@@ -96,7 +96,7 @@ function App() {
     window.addEventListener("offline", handleOffline);
 
     // Проверка начального состояния
-    if (!navigator.onLine) {
+    while (!navigator.onLine) {
       alert("No connection network");
       window.location.reload(); 
 
