@@ -15,7 +15,7 @@ function Main({count, countTrue, handleClick, canClick}) {
         </div>
       </div>
       <div class="title-box">
-        <div class="title">...</div>
+        <div class="title-main">...</div>
       </div>
       <div class="main-box">
         <div class="main-text">
