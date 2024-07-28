@@ -23,11 +23,19 @@ function Main({count, countTrue, handleClick, canClick}) {
           <div class="reflink-text">Ref link</div>
         </div>
         <div class="coin-button-box">
-          <button class="coin-button">...</button>
+          <button
+            class="coin-button"
+            onClick={handleClick}
+            disabled={!canClick || countTrue === 0}
+          >
+            ...
+          </button>
         </div>
-        <div class="count-box">
-          <div class="korona">...</div>
-          <div class="count">{count}</div>
+        <div class="count-box-box">
+          <div class="count-box">
+            <div class="korona">...</div>
+            <div class="count">10000</div>
+          </div>
         </div>
       </div>
     </div>

@@ -68,8 +68,9 @@
   background-image: url(https://i.postimg.cc/XJfjwd38/temp-Imagem3z-Mky.avif);
 }
 
+
 .header {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between; /* Размещает элементы по краям */
     align-items: center; /* Выравнивание по центру по вертикали */
@@ -78,6 +79,8 @@
 
 
 .wallet-box {
+    position: absolute;
+    left: 0;
     display: flex;
     justify-content: space-between; /* Размещает элементы по краям */
     align-items: center; /* Выравнивание по центру по вертикали */
@@ -93,6 +96,8 @@
 }
 
 .counttrue-box {
+    position: absolute;
+    right: 0;
     display: flex;
     justify-content: space-between; /* Размещает элементы по краям */
     align-items: center; /* Выравнивание по центру по вертикали */
@@ -156,8 +161,7 @@
 
 
 .main-box {
-  position: absolute;
-  left: 0;
+position: absolute;
   bottom: 0;
   margin-top: 0px;
   width: 100vw;
@@ -194,6 +198,11 @@
     color: #4771DE;
 }
 
+.coin-button-box {
+  text-align: center;
+  padding: 0;
+}
+
 .coin-button {
   width: 60vw; /* Ширина кнопки в процентах от ширины экрана */
   height: 60vw; /* Высота кнопки равна ширине для сохранения круглой формы */
@@ -206,21 +215,25 @@
   cursor: pointer; /* Курсор в виде указателя */
   background-image: url(https://i.postimg.cc/CdpBgyZm/temp-Image3-IX8-Ss.avif);
   background-size: contain;
-  border-radius: 50%; /* Круглая форма */
-  display: block; /* Убираем лишние отступы вокруг изображения */
+  border-radius: 50%; /* Круглая форма */ /* Убираем лишние отступы вокруг изображения */
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: 6px 6px 6px 6px rgba(255, 102, 51, 0.2);
+  margin-bottom: 20px;
+}
+
+.count-box-box {
+     display: grid;
 }
 
 .count-box {
-    margin-top: 20px;
+    margin: auto;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     /*Размещаетэлементыпокраям*/align-items: center;
     /*Выравниваниепоцентруповертикали*/width: 30%;
-    height: 10%;
+    height: 100%;
     background-color: #507BEC;
     border-radius: 80px;
     -webkit-border-radius: 80px;
