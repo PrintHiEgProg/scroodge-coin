@@ -4,25 +4,31 @@ function Main({count, countTrue, handleClick, canClick}) {
     
   return (
     <div className="Main">
-      <h2 className="title">Quack Coin</h2>
-      <p className="count-click">{count}</p>
-      <div className="coin-btn">
-        <button
-          className="coin-button"
-          onClick={handleClick}
-          disabled={!canClick || countTrue === 0}
-        >
-          
-        </button>
+      <div class="header">
+        <div class="wallet-box">
+          <div class="wallet-icon">...</div>
+          <div class="wallet-text">Wallet</div>
+        </div>
+        <div class="counttrue-box">
+          <div class="counttrue-icon">...</div>
+          <div class="counttrue-text">{countTrue}</div>
+        </div>
       </div>
-      <div className="box-progress">
-        
-          <hr className="coin-progress" style={{ width: countTrue * 10 }} />
-        
-
-        <p className="sum-true">
-          <b>{countTrue}</b>
-        </p>
+      <div class="title-box">
+        <div class="title">...</div>
+      </div>
+      <div class="main-box">
+        <div class="main-text">
+          <div class="education-text">Education</div>
+          <div class="reflink-text">Ref link</div>
+        </div>
+        <div class="coin-button-box">
+          <button class="coin-button">...</button>
+        </div>
+        <div class="count-box">
+          <div class="korona">...</div>
+          <div class="count">{count}</div>
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@
 * Autoprefixer: v10.4.7
 * Browsers: last 4 version
 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
@@ -67,28 +68,130 @@
   background-image: url(https://i.postimg.cc/XJfjwd38/temp-Imagem3z-Mky.avif);
 }
 
+.header {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between; /* Размещает элементы по краям */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    padding: 10px; /* Отступы вокруг контейнера */
+}
+
+
+.wallet-box {
+    display: flex;
+    justify-content: space-between; /* Размещает элементы по краям */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    padding: 10px; /* Отступы вокруг контейнера */
+    width: 20%;
+    height: auto;
+    background-color: #507BEC;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.counttrue-box {
+    display: flex;
+    justify-content: space-between; /* Размещает элементы по краям */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    padding: 10px; /* Отступы вокруг контейнера */
+    width: 20%;
+    height: auto;
+    background-color: #507BEC;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.wallet-icon {
+    width: 100%;
+    height: auto;
+  background-image: url(https://cdn.discordapp.com/attachments/1243965505513984013/1266728798166974617/Mask_group_5.png?ex=66a634a0&is=66a4e320&hm=81001975a547ce7bf45a72f207c5e5248cfd9a6b04411568ce936aa9ac04822c&);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #ffffff00;
+}
+
+.counttrue-icon {
+    width: 100%;
+    height: auto;
+    background-image: url(https://cdn.discordapp.com/attachments/1243965505513984013/1266728796451508314/Mask_group_2.png?ex=66a6349f&is=66a4e31f&hm=89e8ca653a41858bffc97f5f44db860c0747026e60546d9b92b6174a2bfb037f&);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #ffffff00;
+}
+
+.wallet-text {
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    color: #ffffff;
+}
+
+.counttrue-text {
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    color: #ffffff;
+}
+
+.title-box {
+    margin-top: 0px;
+    text-align: center;
+}
+
 .title {
-  padding-top: 10vh;
-  color: #ffffff; /* Белый цвет текста */
-  text-align: center;
-  font-size: 6vh; /* Размер шрифта зависит от высоты экрана */
-  margin: 20px 0; /* Отступы сверху и снизу */
+  background-image: url(https://cdn.discordapp.com/attachments/1243965505513984013/1266728797680439306/image_3.png?ex=66a634a0&is=66a4e320&hm=b3584b5208e8b74c9d3eb0e889a35396988da3dfd31938b81948cb6eb092c8dc&);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #00000000;
+    font-size: 200px;
 }
 
-.count-click {
-  color: #ffffff;
-  text-align: center;
-  font-size: 5vh; /* Больший размер шрифта для счетчика */
-  margin: 20px 0; /* Отступы сверху и снизу */
+
+.main-box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-top: 0px;
+  width: 100vw;
+  height: 73vh;
+  background: #ffffff;
+  border-radius: 80px 80px 0px 0px;
+  -webkit-border-radius: 80px 80px 0px 0px;
+  -moz-border-radius: 80px 80px 0px 0px;
+  -ms-border-radius: 80px 80px 0px 0px;
+  -o-border-radius: 80px 80px 0px 0px;
 }
 
-.coin-btn {
-  width: 100%; /* Ширина кнопки равна ширине контейнера */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  
+.main-text {
+    padding: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between; /* Размещает элементы по краям */
+    align-items: center;
+}
+
+.education-text {
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    color: #000000;
+}
+
+.reflink-text {
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    color: #4771DE;
 }
 
 .coin-button {
@@ -107,44 +210,40 @@
   display: block; /* Убираем лишние отступы вокруг изображения */
   -o-object-fit: cover;
      object-fit: cover;
-  
+  box-shadow: 6px 6px 6px 6px rgba(255, 102, 51, 0.2);
 }
 
-.img-boobs {
-  width: 100%; /* Заполняет ширину контейнера */
-  height: auto; /* Высота автоматически регулируется для сохранения пропорций */
-  border-radius: 50%; /* Круглая форма */
-  display: block; /* Убираем лишние отступы вокруг изображения */
-  -o-object-fit: cover;
-     object-fit: cover; /* Обеспечивает полное покрытие круга, обрезая лишнее */
+.count-box {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    /*Размещаетэлементыпокраям*/align-items: center;
+    /*Выравниваниепоцентруповертикали*/width: 30%;
+    height: 10%;
+    background-color: #507BEC;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
 }
 
-.box-progress {
-  text-align: center;
-  width: 60vw; /* Ширина кнопки в процентах от ширины экрана */
-  height: 60vw; /* Высота кнопки равна ширине для сохранения круглой формы */
-  max-width: 270px; /* Максимальная ширина кнопки */
-  max-height: 50px; /* Максимальная высота кнопки */
-  background: #3e92cc;
-  border-radius: 5px 5px 5px 5px;
+.korona {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://cdn.discordapp.com/attachments/1243965505513984013/1266728797911388193/Mask_group_3.png?ex=66a634a0&is=66a4e320&hm=8d8da8af6103463ecb8de4915ba810bc480323793ecbca547366c75cdba24d05&);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #00000000;
 }
 
-.coin-progress {
-  margin-top: 15px;  
-  text-align: center;
-  width: 0%;
-  max-width: 90%;
-  height: 5px;
+.count {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
   color: #ffffff;
-  background-color: #ffee01;
-  transition: width 0.3s ease;
-  border: 0;
-}
-
-.sum-true {
-  color: #ffffff;
-  text-align: center;
-  padding-bottom: 5%;
 }
 
 .nav-bar-btn-box {
