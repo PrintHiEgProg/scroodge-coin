@@ -34,7 +34,7 @@ function Main({count, countTrue, handleClick, canClick}) {
         <div class="count-box-box">
           <div class="count-box">
             <div class="korona">...</div>
-            <div class="count">10000</div>
+            <div class="count">{count}</div>
           </div>
         </div>
       </div>
