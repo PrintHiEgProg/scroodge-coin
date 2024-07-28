@@ -27,23 +27,18 @@ function NavBar() {
 
   return (
     <div className="NavBar">
-      <div className="nav-bar-btn-box">
-        <div className="icon-container" onClick={handleHomeClick}>
-          <button className="icon home"></button>
-          <p className="icon-description">home</p>
+      <div className="navbar-box">
+        <div className="nav-item left">
+          <div className="icon boosts">...</div>
+          <p className="icon-description">Boosts</p>
         </div>
-
-        <div className="icon-container" onClick={handleBoostClick}>
-          <button className="icon boost"></button>
-          <p className="icon-description">boost</p>
+        <div className="nav-item center">
+          <div className="icon monopoly">...</div>
+          <p className="icon-description">Monopoly</p>
         </div>
-        <div className="icon-container" onClick={handleTaskClick}>
-          <button className="icon task"></button>
-          <p className="icon-description">task</p>
-        </div>
-        <div className="icon-container" onClick={handleRefLinkClick}>
-          <button className="icon reflink"></button>
-          <p className="icon-description">link</p>
+        <div className="nav-item right">
+          <div className="icon tasks">...</div>
+          <p className="icon-description">Tasks</p>
         </div>
       </div>
     </div>
