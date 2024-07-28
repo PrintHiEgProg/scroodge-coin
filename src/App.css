@@ -19,6 +19,14 @@
 	user-select: none; 
 }
 
+.App {
+  height: 100vh;
+}
+
+.Main {
+  height: 100vh;
+}
+
 .header {
     margin-top: 20px;
     display: flex;
