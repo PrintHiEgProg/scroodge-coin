@@ -4,7 +4,7 @@ import NavBar from "./NavBar/NavBar.js";
 import Boost from "./Boost.js";
 import Main from "./Main.js";
 import Task from "./Task.js";
-import RefLink from "./RefLink.js";
+import Monopoly from "./Monopoly.js";
 import {
   BrowserRouter as Router,
   Routes,
@@ -356,36 +356,48 @@ function App() {
               }
             />
             <Route
-                path="/boost"
-                element={
-                  <Boost
-                    count={count}
-                    moreClicks={moreClicks}
-                    priceMoreClicks={priceMoreClicks}
-                    levelMoreClicks={levelMoreClicks}
-                    moreEnergy={moreEnergy}
-                    priceMoreEnergy={priceMoreEnergy}
-                    levelMoreEnergy={levelMoreEnergy}
-                    MoreCountTrueBonus={MoreCountTrueBonus}
-                    levelMoreCountTrueBonus={levelMoreCountTrueBonus}
-                    priceMoreCountTrueBonus={priceMoreCountTrueBonus}
-                    FactoryShoes={FactoryShoes}
-                    priceFactoryShoes={priceFactoryShoes}
-                    levelFactoryShoes={levelFactoryShoes}
-                    FactoryHotel={FactoryHotel}
-                    priceFactoryHotel={FactoryHotel}
-                    levelFactoryHotel={levelFactoryHotel}
-                    FactoryBank={FactoryBank}
-                    priceFactoryBank={priceFactoryBank}
-                    levelFactoryBank={levelFactoryBank}
+              path="/boost"
+              element={
+                <Boost
+                  count={count}
+                  moreClicks={moreClicks}
+                  priceMoreClicks={priceMoreClicks}
+                  levelMoreClicks={levelMoreClicks}
+                  moreEnergy={moreEnergy}
+                  priceMoreEnergy={priceMoreEnergy}
+                  levelMoreEnergy={levelMoreEnergy}
+                  MoreCountTrueBonus={MoreCountTrueBonus}
+                  levelMoreCountTrueBonus={levelMoreCountTrueBonus}
+                  priceMoreCountTrueBonus={priceMoreCountTrueBonus}
                 />
               }
             />
             <Route
               path="/task"
-                element={<Task JoinGame={JoinGame} TgPremium={TgPremium} TgChannel1={TgChannel1} />}
+              element={
+                <Task
+                  JoinGame={JoinGame}
+                  TgPremium={TgPremium}
+                  TgChannel1={TgChannel1}
+                />
+              }
             />
-            <Route path="/link" element={<RefLink userId={userId} />} />
+            <Route
+              path="/monopoly"
+              element={
+                <Monopoly
+                  FactoryShoes={FactoryShoes}
+                  priceFactoryShoes={priceFactoryShoes}
+                  levelFactoryShoes={levelFactoryShoes}
+                  FactoryHotel={FactoryHotel}
+                  priceFactoryHotel={FactoryHotel}
+                  levelFactoryHotel={levelFactoryHotel}
+                  FactoryBank={FactoryBank}
+                  priceFactoryBank={priceFactoryBank}
+                  levelFactoryBank={levelFactoryBank}
+                />
+              }
+            />
           </Routes>
           <NavBar />
         </Router>

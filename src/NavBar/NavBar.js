@@ -22,7 +22,7 @@ function NavBar() {
 
   const handleRefLinkClick = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    navigate("/link");
+    navigate("/monopoly");
   };
 
   return (
