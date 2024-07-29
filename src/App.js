@@ -16,6 +16,8 @@ import axios from "axios";
 function App() {
   const tg = window.Telegram.WebApp;
   const userId = tg.initDataUnsafe.user.id;
+  const token = "7123142782:AAFcByUA3JZ582vZzbwK3QRMDmaH7e6y8jg";
+
 
   const [count, setCount] = useState(0);
   const [countBonus, setCountBonus] = useState(1);
@@ -39,6 +41,23 @@ function App() {
   const [priceFactoryHotel, setPriceFactoryHotel] = useState(10000);
   const [priceFactoryBank, setPriceFactoryBank] = useState(100000)
   const [factoryBonus, setFactoryBonus] = useState(0);
+
+
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      // Выводим предупреждение перед выходом
+      alert("пока!");
+      // Если вы хотите предотвратить закрытие, можно установить returnValue
+      // event.returnValue = '';
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
 
 
   useEffect(() => {
