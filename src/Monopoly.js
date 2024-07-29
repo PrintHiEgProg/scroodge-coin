@@ -53,7 +53,7 @@ const Monopoly = ({
         </div>
       </div>
       <div class="monopoly-box">
-        <div class="title">
+        <div class="monopoly-title">
           <b>Monopoly</b>
         </div>
 
