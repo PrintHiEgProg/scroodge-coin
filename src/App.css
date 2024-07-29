@@ -383,6 +383,7 @@ position: absolute;
 }
 
 .upgrade-btn-box {
+  margin-bottom: 30vh;
     margin-top: 20px;
     text-align: center;
     height: 10%;
