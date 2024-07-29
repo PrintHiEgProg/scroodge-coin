@@ -20,7 +20,7 @@ function NavBar() {
     navigate("/task");
   };
 
-  const handleRefLinkClick = () => {
+  const handleMonopolyClick = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     navigate("/monopoly");
   };
@@ -32,7 +32,7 @@ function NavBar() {
           <div className="icon boosts">...</div>
           <p className="icon-description">Boosts</p>
         </div>
-        <div className="nav-item center">
+        <div className="nav-item center" onClick={handleMonopolyClick}>
           <div className="icon monopoly">...</div>
           <p className="icon-description">Monopoly</p>
         </div>
