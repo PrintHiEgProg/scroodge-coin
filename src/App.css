@@ -387,6 +387,7 @@ position: absolute;
     margin-top: 20px;
     text-align: center;
     height: 10%;
+    margin-bottom: 100vh;
 }
 
 .upgrade-btn {
