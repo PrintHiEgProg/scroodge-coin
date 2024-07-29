@@ -247,7 +247,7 @@ position: absolute;
 }
 
 .container-for-navbar {
-  height: 30vh;
+  margin-bottom: 30vh;
 }
 
 .navbar-box {
@@ -387,7 +387,6 @@ position: absolute;
     margin-top: 20px;
     text-align: center;
     height: 10%;
-    margin-bottom: 100vh;
 }
 
 .upgrade-btn {
