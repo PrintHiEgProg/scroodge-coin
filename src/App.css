@@ -22,17 +22,18 @@
 .App {
   height: 100vh;
   width: 100vw;
-  margin-bottom: 30vh;
 }
 
 .Main {
   height: 100vh;
   width: 100vw;
+  margin-bottom: 30vh;
 }
 
 .Monopoly {
   height: 100vh;
   width: 100vw;
+  margin-bottom: 30vh;
 }
 
 .header {
@@ -211,7 +212,7 @@ position: absolute;
 .korona {
     width: 100%;
     height: 100%;
-    background-image: url(https://cdn.discordapp.com/attachments/1243965505513984013/1266728797911388193/Mask_group_3.png?ex=66a634a0&is=66a4e320&hm=8d8da8af6103463ecb8de4915ba810bc480323793ecbca547366c75cdba24d05&);
+    background-image: url(https://cdn.discordapp.com/attachments/1243965505513984013/1266728797911388193/Mask_group_3.png?ex=66a78620&is=66a634a0&hm=34824a412544157e6619211a1ca725bdfd2ed258ebc446435003696d3341dfaf&);
     background-size: contain;
     background-repeat: no-repeat;
     color: #00000000;
