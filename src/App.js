@@ -114,7 +114,30 @@ function App() {
     handleSendData();
     // Если вы хотите предотвратить закрытие, можно установить returnValue
     // event.returnValue = '';
-  }, []);
+  }, [
+    count,
+    countBonus,
+    countTrueMax,
+    countTrueBonus,
+    levelMoreClicks,
+    levelMoreEnergy,
+    levelTgChannel1,
+    levelTgPremium,
+    levelMoreCountTrueBonus,
+    levelFactoryShoes,
+    levelFactoryHotel,
+    levelFactoryBank,
+    levelJoinGame,
+    countTrue,
+    canClick,
+    priceMoreClicks,
+    priceMoreEnergy,
+    priceMoreCountTrueBonus,
+    priceFactoryShoes,
+    priceFactoryHotel,
+    priceFactoryBank,
+    factoryBonus,
+  ]);
 
 
 
