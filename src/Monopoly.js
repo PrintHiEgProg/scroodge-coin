@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 
-const Monopoly = () => {
+const Monopoly = ({
+  FactoryShoes,
+  priceFactoryShoes,
+  levelFactoryShoes,
+  FactoryHotel,
+  priceFactoryHotel,
+  levelFactoryHotel,
+  FactoryBank,
+  priceFactoryBank,
+  levelFactoryBank
+}) => {
   const [currentIndex, setCurrentIndex] = useState(2);
   const images = [
     "https://cdn.discordapp.com/attachments/1243965505513984013/1267285575010877460/Remove-bg.ai_1722090065984.png?ex=66a83b2a&is=66a6e9aa&hm=8efbedb72d3b5a50fe96cda0e14637aac960a222c9a7c98eae7895eccab8ea83&",
@@ -34,9 +44,6 @@ const Monopoly = () => {
         break;
     }
   };
-  const level1 = "1";
-  const level2 = "2";
-  const level3 = "3";
   return (
     <div className="">
       <div class="header">
@@ -69,9 +76,9 @@ const Monopoly = () => {
           </div>
         </div>
         <div className="monopoly-title">
-          {currentIndex === 0 && `Hotel ${level1} lvl`}
-          {currentIndex === 1 && `Powerstation ${level2} lvl`}
-          {currentIndex === 2 && `Factory ${level3} lvl`}
+          {currentIndex === 0 && `Hotel lvl ${levelFactoryHotel}`}
+          {currentIndex === 1 && `Powerstation lvl ${levelFactoryShoes}`}
+          {currentIndex === 2 && `Factory lvl ${levelFactoryBank}`}
         </div>
         <div class="upgrade-btn-box">
           <button class="upgrade-btn" onClick={handleButtonClick}>

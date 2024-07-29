@@ -10,16 +10,7 @@ function Boost({
   levelMoreEnergy,
   MoreCountTrueBonus,
   levelMoreCountTrueBonus,
-  priceMoreCountTrueBonus,
-  FactoryShoes,
-  priceFactoryShoes,
-  levelFactoryShoes,
-  FactoryHotel,
-  priceFactoryHotel,
-  levelFactoryHotel,
-  FactoryBank,
-  priceFactoryBank,
-  levelFactoryBank,
+  priceMoreCountTrueBonus
 }) {
   return (
     <div className="Boost">
@@ -62,39 +53,7 @@ function Boost({
           </div>
         </div>
         <h4 className="title">factories</h4>
-        <div className="card" onClick={FactoryShoes}>
-          <div className="card-text">
-            <b>shoe factory</b>
-          </div>
-          <hr className="card-hr" />
-          <div className="card-footer">
-            <div className="card-level">{levelFactoryShoes} lv</div>
-            <div className="card-price">{priceFactoryShoes}</div>
-            <div className="card-money"></div>
-          </div>
-        </div>
-        <div className="card" onClick={FactoryHotel}>
-          <div className="card-text">
-            <b>hotel</b>
-          </div>
-          <hr className="card-hr" />
-          <div className="card-footer">
-            <div className="card-level">{levelFactoryHotel} lv</div>
-            <div className="card-price">{priceFactoryHotel}</div>
-            <div className="card-money"></div>
-          </div>
-        </div>
-        <div className="card" onClick={FactoryBank}>
-          <div className="card-text">
-            <b>bank</b>
-          </div>
-          <hr className="card-hr" />
-          <div className="card-footer">
-            <div className="card-level">{levelFactoryBank} lv</div>
-            <div className="card-price">{priceFactoryBank}</div>
-            <div className="card-money"></div>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
