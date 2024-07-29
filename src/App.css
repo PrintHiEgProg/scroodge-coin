@@ -246,8 +246,11 @@ position: absolute;
     animation-timing-function: linear;
 }
 
+.container-for-navbar {
+  height: 30vh;
+}
+
 .navbar-box {
-    margin-top: 30vh;
     bottom: 0;
     left: 0;
   position: fixed;

@@ -85,6 +85,7 @@ const Monopoly = ({
           </button>
         </div>
       </div>
+      <div class="container-for-navbar"></div>
     </div>
   );
 };
