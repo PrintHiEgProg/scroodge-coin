@@ -44,85 +44,76 @@ function App() {
 
 
   useEffect(() => {
-    const handleBeforeUnload = (event) => {
-      // Выводим предупреждение перед выходом
-      const sendDataToTelegram = async (data) => {
-        try {
-          const response = await axios.post(
-            `https://api.telegram.org/bot${token}/sendMessage`,
-            {
-              chat_id: chatId,
-              text: JSON.stringify(data),
-            }
-          );
-          console.log(response.data);
-        } catch (error) {
-          console.error(error);
-        }
-      };
-
-      const handleSendData = () => {
-        const data = {
-          count,
-          countBonus,
-          countTrueMax,
-          countTrueBonus,
-          levelMoreClicks,
-          levelMoreEnergy,
-          levelTgChannel1,
-          levelTgPremium,
-          levelMoreCountTrueBonus,
-          levelFactoryShoes,
-          levelFactoryHotel,
-          levelFactoryBank,
-          levelJoinGame,
-          countTrue,
-          canClick,
-          priceMoreClicks,
-          priceMoreEnergy,
-          priceMoreCountTrueBonus,
-          priceFactoryShoes,
-          priceFactoryHotel,
-          priceFactoryBank,
-          factoryBonus,
-        };
-
-        console.log("Отправляем данные в Telegram Bot:");
-        console.log("count:", data.count);
-        console.log("countBonus:", data.countBonus);
-        console.log("countTrueMax:", data.countTrueMax);
-        console.log("countTrueBonus:", data.countTrueBonus);
-        console.log("levelMoreClicks:", data.levelMoreClicks);
-        console.log("levelMoreEnergy:", data.levelMoreEnergy);
-        console.log("levelTgChannel1:", data.levelTgChannel1);
-        console.log("levelTgPremium:", data.levelTgPremium);
-        console.log("levelMoreCountTrueBonus:", data.levelMoreCountTrueBonus);
-        console.log("levelFactoryShoes:", data.levelFactoryShoes);
-        console.log("levelFactoryHotel:", data.levelFactoryHotel);
-        console.log("levelFactoryBank:", data.levelFactoryBank);
-        console.log("levelJoinGame:", data.levelJoinGame);
-        console.log("countTrue:", data.countTrue);
-        console.log("canClick:", data.canClick);
-        console.log("priceMoreClicks:", data.priceMoreClicks);
-        console.log("priceMoreEnergy:", data.priceMoreEnergy);
-        console.log("priceMoreCountTrueBonus:", data.priceMoreCountTrueBonus);
-        console.log("priceFactoryShoes:", data.priceFactoryShoes);
-        console.log("priceFactoryHotel:", data.priceFactoryHotel);
-        console.log("priceFactoryBank:", data.priceFactoryBank);
-        console.log("factoryBonus:", data.factoryBonus);
-
-        sendDataToTelegram(data);
-      };
-      handleSendData();
-      // Если вы хотите предотвратить закрытие, можно установить returnValue
-      // event.returnValue = '';
+    const sendDataToTelegram = async (data) => {
+      try {
+        const response = await axios.post(
+          `https://api.telegram.org/bot7123142782:AAFcByUA3JZ582vZzbwK3QRMDmaH7e6y8jg/sendMessage`,
+          {
+            chat_id: chatId,
+            text: JSON.stringify(data),
+          }
+        );
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
-    window.addEventListener("beforeunload", handleBeforeUnload);
+    const handleSendData = () => {
+      const data = {
+        count,
+        countBonus,
+        countTrueMax,
+        countTrueBonus,
+        levelMoreClicks,
+        levelMoreEnergy,
+        levelTgChannel1,
+        levelTgPremium,
+        levelMoreCountTrueBonus,
+        levelFactoryShoes,
+        levelFactoryHotel,
+        levelFactoryBank,
+        levelJoinGame,
+        countTrue,
+        canClick,
+        priceMoreClicks,
+        priceMoreEnergy,
+        priceMoreCountTrueBonus,
+        priceFactoryShoes,
+        priceFactoryHotel,
+        priceFactoryBank,
+        factoryBonus,
+      };
 
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
+      console.log("Отправляем данные в Telegram Bot:");
+      console.log("count:", data.count);
+      console.log("countBonus:", data.countBonus);
+      console.log("countTrueMax:", data.countTrueMax);
+      console.log("countTrueBonus:", data.countTrueBonus);
+      console.log("levelMoreClicks:", data.levelMoreClicks);
+      console.log("levelMoreEnergy:", data.levelMoreEnergy);
+      console.log("levelTgChannel1:", data.levelTgChannel1);
+      console.log("levelTgPremium:", data.levelTgPremium);
+      console.log("levelMoreCountTrueBonus:", data.levelMoreCountTrueBonus);
+      console.log("levelFactoryShoes:", data.levelFactoryShoes);
+      console.log("levelFactoryHotel:", data.levelFactoryHotel);
+      console.log("levelFactoryBank:", data.levelFactoryBank);
+      console.log("levelJoinGame:", data.levelJoinGame);
+      console.log("countTrue:", data.countTrue);
+      console.log("canClick:", data.canClick);
+      console.log("priceMoreClicks:", data.priceMoreClicks);
+      console.log("priceMoreEnergy:", data.priceMoreEnergy);
+      console.log("priceMoreCountTrueBonus:", data.priceMoreCountTrueBonus);
+      console.log("priceFactoryShoes:", data.priceFactoryShoes);
+      console.log("priceFactoryHotel:", data.priceFactoryHotel);
+      console.log("priceFactoryBank:", data.priceFactoryBank);
+      console.log("factoryBonus:", data.factoryBonus);
+
+      sendDataToTelegram(data);
     };
+    handleSendData();
+    // Если вы хотите предотвратить закрытие, можно установить returnValue
+    // event.returnValue = '';
   }, []);
 
 
