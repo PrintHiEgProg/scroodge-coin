@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Monopoly = ({
   FactoryShoes,
@@ -11,6 +11,10 @@ const Monopoly = ({
   priceFactoryBank,
   levelFactoryBank
 }) => {
+  const tg = window.Telegram.WebApp;
+  useEffect = () => {
+    tg.BackButton();
+  }
   const [currentIndex, setCurrentIndex] = useState(2);
   const images = [
     "https://cdn.discordapp.com/attachments/1243965505513984013/1267285575010877460/Remove-bg.ai_1722090065984.png?ex=66a83b2a&is=66a6e9aa&hm=8efbedb72d3b5a50fe96cda0e14637aac960a222c9a7c98eae7895eccab8ea83&",
@@ -45,7 +49,7 @@ const Monopoly = ({
     }
   };
   return (
-    <div className="">
+    <div className="Monopoly">
       <div class="header">
         <div class="wallet-box">
           <div class="wallet-icon">...</div>
