@@ -61,6 +61,7 @@ function App() {
 
     const handleSendData = () => {
       const data = {
+        userId,
         count,
         countBonus,
         countTrueMax,
@@ -86,6 +87,7 @@ function App() {
       };
 
       console.log("Отправляем данные в Telegram Bot:");
+      console.log("userId", data.userId);
       console.log("count:", data.count);
       console.log("countBonus:", data.countBonus);
       console.log("countTrueMax:", data.countTrueMax);
