@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Boost({
   count,
@@ -10,51 +10,86 @@ function Boost({
   levelMoreEnergy,
   MoreCountTrueBonus,
   levelMoreCountTrueBonus,
-  priceMoreCountTrueBonus
+  priceMoreCountTrueBonus,
 }) {
+  const tg = window.Telegram.WebApp;
+
+  const [currentIndex, setCurrentIndex] = useState(2);
+  const images = [
+    // картинка номер три
+    "",
+    // картинка номер два
+    "",
+    // картинка номер один
+    "",
+  ];
+  const handleSwipe = (direction) => {
+    if (direction === "left") {
+      setCurrentIndex((currentIndex + 1) % images.length);
+    } else if (direction === "right") {
+      setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+    }
+  };
+
+  const handleButtonClick = () => {
+    switch (currentIndex) {
+      case 0:
+        alert("Hotel");
+
+        break;
+      case 1:
+        alert("Powerstation");
+
+        break;
+      case 2:
+        alert("Factory");
+
+        break;
+      default:
+        break;
+    }
+  };
   return (
-    <div className="Boost">
-      <h2 className="title">Boost</h2>
-      <p className="count-click">{count}</p>
-      <div className="catalog">
-        <div className="card" onClick={moreClicks}>
-          <div className="card-img"></div>
-          <div className="card-text">
-            <b>more clicks</b>
-          </div>
-          <hr className="card-hr" />
-          <div className="card-footer">
-            <div className="card-level">{levelMoreClicks} lv</div>
-            <div className="card-price">{priceMoreClicks}</div>
-            <div className="card-money"></div>
-          </div>
+    <div className="Monopoly">
+      <div class="header">
+        <div class="wallet-box">
+          <div class="wallet-icon">...</div>
+          <div class="wallet-text">Wallet</div>
         </div>
-        <div className="card" onClick={moreEnergy}>
-          <div className="card-text">
-            <b>more enegry</b>
-          </div>
-          <hr className="card-hr" />
-          <div className="card-footer">
-            <div className="card-level">{levelMoreEnergy} lv</div>
-            <div className="card-price">{priceMoreEnergy}</div>
-            <div className="card-money"></div>
-          </div>
-        </div>
-        <div className="card" onClick={MoreCountTrueBonus}>
-          <div className="card-img"></div>
-          <div className="card-text">
-            <b>more +enegry</b>
-          </div>
-          <hr className="card-hr" />
-          <div className="card-footer">
-            <div className="card-level">{levelMoreCountTrueBonus} lv</div>
-            <div className="card-price">{priceMoreCountTrueBonus}</div>
-            <div className="card-money"></div>
-          </div>
-        </div>
-        <h4 className="title">factories</h4>
-        
       </div>
+      <div class="monopoly-box">
+        <div class="title">Monopoly</div>
+
+        <div className="gallery">
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Картинка ${index + 1}`}
+              className={`image ${currentIndex === index ? "active" : ""} `}
+            />
+          ))}
+        </div>
+        <div className="swipe-container">
+          <div className="swipe-left" onClick={() => handleSwipe("left")}>
+            &#8249;
+          </div>
+          <div className="swipe-right" onClick={() => handleSwipe("right")}>
+            &#8250;
+          </div>
+        </div>
+        <div className="monopoly-title">
+          {currentIndex === 0 && `More clicks lvl ${levelMoreClicks}`}
+          {currentIndex === 1 && `More energy lvl ${levelMoreEnergy}`}
+          {currentIndex === 2 && `Fast energy lvl ${levelMoreCountTrueBonus}`}
+        </div>
+        <div class="upgrade-btn-box">
+          <button class="upgrade-btn" onClick={handleButtonClick}>
+            Upgrade
+          </button>
+        </div>
+      </div>
+      <div class="container-for-navbar"></div>
     </div>
   );
 }
