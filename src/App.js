@@ -502,17 +502,14 @@ function App() {
               }
             />
             <Route
-              path="/market-factory"
-              element={
-                <MarketFactory
-                />
-              }
+              path="/monopoly/market-factory"
+              element={<MarketFactory />}
             />
             <Route
-              path="/market-powerstation"
+              path="/monopoly/market-powerstation"
               element={<MarketPowerStation />}
             />
-            <Route path="/market-hotel" element={<MarketHotel />} />
+            <Route path="/monopoly/market-hotel" element={<MarketHotel />} />
           </Routes>
           <NavBar />
         </Router>

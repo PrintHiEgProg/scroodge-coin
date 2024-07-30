@@ -40,23 +40,24 @@ const Monopoly = ({
   const handleButtonClick = () => {
     switch (currentIndex) {
       case 0:
-        alert("Hotel");
+        
         const handleHotelClick = () => {
+          alert("Hotel");
           const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-          navigate("/market-hotel");
+          navigate("/monopoly/market-hotel");
         };
         break;
       case 1:
         const handlePowerStationClick = () => {
           const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-          navigate("/market-powerstation");
+          navigate("/monopoly/market-powerstation");
         };
 
         break;
       case 2:
         const handleFactoryClick = () => {
           const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-          navigate("/market-factory");
+          navigate("/monopoly/market-factory");
         };
 
         break;
