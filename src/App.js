@@ -501,12 +501,18 @@ function App() {
                 />
               }
             />
-            <Route path="/market-factory" element={<MarketFactory />} />
+            <Route
+              path="/market-factory"
+              element={
+                <MarketFactory
+                />
+              }
+            />
             <Route
               path="/market-powerstation"
               element={<MarketPowerStation />}
             />
-            <Route path="/market-hotel" element={<MarketHotel />}/>
+            <Route path="/market-hotel" element={<MarketHotel />} />
           </Routes>
           <NavBar />
         </Router>
