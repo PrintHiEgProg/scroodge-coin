@@ -40,24 +40,19 @@ const Monopoly = ({
   const handleButtonClick = () => {
     switch (currentIndex) {
       case 0:
-        
-        const handleHotelClick = () => {
-          const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+          const hapticFeedbackSoft1 = tg.HapticFeedback.impactOccurred("soft");
           navigate("/monopoly/market-hotel");
-        };
         break;
       case 1:
-        const handlePowerStationClick = () => {
-          const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+          const hapticFeedbackSoft2 = tg.HapticFeedback.impactOccurred("soft");
           navigate("/monopoly/market-powerstation");
-        };
+        
 
         break;
       case 2:
-        const handleFactoryClick = () => {
-          const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-          navigate("/monopoly/market-factory");
-        };
+        const hapticFeedbackSoft3 = tg.HapticFeedback.impactOccurred("soft");
+        navigate("/monopoly/market-factory");
+        
 
         break;
       default:

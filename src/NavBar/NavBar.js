@@ -15,11 +15,6 @@ function NavBar() {
     navigate("/boost")
   };
 
-  const handleFactoryClick = () => {
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    navigate("/monopoly/market-factory");
-  };
-
   const handleMonopolyClick = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     navigate("/monopoly");
@@ -36,7 +31,7 @@ function NavBar() {
           <div className="icon monopoly">...</div>
           <p className="icon-description">Monopoly</p>
         </div>
-        <div className="nav-item right" onClick={handleFactoryClick}>
+        <div className="nav-item right">
           <div className="icon tasks">...</div>
           <p className="icon-description">Tasks</p>
         </div>
