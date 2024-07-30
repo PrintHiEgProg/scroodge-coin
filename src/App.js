@@ -11,82 +11,148 @@ import {
   Route,
   useNavigate,
 } from "react-router-dom";
-import axios from "axios";
 
 function App() {
   const tg = window.Telegram.WebApp;
   const userId = tg.initDataUnsafe.user.id;
   const token = "7123142782:AAFcByUA3JZ582vZzbwK3QRMDmaH7e6y8jg";
-  const chatId = userId
+  const chatId = userId;
 
-  const [count, setCount] = useState(0);
-  const [countBonus, setCountBonus] = useState(1);
-  const [countTrueMax, setcountTrueMax] = useState(1000);
-  const [countTrueBonus, setCountTrueBonus] = useState(1);
-  const [levelMoreClicks, setLevelMoreClicks] = useState(0);
-  const [levelMoreEnergy, setLevelMoreEnergy] = useState(0);
-  const [levelTgChannel1, setLevelTgChannel1] = useState(0);
-  const [levelTgPremium, setlevelTgPremium] = useState(0);
-  const [levelMoreCountTrueBonus, setLevelMoreCountTrueBonus] = useState(0);
-  const [levelFactoryShoes, setLevelFactoryShoes] = useState(0);
-  const [levelFactoryHotel, setLevelFactoryHotel] = useState(0);
-  const [levelFactoryBank, setLevelFactoryBank] = useState(0);
-  const [levelJoinGame, setLevelJoinGame] = useState(0);
-  const [countTrue, setCountTrue] = useState(1000);
+  const [count, setCount] = useState(() => {
+    const savedCount = localStorage.getItem("count");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [countBonus, setCountBonus] = useState(() => {
+    const savedCount = localStorage.getItem("countBonus");
+    return savedCount !== null ? parseInt(savedCount, 10) : 1;
+  });
+  const [countTrueMax, setcountTrueMax] = useState(() => {
+    const savedCount = localStorage.getItem("countTrueMax");
+    return savedCount !== null ? parseInt(savedCount, 10) : 1000;
+  });
+  const [countTrueBonus, setCountTrueBonus] = useState(() => {
+    const savedCount = localStorage.getItem("countTrueBonus");
+    return savedCount !== null ? parseInt(savedCount, 10) : 1;
+  });
+  const [levelMoreClicks, setLevelMoreClicks] = useState(() => {
+    const savedCount = localStorage.getItem("levelMoreClicks");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [levelMoreEnergy, setLevelMoreEnergy] = useState(() => {
+    const savedCount = localStorage.getItem("levelMoreEnergy");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [levelTgChannel1, setLevelTgChannel1] = useState(() => {
+    const savedCount = localStorage.getItem("levelTgChannel1");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [levelTgPremium, setlevelTgPremium] = useState(() => {
+    const savedCount = localStorage.getItem("levelTgPremium");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [levelMoreCountTrueBonus, setLevelMoreCountTrueBonus] = useState(() => {
+    const savedCount = localStorage.getItem("levelMoreCountTrueBonus");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [levelFactoryShoes, setLevelFactoryShoes] = useState(() => {
+    const savedCount = localStorage.getItem("levelFactoryShoes");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [levelFactoryHotel, setLevelFactoryHotel] = useState(() => {
+    const savedCount = localStorage.getItem("levelFactoryHotel");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [levelFactoryBank, setLevelFactoryBank] = useState(() => {
+    const savedCount = localStorage.getItem("levelFactoryBank");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [levelJoinGame, setLevelJoinGame] = useState(() => {
+    const savedCount = localStorage.getItem("levelJoinGame");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+  const [countTrue, setCountTrue] = useState(() => {
+    const savedCount = localStorage.getItem("countTrue");
+    return savedCount !== null ? parseInt(savedCount, 10) : 1000;
+  });
   const [canClick, setCanClick] = useState(true);
-  const [priceMoreClicks, setPriceMoreClicks] = useState(1000);
-  const [priceMoreEnergy, setPriceMoreEnergy] = useState(2000);
-  const [priceMoreCountTrueBonus, setPriceMoreCountTrueBonus] = useState(3000);
-  const [priceFactoryShoes, setPriceFactoryShoes] = useState(5000);
-  const [priceFactoryHotel, setPriceFactoryHotel] = useState(10000);
-  const [priceFactoryBank, setPriceFactoryBank] = useState(100000)
-  const [factoryBonus, setFactoryBonus] = useState(0);
+  const [priceMoreClicks, setPriceMoreClicks] = useState(() => {
+    const savedCount = localStorage.getItem("priceMoreClicks");
+    return savedCount !== null ? parseInt(savedCount, 10) : 1000;
+  });
+  const [priceMoreEnergy, setPriceMoreEnergy] = useState(() => {
+    const savedCount = localStorage.getItem("priceMoreEnergy");
+    return savedCount !== null ? parseInt(savedCount, 10) : 2000;
+  });
+  const [priceMoreCountTrueBonus, setPriceMoreCountTrueBonus] = useState(() => {
+    const savedCount = localStorage.getItem("priceMoreCountTrueBonus");
+    return savedCount !== null ? parseInt(savedCount, 10) : 3000;
+  });
+  const [priceFactoryShoes, setPriceFactoryShoes] = useState(() => {
+    const savedCount = localStorage.getItem("priceFactoryShoes");
+    return savedCount !== null ? parseInt(savedCount, 10) : 5000;
+  });
+  const [priceFactoryHotel, setPriceFactoryHotel] = useState(() => {
+    const savedCount = localStorage.getItem("priceFactoryHotel");
+    return savedCount !== null ? parseInt(savedCount, 10) : 10000;
+  });
+  const [priceFactoryBank, setPriceFactoryBank] = useState(() => {
+    const savedCount = localStorage.getItem("priceFactoryBank");
+    return savedCount !== null ? parseInt(savedCount, 10) : 100000;
+  });
+  const [factoryBonus, setFactoryBonus] = useState(() => {
+    const savedCount = localStorage.getItem("factoryBonus");
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
 
+  // Загружаем сохраненное значение count из localStorage при инициализации состояния
+   
 
   useEffect(() => {
-    const data = {
-      userId: userId,
-      count: count,
-      countBonus: countBonus,
-      countTrueBox: countTrueMax,
-      countTrueBonus: countTrueBonus,
-      levelMoreClicks: levelMoreClicks,
-      levelMoreEnergy: levelMoreEnergy,
-      levelMoreChannel1: levelTgChannel1,
-      levelTgPremium: levelTgPremium,
-      levelMoreCountTrueBonus: levelMoreCountTrueBonus,
-      levelFactoryShoes: levelFactoryShoes,
-      levelFactoryHotel: levelFactoryHotel,
-      levelFactoryBank: levelFactoryBank,
-      levelJoinGame: levelJoinGame,
-      countTrue: countTrue,
-      canClick: canClick,
-      priceMoreClicks: priceMoreClicks,
-      priceMoreEnergy: priceMoreEnergy,
-      priceMoreCountTrueBonus: priceMoreCountTrueBonus,
-      priceFactoryShoes: priceFactoryShoes,
-      priceFactoryHotel: priceFactoryHotel,
-      priceFactoryBank: priceFactoryBank,
-      factoryBonus: factoryBonus,
-    };
-    const handleBeforeUnload = (event) => {
-      // Выводим предупреждение перед выходом
-      tg.sendData(JSON.stringify(data));
-      // Если вы хотите предотвратить закрытие, можно установить returnValue
-      // event.returnValue = '';
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-
-    
+    // Сохраняем значение count в localStorage при его изменении
+    localStorage.setItem("count", count);
+    localStorage.setItem("countBonus", countBonus);
+    localStorage.setItem("countTrueMax", countTrueMax);
+    localStorage.setItem("countTrueBonus", countTrueBonus);
+    localStorage.setItem("levelMoreClicks", levelMoreClicks);
+    localStorage.setItem("levelMoreEnergy", levelMoreEnergy);
+    localStorage.setItem("levelTgChannel1", levelTgChannel1);
+    localStorage.setItem("levelTgPremium", levelTgPremium);
+    localStorage.setItem("levelMoreCountTrueBonus", levelMoreCountTrueBonus);
+    localStorage.setItem("levelFactoryShoes", levelFactoryShoes);
+    localStorage.setItem("levelFactoryHotel", levelFactoryHotel);
+    localStorage.setItem("levelFactoryBank", levelFactoryBank);
+    localStorage.setItem("levelJoinGame", levelJoinGame);
+    localStorage.setItem("countTrue", countTrue);
+    localStorage.setItem("priceMoreClicks,", priceMoreClicks);
+    localStorage.setItem("priceMoreEnergy", priceMoreEnergy);
+    localStorage.setItem("priceMoreCountTrueBonus", priceMoreCountTrueBonus);
+    localStorage.setItem("priceFactoryShoes", priceFactoryShoes);
+    localStorage.setItem("priceFactoryHotel", priceFactoryHotel);
+    localStorage.setItem("priceFactoryBank", priceFactoryBank);
+    localStorage.setItem("factoryBonus", factoryBonus);
   }, [
-  ]);
-
-
+    count,
+    countBonus,
+    countTrueMax,
+    countTrueBonus,
+    levelMoreClicks,
+    levelMoreEnergy,
+    levelTgChannel1,
+    levelTgPremium,
+    levelMoreCountTrueBonus,
+    levelFactoryShoes,
+    levelFactoryHotel,
+    levelFactoryBank,
+    levelJoinGame,
+    countTrue,
+    priceMoreClicks,
+    priceMoreEnergy,
+    priceMoreCountTrueBonus,
+    priceFactoryShoes,
+    priceFactoryHotel,
+    priceFactoryBank,
+    factoryBonus
+  ]); // Зависимость от переменных, чтобы эффект срабатывал при их изменении
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -97,18 +163,16 @@ function App() {
 
     return () => clearInterval(interval);
   }, [countTrue]);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (factoryBonus > 0) {
-        setCount((prevCount) => prevCount + factoryBonus)
+        setCount((prevCount) => prevCount + factoryBonus);
       }
     }, 1000);
 
     return () => clearInterval(interval);
   }, [count]);
-  
-
 
   const handleClick = () => {
     if (canClick) {
@@ -135,7 +199,7 @@ function App() {
 
     const handleOffline = () => {
       alert("No connection network");
-      window.location.reload(); 
+      window.location.reload();
     };
 
     // Добавляем обработчики событий
@@ -145,8 +209,7 @@ function App() {
     // Проверка начального состояния
     while (!navigator.onLine) {
       alert("No connection network");
-      window.location.reload(); 
-
+      window.location.reload();
     }
 
     // Убираем обработчики событий при размонтировании компонента
@@ -176,7 +239,7 @@ function App() {
   }, []);
 
   //Boosts
-  
+
   const moreClicks = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreClicks === 10) {
@@ -189,7 +252,7 @@ function App() {
           setCount(count - priceMoreClicks);
           setCountBonus(countBonus + 1);
           setLevelMoreClicks(levelMoreClicks + 1);
-          setPriceMoreClicks(priceMoreClicks + 1000)
+          setPriceMoreClicks(priceMoreClicks + 1000);
           alert("Thanks for the purchase ✅");
         } else {
           alert("Insufficient funds ❌");
@@ -198,7 +261,6 @@ function App() {
     }
   };
 
-  
   const moreEnergy = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreEnergy === 7) {
@@ -210,7 +272,7 @@ function App() {
           setCountTrue(countTrue + 1000);
           setcountTrueMax(countTrueMax + 1000);
           setLevelMoreEnergy(levelMoreEnergy + 1);
-          setPriceMoreEnergy(priceMoreEnergy + 1000)
+          setPriceMoreEnergy(priceMoreEnergy + 1000);
           alert("Thanks for the purchase ✅");
         } else {
           alert("Insufficient funds ❌");
@@ -240,7 +302,6 @@ function App() {
     }
   };
 
-  
   const FactoryShoes = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactoryShoes === 5) {
@@ -307,8 +368,6 @@ function App() {
     }
   };
 
-  
-
   //Tasks
 
   const JoinGame = () => {
@@ -316,11 +375,11 @@ function App() {
     if (levelJoinGame === 1) {
       alert("You have already completed this task ✅");
     } else {
-      setLevelJoinGame(levelJoinGame + 1)
-      setCount(count + 10000)
+      setLevelJoinGame(levelJoinGame + 1);
+      setCount(count + 10000);
       alert("Welcome to the game!!! You get +10000 coins. 🎁");
     }
-  }
+  };
 
   const TgPremium = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
@@ -361,15 +420,10 @@ function App() {
           )
         ) {
           tg.openTelegramLink("https://t.me/deanon_team_blog");
-        } 
+        }
       }
-      
     }
-  }
-
-  
-  
-
+  };
 
   return (
     <div className="App">
