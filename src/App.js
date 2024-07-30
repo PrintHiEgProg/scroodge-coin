@@ -15,7 +15,6 @@ import {
 function App() {
   const tg = window.Telegram.WebApp;
   const userId = tg.initDataUnsafe.user.id;
-  const token = "7123142782:AAFcByUA3JZ582vZzbwK3QRMDmaH7e6y8jg";
   const chatId = userId;
 
   const [count, setCount] = useState(() => {
