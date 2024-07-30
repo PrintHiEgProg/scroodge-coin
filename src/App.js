@@ -5,6 +5,10 @@ import Boost from "./Boost.js";
 import Main from "./Main.js";
 import Task from "./Task.js";
 import Monopoly from "./Monopoly.js";
+import MarketFactory from "./MarketFactory.js";
+import MarketPowerStation from "./MarketPowerStation.js"
+import MarketHotel from "./MarketHotel.js"
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,7 +19,6 @@ import {
 function App() {
   const tg = window.Telegram.WebApp;
   const userId = tg.initDataUnsafe.user.id;
-  const chatId = userId;
 
   const [count, setCount] = useState(() => {
     const savedCount = localStorage.getItem("count");
@@ -498,6 +501,12 @@ function App() {
                 />
               }
             />
+            <Route path="/market-factory" element={<MarketFactory />}></Route>
+            <Route
+              path="/market-powerstation"
+              element={<MarketPowerStation />}
+            ></Route>
+            <Route path="/market-hotel" element={<MarketHotel />}></Route>
           </Routes>
           <NavBar />
         </Router>

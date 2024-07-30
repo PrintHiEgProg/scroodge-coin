@@ -34,15 +34,15 @@ function Boost({
   const handleButtonClick = () => {
     switch (currentIndex) {
       case 0:
-        alert("Hotel");
+        alert("Fast Energy");
 
         break;
       case 1:
-        alert("Powerstation");
+        alert("More Energy");
 
         break;
       case 2:
-        alert("Factory");
+        alert("More clicks");
 
         break;
       default:
@@ -79,9 +79,9 @@ function Boost({
           </div>
         </div>
         <div className="monopoly-title">
-          {currentIndex === 0 && `More clicks lvl ${levelMoreClicks}`}
+          {currentIndex === 0 && `Fast energy lvl ${levelMoreCountTrueBonus}`}
           {currentIndex === 1 && `More energy lvl ${levelMoreEnergy}`}
-          {currentIndex === 2 && `Fast energy lvl ${levelMoreCountTrueBonus}`}
+          {currentIndex === 2 && `More clicks lvl ${levelMoreClicks}`}
         </div>
         <div class="upgrade-btn-box">
           <button class="upgrade-btn" onClick={handleButtonClick}>

@@ -95,6 +95,31 @@
     color: #ffffff00;
 }
 
+.close-icon {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://cdn1.picturebb.com/1/2024/07/31/7TYwQ.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #ffffff00;
+}
+
+.close-box {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    /*Размещаетэлементыпокраям*/align-items: center;
+    /*Выравниваниепоцентруповертикали*//*Отступывокругконтейнера*/width: 9%;
+    height: 5%;
+    background-color: #507BEC;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
 .wallet-text {
     font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -413,6 +438,66 @@ position: absolute;
     color: #000000;
     font-size: 30px;
     text-align: center;
+}
+
+.catalog {
+    margin-top: 10%;
+    display: block;
+    padding-left: 10%;
+}
+
+.product-box {
+    display: flex;
+    margin-top: 5%;
+    background-color: #507BEC;
+    width: 94%;
+    height: 50px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+}
+
+.product-level {
+    margin-top: 3%;
+    margin-left: 10%;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    color: #ffffff;
+}
+
+.product-description {
+    margin-top: 3%;
+    margin-left: 10%;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    color: #ffffff;
+}
+
+.product-price {
+    margin-top: 3%;
+    margin-left: 10%;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    color: #ffffff;
+    display: flex;
+    
+}
+
+.korona-price {
+    width: 20px;
+    height: 20px;
+    background-image: url(https://cdn1.picturebb.com/1/2024/07/30/7Tbsl.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #00000000;
 }
 
 @-webkit-keyframes rotation {

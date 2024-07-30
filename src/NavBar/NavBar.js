@@ -28,7 +28,7 @@ function NavBar() {
   return (
     <div className="NavBar">
       <div className="navbar-box">
-        <div className="nav-item left">
+        <div className="nav-item left" onClick={handleBoostClick}>
           <div className="icon boosts">...</div>
           <p className="icon-description">Boosts</p>
         </div>
