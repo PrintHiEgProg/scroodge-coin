@@ -42,7 +42,6 @@ const Monopoly = ({
       case 0:
         
         const handleHotelClick = () => {
-          alert("Hotel");
           const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
           navigate("/monopoly/market-hotel");
         };
