@@ -58,7 +58,7 @@ function Boost({
         </div>
       </div>
       <div class="monopoly-box">
-        <div class="title">Monopoly</div>
+        <div class="title">Boosts</div>
 
         <div className="gallery">
           {images.map((image, index) => (
