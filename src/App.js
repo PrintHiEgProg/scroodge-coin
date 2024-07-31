@@ -231,7 +231,7 @@ function App() {
     };
 
     const handleOffline = () => {
-      tg.showAlert("No connection network");
+      alert("No connection network");
       window.location.reload();
     };
 
@@ -241,7 +241,7 @@ function App() {
 
     // Проверка начального состояния
     while (!navigator.onLine) {
-      tg.showAlert("No connection network");
+      alert("No connection network");
       window.location.reload();
     }
 
@@ -256,7 +256,7 @@ function App() {
     if (countTrue === 0) {
       const HapticFeedbackError =
         tg.HapticFeedback.notificationOccurred("warning");
-      tg.showAlert("Scrooge is tired... 😴");
+      alert("Scrooge is tired... 😴");
     }
   }, [countTrue]);
 
@@ -278,19 +278,19 @@ function App() {
   const moreClicks = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreClicks === 10) {
-      tg.showAlert("Max level 🔝");
+      alert("Max level 🔝");
     } else {
       if (
-        tg.showConfirm("Here you can buy more clicks in one click 🤑.\nBuy it?")
+        window.confirm("Here you can buy more clicks in one click 🤑.\nBuy it?")
       ) {
         if (count >= priceMoreClicks) {
           setCount(count - priceMoreClicks);
           setCountBonus(countBonus + 1);
           setLevelMoreClicks(levelMoreClicks + 1);
           setPriceMoreClicks(priceMoreClicks + 1000);
-          tg.showAlert("Thanks for the purchase ✅");
+          alert("Thanks for the purchase ✅");
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
@@ -299,18 +299,18 @@ function App() {
   const moreEnergy = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreEnergy === 7) {
-      tg.showAlert("Max level 🔝");
+      alert("Max level 🔝");
     } else {
-      if (tg.showConfirm("Here you can buy more energy.\nBuy it?")) {
+      if (window.confirm("Here you can buy more energy.\nBuy it?")) {
         if (count >= priceMoreEnergy) {
           setCount(count - priceMoreEnergy);
           setCountTrue(countTrue + 1000);
           setcountTrueMax(countTrueMax + 1000);
           setLevelMoreEnergy(levelMoreEnergy + 1);
           setPriceMoreEnergy(priceMoreEnergy + 1000);
-          tg.showAlert("Thanks for the purchase ✅");
+          alert("Thanks for the purchase ✅");
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
@@ -319,19 +319,19 @@ function App() {
   const MoreCountTrueBonus = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreCountTrueBonus === 10) {
-      tg.showAlert("Max level 🔝");
+      alert("Max level 🔝");
     } else {
       if (
-        tg.showConfirm("Here you can buy more energy to be charged.\nBuy it?")
+        window.confirm("Here you can buy more energy to be charged.\nBuy it?")
       ) {
         if (count >= priceMoreCountTrueBonus) {
           setCount(count - priceMoreCountTrueBonus);
           setCountTrueBonus(countTrueBonus + 1);
           setLevelMoreCountTrueBonus(levelMoreCountTrueBonus + 1);
           setPriceMoreCountTrueBonus(priceMoreCountTrueBonus + 2000);
-          tg.showAlert("Thanks for the purchase ✅");
+          alert("Thanks for the purchase ✅");
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
@@ -343,10 +343,10 @@ function App() {
   const levelFactory1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 0) {
-      tg.showAlert("This level has already been purchased! ✅");
+      alert("This level has already been purchased! ✅");
     } else {
       if (
-        tg.showConfirm(
+        window.confirm(
           "Buy it?"
         )
       ) {
@@ -355,7 +355,7 @@ function App() {
           setLevelFactory(levelFactory + 1);
           setFactoryBonus(factoryBonus + 0.5);
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
@@ -364,10 +364,10 @@ function App() {
   const levelFactory2 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 1) {
-      tg.showAlert("This level has already been purchased! ✅");
+      alert("This level has already been purchased! ✅");
     } else {
       if (
-        tg.showConfirm(
+        window.confirm(
           "Buy it?"
         )
       ) {
@@ -376,7 +376,7 @@ function App() {
           setLevelFactory(levelFactory + 1);
           setFactoryBonus(factoryBonus + 1)
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
@@ -385,10 +385,10 @@ function App() {
   const levelFactory3 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 2) {
-      tg.showAlert("This level has already been purchased! ✅");
+      alert("This level has already been purchased! ✅");
     } else {
       if (
-        tg.showConfirm(
+        window.confirm(
           "Buy it?"
         )
       ) {
@@ -397,7 +397,7 @@ function App() {
           setLevelFactory(levelFactory + 1);
           setFactoryBonus(factoryBonus + 1.5)
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
@@ -406,15 +406,15 @@ function App() {
   const levelFactory4 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 3) {
-      tg.showAlert("This level has already been purchased! ✅");
+      alert("This level has already been purchased! ✅");
     } else {
-      if (tg.showConfirm("Buy it?")) {
+      if (window.confirm("Buy it?")) {
         if (count >= priceLevelFactory4) {
           setCount(count - priceLevelFactory4);
           setLevelFactory(levelFactory + 1);
           setFactoryBonus(factoryBonus + 0.5);
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
@@ -423,15 +423,15 @@ function App() {
   const levelFactory5 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 4) {
-      tg.showAlert("This level has already been purchased! ✅");
+      alert("This level has already been purchased! ✅");
     } else {
-      if (tg.showConfirm("Buy it?")) {
+      if (window.confirm("Buy it?")) {
         if (count >= priceLevelFactory5) {
           setCount(count - priceLevelFactory5);
           setLevelFactory(levelFactory + 1);
           setFactoryBonus(factoryBonus + 1);
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
@@ -448,30 +448,30 @@ function App() {
   const JoinGame = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelJoinGame === 1) {
-      tg.showAlert("You have already completed this task ✅");
+      alert("You have already completed this task ✅");
     } else {
       setLevelJoinGame(levelJoinGame + 1);
       setCount(count + 100000);
-      tg.showAlert("Welcome to the game!!! You get +100000 coins. 🎁");
+      alert("Welcome to the game!!! You get +100000 coins. 🎁");
     }
   };
 
   const TgPremium = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelTgPremium === 1) {
-      tg.showAlert("You have already completed this task ✅");
+      alert("You have already completed this task ✅");
     } else {
       if (
-        tg.showConfirm(
+        window.confirm(
           "If you have Telegram premium you get +20,000 coins.\nTo execute?"
         )
       ) {
         if (tg.initDataUnsafe.user.is_premium) {
           setCount(count + 20000);
           setlevelTgPremium(levelTgPremium + 1);
-          tg.showAlert("Yoooo!\nCongratulations on buying TG Premium! ⭐️");
+          alert("Yoooo!\nCongratulations on buying TG Premium! ⭐️");
         } else {
-          tg.showAlert("Sorry, but you don't have tg premium 😔");
+          alert("Sorry, but you don't have tg premium 😔");
         }
       }
     }
@@ -480,17 +480,17 @@ function App() {
   const TgChannel1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelTgChannel1 === 1) {
-      tg.showAlert("You have already completed this task ✅");
+      alert("You have already completed this task ✅");
     } else {
       //тут должна быть проверка
       if (false) {
         //здесь вместо false должен быть вывод проверки
         setCount(count + 20000);
         setLevelTgChannel1(levelTgChannel1 + 1);
-        tg.showAlert("You are subscribed to the channel! ✅");
+        alert("You are subscribed to the channel! ✅");
       } else {
         if (
-          tg.showConfirm(
+          window.confirm(
             "If you subscribe to the TG channel, you get +10,000 coins. To execute?"
           )
         ) {
