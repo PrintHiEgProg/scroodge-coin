@@ -343,7 +343,7 @@ function App() {
   const levelFactory1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 0) {
-      tg.showAlert("This level has already been purchased! ✅");
+      alert("This level has already been purchased! ✅");
     } else {
       if (
         window.confirm(
@@ -355,7 +355,7 @@ function App() {
           setLevelFactory(levelFactory + 1);
           setFactoryBonus(factoryBonus + 0.5)
         } else {
-          tg.showAlert("Insufficient funds ❌");
+          alert("Insufficient funds ❌");
         }
       }
     }
