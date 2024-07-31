@@ -57,16 +57,16 @@ function App() {
     const savedCount = localStorage.getItem("levelMoreCountTrueBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
-  const [levelFactoryShoes, setLevelFactoryShoes] = useState(() => {
-    const savedCount = localStorage.getItem("levelFactoryShoes");
+  const [levelFactory, setLevelFactory] = useState(() => {
+    const savedCount = localStorage.getItem("levelFactory");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
-  const [levelFactoryHotel, setLevelFactoryHotel] = useState(() => {
-    const savedCount = localStorage.getItem("levelFactoryHotel");
+  const [levelHotel, setLevelHotel] = useState(() => {
+    const savedCount = localStorage.getItem("levelHotel");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
-  const [levelFactoryBank, setLevelFactoryBank] = useState(() => {
-    const savedCount = localStorage.getItem("levelFactoryBank");
+  const [levelPowerstation, setLevelPowerstation] = useState(() => {
+    const savedCount = localStorage.getItem("levelPowerstation");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelJoinGame, setLevelJoinGame] = useState(() => {
@@ -90,21 +90,37 @@ function App() {
     const savedCount = localStorage.getItem("priceMoreCountTrueBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 3000;
   });
-  const [priceFactoryShoes, setPriceFactoryShoes] = useState(() => {
-    const savedCount = localStorage.getItem("priceFactoryShoes");
-    return savedCount !== null ? parseInt(savedCount, 10) : 5000;
+  const [priceLevelFactory1, setpriceLevelFactory1] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelFactory1");
+    return savedCount !== null ? parseInt(savedCount, 10) : 100000;
   });
-  const [priceFactoryHotel, setPriceFactoryHotel] = useState(() => {
-    const savedCount = localStorage.getItem("priceFactoryHotel");
+  const [priceLevelFactory2, setpriceLevelFactory2] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelFactory2");
+    return savedCount !== null ? parseInt(savedCount, 10) : 300000;
+  });
+  const [priceLevelFactory3, setpriceLevelFactory3] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelFactory3");
+    return savedCount !== null ? parseInt(savedCount, 10) : 1000000;
+  });
+  const [priceLevelFactory4, setpriceLevelFactory4] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelFactory4");
+    return savedCount !== null ? parseInt(savedCount, 10) : 3000000;
+  });
+  const [priceLevelFactory5, setpriceLevelFactory5] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelFactory5");
+    return savedCount !== null ? parseInt(savedCount, 10) : 6000000;
+  });
+  const [priceHotel, setPriceHotel] = useState(() => {
+    const savedCount = localStorage.getItem("priceHotel");
     return savedCount !== null ? parseInt(savedCount, 10) : 10000;
   });
-  const [priceFactoryBank, setPriceFactoryBank] = useState(() => {
-    const savedCount = localStorage.getItem("priceFactoryBank");
+  const [pricePowerstation, setPricePowerstation] = useState(() => {
+    const savedCount = localStorage.getItem("pricePowerstation");
     return savedCount !== null ? parseInt(savedCount, 10) : 100000;
   });
   const [factoryBonus, setFactoryBonus] = useState(() => {
     const savedCount = localStorage.getItem("factoryBonus");
-    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+    return savedCount !== null ? parseInt(savedCount, 10) : 1;
   });
 
   // Загружаем сохраненное значение count из localStorage при инициализации состояния
@@ -121,17 +137,21 @@ function App() {
     localStorage.setItem("levelTgChannel1", levelTgChannel1);
     localStorage.setItem("levelTgPremium", levelTgPremium);
     localStorage.setItem("levelMoreCountTrueBonus", levelMoreCountTrueBonus);
-    localStorage.setItem("levelFactoryShoes", levelFactoryShoes);
-    localStorage.setItem("levelFactoryHotel", levelFactoryHotel);
-    localStorage.setItem("levelFactoryBank", levelFactoryBank);
+    localStorage.setItem("levelFactory", levelFactory);
+    localStorage.setItem("levelHotel", levelHotel);
+    localStorage.setItem("levelPowerstation", levelPowerstation);
     localStorage.setItem("levelJoinGame", levelJoinGame);
     localStorage.setItem("countTrue", countTrue);
     localStorage.setItem("priceMoreClicks,", priceMoreClicks);
     localStorage.setItem("priceMoreEnergy", priceMoreEnergy);
     localStorage.setItem("priceMoreCountTrueBonus", priceMoreCountTrueBonus);
-    localStorage.setItem("priceFactoryShoes", priceFactoryShoes);
-    localStorage.setItem("priceFactoryHotel", priceFactoryHotel);
-    localStorage.setItem("priceFactoryBank", priceFactoryBank);
+    localStorage.setItem("priceLevelFactory1", priceLevelFactory1);
+    localStorage.setItem("priceLevelFactory2", priceLevelFactory2);
+    localStorage.setItem("priceLevelFactory3", priceLevelFactory3);
+    localStorage.setItem("priceLevelFactory4", priceLevelFactory4);
+    localStorage.setItem("priceLevelFactory5", priceLevelFactory5);
+    localStorage.setItem("priceHotel", priceHotel);
+    localStorage.setItem("pricePowerstation", pricePowerstation);
     localStorage.setItem("factoryBonus", factoryBonus);
   }, [
     count,
@@ -143,17 +163,21 @@ function App() {
     levelTgChannel1,
     levelTgPremium,
     levelMoreCountTrueBonus,
-    levelFactoryShoes,
-    levelFactoryHotel,
-    levelFactoryBank,
+    levelFactory,
+    levelHotel,
+    levelPowerstation,
     levelJoinGame,
     countTrue,
     priceMoreClicks,
     priceMoreEnergy,
     priceMoreCountTrueBonus,
-    priceFactoryShoes,
-    priceFactoryHotel,
-    priceFactoryBank,
+    priceLevelFactory1,
+    priceLevelFactory2,
+    priceLevelFactory3,
+    priceLevelFactory4,
+    priceLevelFactory5,
+    priceHotel,
+    pricePowerstation,
     factoryBonus
   ]); // Зависимость от переменных, чтобы эффект срабатывал при их изменении
 
@@ -176,7 +200,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (factoryBonus > 0) {
-        setCount((prevCount) => prevCount + factoryBonus);
+        setCount((prevCount) => prevCount * factoryBonus);
       }
     }, 1000);
 
@@ -313,43 +337,82 @@ function App() {
     }
   };
 
-  const FactoryShoes = () => {
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    if (levelFactoryShoes === 5) {
-      tg.showAlert("Max level 🔝");
-    } else {
-      if (
-        window.confirm(
-          "By buying a shoe factory, you will receive +1 coins every 10 seconds.\nBuy it?"
-        )
-      ) {
-        if (count >= priceFactoryShoes) {
-          setCount(count - priceFactoryShoes);
-          setLevelFactoryShoes(levelFactoryShoes + 1);
-          setFactoryBonus(factoryBonus + 1);
-          setPriceFactoryShoes(priceFactoryShoes + 1000);
-        } else {
-          tg.showAlert("Insufficient funds ❌");
-        }
-      }
-    }
-  };
+  //Monopoly
 
-  const FactoryHotel = () => {
+  //Factory
+  const levelFactory1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    if (levelFactoryHotel === 5) {
-      tg.showAlert("Max level 🔝");
+    if (levelFactory > 0) {
+      tg.showAlert("This level has already been purchased! ✅");
     } else {
       if (
         window.confirm(
           "By buying a shoe factory, you will receive +2 coins every 1 seconds.\nBuy it?"
         )
       ) {
-        if (count >= priceFactoryHotel) {
-          setCount(count - priceFactoryHotel);
-          setLevelFactoryHotel(levelFactoryHotel + 1);
-          setFactoryBonus(factoryBonus + 2);
-          setPriceFactoryHotel(priceFactoryHotel + 1000);
+        if (count >= priceLevelFactory1) {
+          setCount(count - priceLevelFactory1);
+          setLevelFactory(levelFactory + 1);
+          setFactoryBonus(factoryBonus + 0.5)
+        } else {
+          tg.showAlert("Insufficient funds ❌");
+        }
+      }
+    }
+  }
+    
+    const levelFactory2 = () => {
+      const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+      if (levelFactory > 1) {
+        tg.showAlert("This level has already been purchased! ✅");
+      } else {
+        if (
+          window.confirm(
+            "Buy it?"
+          )
+        ) {
+          if (count >= priceLevelFactory2) {
+            setCount(count - priceLevelFactory2);
+            setLevelFactory(levelFactory + 1);
+            setFactoryBonus(factoryBonus + 1)
+          } else {
+            tg.showAlert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  
+  const levelFactory3 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelFactory > 2) {
+      tg.showAlert("This level has already been purchased! ✅");
+    } else {
+      if (
+        window.confirm(
+          "Buy it?"
+        )
+      ) {
+        if (count >= priceLevelFactory3) {
+          setCount(count - priceLevelFactory3);
+          setLevelFactory(levelFactory + 1);
+          setFactoryBonus(factoryBonus + 1.5)
+        } else {
+          tg.showAlert("Insufficient funds ❌");
+        }
+      }
+    }
+  }
+
+  const levelFactory4 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelFactory > 3) {
+      tg.showAlert("This level has already been purchased! ✅");
+    } else {
+      if (window.confirm("Buy it?")) {
+        if (count >= priceLevelFactory4) {
+          setCount(count - priceLevelFactory4);
+          setLevelFactory(levelFactory + 1);
+          setFactoryBonus(factoryBonus + 0.5);
         } else {
           tg.showAlert("Insufficient funds ❌");
         }
@@ -357,27 +420,28 @@ function App() {
     }
   };
 
-  const FactoryBank = () => {
+  const levelFactory5 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    if (levelFactoryBank === 5) {
-      tg.showAlert("Max level 🔝");
+    if (levelFactory > 4) {
+      tg.showAlert("This level has already been purchased! ✅");
     } else {
-      if (
-        window.confirm(
-          "By buying a shoe factory, you will receive +5 coins every 1 seconds.\nBuy it?"
-        )
-      ) {
-        if (count >= priceFactoryBank) {
-          setCount(count - priceFactoryBank);
-          setLevelFactoryBank(levelFactoryBank + 1);
+      if (window.confirm("Buy it?")) {
+        if (count >= priceLevelFactory5) {
+          setCount(count - priceLevelFactory5);
+          setLevelFactory(levelFactory + 1);
           setFactoryBonus(factoryBonus + 1);
-          setPriceFactoryBank(priceFactoryBank + 1000);
         } else {
           tg.showAlert("Insufficient funds ❌");
         }
       }
     }
   };
+
+
+  //Powerstation
+
+  //Hotel
+
 
   //Tasks
 
@@ -500,15 +564,9 @@ function App() {
               path="/monopoly"
               element={
                 <Monopoly
-                  FactoryShoes={FactoryShoes}
-                  priceFactoryShoes={priceFactoryShoes}
-                  levelFactoryShoes={levelFactoryShoes}
-                  FactoryHotel={FactoryHotel}
-                  priceFactoryHotel={priceFactoryHotel}
-                  levelFactoryHotel={levelFactoryHotel}
-                  FactoryBank={FactoryBank}
-                  priceFactoryBank={priceFactoryBank}
-                  levelFactoryBank={levelFactoryBank}
+                  levelFactory={levelFactory}
+                  levelPowerstation={levelPowerstation}
+                  levelHotel={levelHotel}
                 />
               }
             />
@@ -516,30 +574,23 @@ function App() {
               path="/monopoly/market-factory"
               element={
                 <MarketFactory
-                  FactoryBank={FactoryBank}
-                  priceFactoryBank={priceFactoryBank}
-                  levelFactoryBank={levelFactoryBank}
+                  levelFactory={levelFactory}
+                  levelFactory1={levelFactory1}
+                  levelFactory2={levelFactory2}
+                  levelFactory3={levelFactory3}
+                  levelFactory4={levelFactory4}
+                  levelFactory5={levelFactory5}
                 />
               }
             />
             <Route
               path="/monopoly/market-powerstation"
-              element={
-                <MarketPowerStation
-                  FactoryShoes={FactoryShoes}
-                  priceFactoryShoes={priceFactoryShoes}
-                  levelFactoryShoes={levelFactoryShoes}
-                />
-              }
+              element={<MarketPowerStation levelPowerstation={levelPowerstation} />}
             />
             <Route
               path="/monopoly/market-hotel"
               element={
-                <MarketHotel
-                  FactoryHotel={FactoryHotel}
-                  priceFactoryHotel={priceFactoryHotel}
-                  levelFactoryHotel={levelFactoryHotel}
-                />
+                <MarketHotel levelHotel={levelHotel} />
               }
             />
 
@@ -547,7 +598,8 @@ function App() {
               path="/games/flappy-scrooge"
               element={
                 <ScroogeGameFlappy
-                  countTrue={countTrue} setCountTrue={setCountTrue}
+                  countTrue={countTrue}
+                  setCountTrue={setCountTrue}
                 />
               }
             />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-const MarketFactory = (FactoryBank) => {
+const MarketFactory = (levelFactory1, levelFactory2, levelFactory3, levelFactory4, levelFactory5) => {
     const tg = window.Telegram.WebApp;
     const navigate = useNavigate();
 
@@ -25,10 +25,10 @@ const MarketFactory = (FactoryBank) => {
       <div class="monopoly-box">
         <div class="title">Factory lvl 0</div>
         <div class="catalog">
-          <div class="product-box">
+          <div class="product-box" onClick={levelFactory1}>
             <div class="product-level">lvl 1</div>
             <div class="product-description">
-              X 1.5 energy/
+              2000 coins/
               <br />
               hour
             </div>
@@ -36,48 +36,48 @@ const MarketFactory = (FactoryBank) => {
               100K<div class="korona-price">...</div>
             </div>
           </div>
-          <div class="product-box">
+          <div class="product-box" onClick={levelFactory2}>
             <div class="product-level">lvl 2</div>
             <div class="product-description">
-              X 2 energy/
+              4000 coins/
               <br />
               hour
             </div>
             <div class="product-price">
-              100K<div class="korona-price">...</div>
+              300K<div class="korona-price">...</div>
             </div>
           </div>
-          <div class="product-box">
+          <div class="product-box" onClick={levelFactory3}>
             <div class="product-level">lvl 3</div>
             <div class="product-description">
-              X 2.5 energy/
+              8000 coins/
               <br />
               hour
             </div>
             <div class="product-price">
-              100K<div class="korona-price">...</div>
+              1KK<div class="korona-price">...</div>
             </div>
           </div>
-          <div class="product-box">
+          <div class="product-box" onClick={levelFactory4}>
             <div class="product-level">lvl 4</div>
             <div class="product-description">
-              X 3 energy/
+              12000 coins/
               <br />
               hour
             </div>
             <div class="product-price">
-              100K<div class="korona-price">...</div>
+              3KK<div class="korona-price">...</div>
             </div>
           </div>
-          <div class="product-box">
+          <div class="product-box" onClick={levelFactory5}>
             <div class="product-level">lvl 5</div>
             <div class="product-description">
-              X 3.5 energy/
+              16000 coins/
               <br />
               hour
             </div>
             <div class="product-price">
-              100K<div class="korona-price">...</div>
+              6KK<div class="korona-price">...</div>
             </div>
           </div>
         </div>

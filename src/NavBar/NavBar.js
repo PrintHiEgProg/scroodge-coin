@@ -35,10 +35,6 @@ function NavBar() {
           <div className="icon tasks">...</div>
           <p className="icon-description">Tasks</p>
         </div>
-        <div className="nav-item">
-          <div className="icon games">...</div>
-          <p className="icon-description">Games</p>
-        </div>
       </div>
     </div>
   );

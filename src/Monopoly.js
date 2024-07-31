@@ -2,15 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Monopoly = ({
-  FactoryShoes,
-  priceFactoryShoes,
-  levelFactoryShoes,
-  FactoryHotel,
-  priceFactoryHotel,
-  levelFactoryHotel,
-  FactoryBank,
-  priceFactoryBank,
-  levelFactoryBank
+  levelFactory,
+  levelHotel,
+  levelPowerstation,
 }) => {
 
   const [currentIndex, setCurrentIndex] = useState(2);
@@ -92,9 +86,9 @@ const Monopoly = ({
           </div>
         </div>
         <div className="monopoly-title">
-          {currentIndex === 0 && `Hotel lvl ${levelFactoryHotel}`}
-          {currentIndex === 1 && `Powerstation lvl ${levelFactoryShoes}`}
-          {currentIndex === 2 && `Factory lvl ${levelFactoryBank}`}
+          {currentIndex === 0 && `Hotel lvl ${levelHotel}`}
+          {currentIndex === 1 && `Powerstation lvl ${levelPowerstation}`}
+          {currentIndex === 2 && `Factory lvl ${levelFactory}`}
         </div>
         <div class="upgrade-btn-box">
           <button class="upgrade-btn" onClick={handleButtonClick}>
