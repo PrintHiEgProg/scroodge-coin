@@ -342,45 +342,29 @@ function App() {
   //Factory
   const levelFactory1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    if (levelFactory > 0) {
-      alert("This level has already been purchased! ✅");
+    alert("ikjsdifkji")
+  };
+    
+  const levelFactory2 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelFactory > 1) {
+      tg.showAlert("This level has already been purchased! ✅");
     } else {
       if (
         window.confirm(
-          "By buying a shoe factory, you will receive +2 coins every 1 seconds.\nBuy it?"
+          "Buy it?"
         )
       ) {
-        if (count >= priceLevelFactory1) {
-          setCount(count - priceLevelFactory1);
+        if (count >= priceLevelFactory2) {
+          setCount(count - priceLevelFactory2);
           setLevelFactory(levelFactory + 1);
-          setFactoryBonus(factoryBonus + 0.5)
+          setFactoryBonus(factoryBonus + 1)
         } else {
-          alert("Insufficient funds ❌");
+          tg.showAlert("Insufficient funds ❌");
         }
       }
     }
-  }
-    
-    const levelFactory2 = () => {
-      const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-      if (levelFactory > 1) {
-        tg.showAlert("This level has already been purchased! ✅");
-      } else {
-        if (
-          window.confirm(
-            "Buy it?"
-          )
-        ) {
-          if (count >= priceLevelFactory2) {
-            setCount(count - priceLevelFactory2);
-            setLevelFactory(levelFactory + 1);
-            setFactoryBonus(factoryBonus + 1)
-          } else {
-            tg.showAlert("Insufficient funds ❌");
-          }
-        }
-      }
-    }
+  };
   
   const levelFactory3 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
@@ -401,7 +385,7 @@ function App() {
         }
       }
     }
-  }
+  };
 
   const levelFactory4 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");

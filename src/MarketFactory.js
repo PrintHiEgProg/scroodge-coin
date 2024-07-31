@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-const MarketFactory = (levelFactory1, levelFactory2, levelFactory3, levelFactory4, levelFactory5) => {
+const MarketFactory = (levelFactory, levelFactory1, levelFactory2, levelFactory3, levelFactory4, levelFactory5) => {
     const tg = window.Telegram.WebApp;
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const MarketFactory = (levelFactory1, levelFactory2, levelFactory3, levelFactory
         </div>
       </div>
       <div class="monopoly-box">
-        <div class="title">Factory lvl 0</div>
+        <div class="title">Factory lvl {levelFactory}</div>
         <div class="catalog">
           <div class="product-box" onClick={levelFactory1}>
             <div class="product-level">lvl 1</div>
