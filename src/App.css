@@ -271,10 +271,6 @@ position: absolute;
     animation-timing-function: linear;
 }
 
-.container-for-navbar {
-  margin-bottom: 30vh;
-}
-
 .navbar-box {
     bottom: 0;
     left: 0;
@@ -286,8 +282,6 @@ position: absolute;
   width: 100vw; /* Ширина кнопки в процентах от ширины экрана */
   height: 30vw; /* Высота кнопки равна ширине для сохранения круглой формы *//* Максимальная высота кнопки */
   background: #ffffff;
-
-
 }
 
 .nav-item {
@@ -325,6 +319,12 @@ position: absolute;
 
 .tasks {
     background-image: url(https://cdn1.picturebb.com/1/2024/07/30/7T3eT.webp);
+    background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.games {
+    background-image: url();
     background-size: contain;
   background-repeat: no-repeat;
 }
@@ -499,6 +499,87 @@ position: absolute;
     background-repeat: no-repeat;
     color: #00000000;
 }
+
+/* src/App.css */
+
+.ScroogeGameFlappy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 70vh;
+    border: 0;
+    overflow: hidden;
+    background-color: #87ceeb;
+    /* Sky Blue */
+    transition: background-color 0.5s ease;
+}
+
+.game-over {
+    background-color: #ff6347;
+    /* Tomato */
+}
+
+.game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.bird {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
+.pipe {
+    position: absolute;
+    width: 100px;
+    height: 600px;
+}
+
+.score-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.Loading-page {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://i.postimg.cc/XJfjwd38/temp-Imagem3z-Mky.avif);
+}
+
+.loading-wheel {
+  text-align: center;
+   margin-top: 10vh;
+    width: 20vh;
+    -webkit-animation-name: rotation;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotation;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -o-animation-name: rotation;
+    -o-animation-duration: 3s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    animation-name: rotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 
 @-webkit-keyframes rotation {
     0% {-webkit-transform:rotate(0deg);

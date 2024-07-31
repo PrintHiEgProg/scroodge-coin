@@ -23,17 +23,21 @@ function NavBar() {
   return (
     <div className="NavBar">
       <div className="navbar-box">
-        <div className="nav-item left" onClick={handleBoostClick}>
+        <div className="nav-item" onClick={handleBoostClick}>
           <div className="icon boosts">...</div>
           <p className="icon-description">Boosts</p>
         </div>
-        <div className="nav-item center" onClick={handleMonopolyClick}>
+        <div className="nav-item" onClick={handleMonopolyClick}>
           <div className="icon monopoly">...</div>
           <p className="icon-description">Monopoly</p>
         </div>
-        <div className="nav-item right">
+        <div className="nav-item">
           <div className="icon tasks">...</div>
           <p className="icon-description">Tasks</p>
+        </div>
+        <div className="nav-item">
+          <div className="icon games">...</div>
+          <p className="icon-description">Games</p>
         </div>
       </div>
     </div>
