@@ -281,7 +281,7 @@ function App() {
       tg.showAlert("Max level 🔝");
     } else {
       if (
-        window.confirm("Here you can buy more clicks in one click 🤑.\nBuy it?")
+        tg.showConfirm("Here you can buy more clicks in one click 🤑.\nBuy it?")
       ) {
         if (count >= priceMoreClicks) {
           setCount(count - priceMoreClicks);
@@ -301,7 +301,7 @@ function App() {
     if (levelMoreEnergy === 7) {
       tg.showAlert("Max level 🔝");
     } else {
-      if (window.confirm("Here you can buy more energy.\nBuy it?")) {
+      if (tg.showConfirm("Here you can buy more energy.\nBuy it?")) {
         if (count >= priceMoreEnergy) {
           setCount(count - priceMoreEnergy);
           setCountTrue(countTrue + 1000);
@@ -322,7 +322,7 @@ function App() {
       tg.showAlert("Max level 🔝");
     } else {
       if (
-        window.confirm("Here you can buy more energy to be charged.\nBuy it?")
+        tg.showConfirm("Here you can buy more energy to be charged.\nBuy it?")
       ) {
         if (count >= priceMoreCountTrueBonus) {
           setCount(count - priceMoreCountTrueBonus);
@@ -343,11 +343,11 @@ function App() {
   const levelFactory1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 0) {
-      alert("This level has already been purchased! ✅");
+      tg.showAlert("This level has already been purchased! ✅");
     } else {
       if (
-        window.confirm(
-          "By buying a shoe factory, you will receive +2 coins every 1 seconds.\nBuy it?"
+        tg.showConfirm(
+          "Buy it?"
         )
       ) {
         if (count >= priceLevelFactory1) {
@@ -355,7 +355,7 @@ function App() {
           setLevelFactory(levelFactory + 1);
           setFactoryBonus(factoryBonus + 0.5);
         } else {
-          alert("Insufficient funds ❌");
+          tg.showAlert("Insufficient funds ❌");
         }
       }
     }
@@ -367,7 +367,7 @@ function App() {
       tg.showAlert("This level has already been purchased! ✅");
     } else {
       if (
-        window.confirm(
+        tg.showConfirm(
           "Buy it?"
         )
       ) {
@@ -388,7 +388,7 @@ function App() {
       tg.showAlert("This level has already been purchased! ✅");
     } else {
       if (
-        window.confirm(
+        tg.showConfirm(
           "Buy it?"
         )
       ) {
@@ -408,7 +408,7 @@ function App() {
     if (levelFactory > 3) {
       tg.showAlert("This level has already been purchased! ✅");
     } else {
-      if (window.confirm("Buy it?")) {
+      if (tg.showConfirm("Buy it?")) {
         if (count >= priceLevelFactory4) {
           setCount(count - priceLevelFactory4);
           setLevelFactory(levelFactory + 1);
@@ -425,7 +425,7 @@ function App() {
     if (levelFactory > 4) {
       tg.showAlert("This level has already been purchased! ✅");
     } else {
-      if (window.confirm("Buy it?")) {
+      if (tg.showConfirm("Buy it?")) {
         if (count >= priceLevelFactory5) {
           setCount(count - priceLevelFactory5);
           setLevelFactory(levelFactory + 1);
@@ -462,7 +462,7 @@ function App() {
       tg.showAlert("You have already completed this task ✅");
     } else {
       if (
-        window.confirm(
+        tg.showConfirm(
           "If you have Telegram premium you get +20,000 coins.\nTo execute?"
         )
       ) {
@@ -490,7 +490,7 @@ function App() {
         tg.showAlert("You are subscribed to the channel! ✅");
       } else {
         if (
-          window.confirm(
+          tg.showConfirm(
             "If you subscribe to the TG channel, you get +10,000 coins. To execute?"
           )
         ) {
