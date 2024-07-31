@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Boost({
   count,
@@ -12,7 +13,6 @@ function Boost({
   levelMoreCountTrueBonus,
   priceMoreCountTrueBonus,
 }) {
-  const tg = window.Telegram.WebApp;
 
   const [currentIndex, setCurrentIndex] = useState(2);
   const images = [
@@ -29,6 +29,14 @@ function Boost({
     } else if (direction === "right") {
       setCurrentIndex((currentIndex - 1 + images.length) % images.length);
     }
+  };
+
+  const tg = window.Telegram.WebApp;
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/");
   };
 
   const handleButtonClick = () => {
@@ -55,6 +63,9 @@ function Boost({
         <div class="wallet-box">
           <div class="wallet-icon">...</div>
           <div class="wallet-text">Wallet</div>
+        </div>
+        <div class="close-box" onClick={handleHomeClick}>
+          <div class="close-icon">...</div>
         </div>
       </div>
       <div class="monopoly-box">
