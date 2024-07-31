@@ -110,7 +110,7 @@
     display: flex;
     justify-content: space-between;
     /*Размещаетэлементыпокраям*/align-items: center;
-    /*Выравниваниепоцентруповертикали*//*Отступывокругконтейнера*/width: 5%;
+    /*Выравниваниепоцентруповертикали*//*Отступывокругконтейнера*/width: 8%;
     height: 5%;
     background-color: #507BEC;
     border-radius: 50%;
