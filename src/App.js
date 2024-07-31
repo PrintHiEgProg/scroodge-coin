@@ -495,7 +495,7 @@ function App() {
                   priceFactoryShoes={priceFactoryShoes}
                   levelFactoryShoes={levelFactoryShoes}
                   FactoryHotel={FactoryHotel}
-                  priceFactoryHotel={FactoryHotel}
+                  priceFactoryHotel={priceFactoryHotel}
                   levelFactoryHotel={levelFactoryHotel}
                   FactoryBank={FactoryBank}
                   priceFactoryBank={priceFactoryBank}
@@ -505,13 +505,34 @@ function App() {
             />
             <Route
               path="/monopoly/market-factory"
-              element={<MarketFactory />}
+              element={
+                <MarketFactory
+                  FactoryBank={FactoryBank}
+                  priceFactoryBank={priceFactoryBank}
+                  levelFactoryBank={levelFactoryBank}
+                />
+              }
             />
             <Route
               path="/monopoly/market-powerstation"
-              element={<MarketPowerStation />}
+              element={
+                <MarketPowerStation
+                  FactoryShoes={FactoryShoes}
+                  priceFactoryShoes={priceFactoryShoes}
+                  levelFactoryShoes={levelFactoryShoes}
+                />
+              }
             />
-            <Route path="/monopoly/market-hotel" element={<MarketHotel />} />
+            <Route
+              path="/monopoly/market-hotel"
+              element={
+                <MarketHotel
+                  FactoryHotel={FactoryHotel}
+                  priceFactoryHotel={priceFactoryHotel}
+                  levelFactoryHotel={levelFactoryHotel}
+                />
+              }
+            />
           </Routes>
           <NavBar />
         </Router>
