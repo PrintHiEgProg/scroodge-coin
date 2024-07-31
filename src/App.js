@@ -342,7 +342,23 @@ function App() {
   //Factory
   const levelFactory1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    alert("ikjsdifkji")
+    if (levelFactory > 0) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (
+        window.confirm(
+          "By buying a shoe factory, you will receive +2 coins every 1 seconds.\nBuy it?"
+        )
+      ) {
+        if (count >= priceLevelFactory1) {
+          setCount(count - priceLevelFactory1);
+          setLevelFactory(levelFactory + 1);
+          setFactoryBonus(factoryBonus + 0.5);
+        } else {
+          alert("Insufficient funds ❌");
+        }
+      }
+    }
   };
     
   const levelFactory2 = () => {

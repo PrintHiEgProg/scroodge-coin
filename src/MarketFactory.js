@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-const MarketFactory = (levelFactory, levelFactory1, levelFactory2, levelFactory3, levelFactory4, levelFactory5) => {
+const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory3, levelFactory4, levelFactory5}) => {
     const tg = window.Telegram.WebApp;
     const navigate = useNavigate();
 
