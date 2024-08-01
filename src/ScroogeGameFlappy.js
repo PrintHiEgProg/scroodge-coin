@@ -21,7 +21,7 @@ const ScroogeGameFlappy = ({ countTrue, setCountTrue }) => {
 
   const jump = () => {
     if (!gameOver && gameStarted) {
-      setBirdPosition((prev) => ({ ...prev, y: prev.y - 120 }));
+      setBirdPosition((prev) => ({ ...prev, y: prev.y - 60 }));
     } else if (!gameOver && !gameStarted) {
       // Start the game on the first jump
       setGameStarted(true);
