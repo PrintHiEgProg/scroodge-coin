@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
-const MarketPowerStation = (FactoryShoes) => {
+const MarketPowerStation = (
+  {levelPowerstation,
+  levelPowerstation1,
+  levelPowerstation2,
+  levelPowerstation3,
+  levelPowerstation4,
+  levelPowerstation5,}
+) => {
   const tg = window.Telegram.WebApp;
   const navigate = useNavigate();
 
@@ -25,19 +32,8 @@ const MarketPowerStation = (FactoryShoes) => {
       <div class="monopoly-box">
         <div class="title">Powerstation lvl 0</div>
         <div class="catalog">
-          <div class="product-box">
+          <div class="product-box" onClick={levelPowerstation1}>
             <div class="product-level">lvl 1</div>
-            <div class="product-description">
-              X 1.5 energy/
-              <br />
-              hour
-            </div>
-            <div class="product-price">
-              100K<div class="korona-price">...</div>
-            </div>
-          </div>
-          <div class="product-box">
-            <div class="product-level">lvl 2</div>
             <div class="product-description">
               X 2 energy/
               <br />
@@ -47,19 +43,8 @@ const MarketPowerStation = (FactoryShoes) => {
               100K<div class="korona-price">...</div>
             </div>
           </div>
-          <div class="product-box">
-            <div class="product-level">lvl 3</div>
-            <div class="product-description">
-              X 2.5 energy/
-              <br />
-              hour
-            </div>
-            <div class="product-price">
-              100K<div class="korona-price">...</div>
-            </div>
-          </div>
-          <div class="product-box">
-            <div class="product-level">lvl 4</div>
+          <div class="product-box" onClick={levelPowerstation2}>
+            <div class="product-level">lvl 2</div>
             <div class="product-description">
               X 3 energy/
               <br />
@@ -69,10 +54,32 @@ const MarketPowerStation = (FactoryShoes) => {
               100K<div class="korona-price">...</div>
             </div>
           </div>
-          <div class="product-box">
+          <div class="product-box" onClick={levelPowerstation3}>
+            <div class="product-level">lvl 3</div>
+            <div class="product-description">
+              X 4 energy/
+              <br />
+              hour
+            </div>
+            <div class="product-price">
+              100K<div class="korona-price">...</div>
+            </div>
+          </div>
+          <div class="product-box" onClick={levelPowerstation4}>
+            <div class="product-level">lvl 4</div>
+            <div class="product-description">
+              X 5 energy/
+              <br />
+              hour
+            </div>
+            <div class="product-price">
+              100K<div class="korona-price">...</div>
+            </div>
+          </div>
+          <div class="product-box" onClick={levelPowerstation5}>
             <div class="product-level">lvl 5</div>
             <div class="product-description">
-              X 3.5 energy/
+              X 6 energy/
               <br />
               hour
             </div>

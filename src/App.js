@@ -23,7 +23,7 @@ function App() {
 
   const [count, setCount] = useState(() => {
     const savedCount = localStorage.getItem("count");
-    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+    return savedCount !== null ? parseInt(savedCount, 10) : 1000;
   });
   const [countBonus, setCountBonus] = useState(() => {
     const savedCount = localStorage.getItem("countBonus");
@@ -90,24 +90,44 @@ function App() {
     const savedCount = localStorage.getItem("priceMoreCountTrueBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 3000;
   });
-  const [priceLevelFactory1, setpriceLevelFactory1] = useState(() => {
+  const [priceLevelFactory1, setPriceLevelFactory1] = useState(() => {
     const savedCount = localStorage.getItem("priceLevelFactory1");
     return savedCount !== null ? parseInt(savedCount, 10) : 100000;
   });
-  const [priceLevelFactory2, setpriceLevelFactory2] = useState(() => {
+  const [priceLevelFactory2, setPriceLevelFactory2] = useState(() => {
     const savedCount = localStorage.getItem("priceLevelFactory2");
     return savedCount !== null ? parseInt(savedCount, 10) : 300000;
   });
-  const [priceLevelFactory3, setpriceLevelFactory3] = useState(() => {
+  const [priceLevelFactory3, setPriceLevelFactory3] = useState(() => {
     const savedCount = localStorage.getItem("priceLevelFactory3");
     return savedCount !== null ? parseInt(savedCount, 10) : 1000000;
   });
-  const [priceLevelFactory4, setpriceLevelFactory4] = useState(() => {
+  const [priceLevelFactory4, setPriceLevelFactory4] = useState(() => {
     const savedCount = localStorage.getItem("priceLevelFactory4");
     return savedCount !== null ? parseInt(savedCount, 10) : 3000000;
   });
-  const [priceLevelFactory5, setpriceLevelFactory5] = useState(() => {
+  const [priceLevelFactory5, setPriceLevelFactory5] = useState(() => {
     const savedCount = localStorage.getItem("priceLevelFactory5");
+    return savedCount !== null ? parseInt(savedCount, 10) : 6000000;
+  });
+  const [priceLevelPowerstation1, setPriceLevelPowerstation1] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelPowerstation1");
+    return savedCount !== null ? parseInt(savedCount, 10) : 100000;
+  });
+  const [priceLevelPowerstation2, setPriceLevelPowerstation2] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelPowerstation2");
+    return savedCount !== null ? parseInt(savedCount, 10) : 300000;
+  });
+  const [priceLevelPowerstation3, setPriceLevelPowerstation3] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelPowerstation3");
+    return savedCount !== null ? parseInt(savedCount, 10) : 1000000;
+  });
+  const [priceLevelPowerstation4, setPriceLevelPowerstation4] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelPowerstation4");
+    return savedCount !== null ? parseInt(savedCount, 10) : 3000000;
+  });
+  const [priceLevelPowerstation5, setPriceLevelPowerstation5] = useState(() => {
+    const savedCount = localStorage.getItem("priceLevelPowerstation5");
     return savedCount !== null ? parseInt(savedCount, 10) : 6000000;
   });
   const [priceHotel, setPriceHotel] = useState(() => {
@@ -120,7 +140,7 @@ function App() {
   });
   const [factoryBonus, setFactoryBonus] = useState(() => {
     const savedCount = localStorage.getItem("factoryBonus");
-    return savedCount !== null ? parseInt(savedCount, 10) : 1;
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
 
   // Загружаем сохраненное значение count из localStorage при инициализации состояния
@@ -150,6 +170,11 @@ function App() {
     localStorage.setItem("priceLevelFactory3", priceLevelFactory3);
     localStorage.setItem("priceLevelFactory4", priceLevelFactory4);
     localStorage.setItem("priceLevelFactory5", priceLevelFactory5);
+    localStorage.setItem("priceLevelPowerstation1", priceLevelPowerstation1);
+    localStorage.setItem("priceLevelPowerstation2", priceLevelPowerstation2);
+    localStorage.setItem("priceLevelPowerstation3", priceLevelPowerstation3);
+    localStorage.setItem("priceLevelPowerstation4", priceLevelPowerstation4);
+    localStorage.setItem("priceLevelPowerstation5", priceLevelPowerstation5);
     localStorage.setItem("priceHotel", priceHotel);
     localStorage.setItem("pricePowerstation", pricePowerstation);
     localStorage.setItem("factoryBonus", factoryBonus);
@@ -176,6 +201,11 @@ function App() {
     priceLevelFactory3,
     priceLevelFactory4,
     priceLevelFactory5,
+    priceLevelPowerstation1,
+    priceLevelPowerstation2,
+    priceLevelPowerstation3,
+    priceLevelPowerstation4,
+    priceLevelPowerstation5,
     priceHotel,
     pricePowerstation,
     factoryBonus
@@ -200,7 +230,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (factoryBonus > 0) {
-        setCount((prevCount) => prevCount * factoryBonus);
+        setCount((prevCount) => prevCount + factoryBonus);
       }
     }, 1000);
 
@@ -209,10 +239,10 @@ function App() {
 
   const handleClick = () => {
     if (canClick) {
+      const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
       setCount(count + countBonus);
-      if (true) {
-        const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
-      }
+      
+      
 
       if (countTrue > 0) {
         setCountTrue(Math.max(countTrue - 1, 0));
@@ -277,7 +307,7 @@ function App() {
 
   const moreClicks = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    if (levelMoreClicks === 10) {
+    if (levelMoreClicks === 5) {
       alert("Max level 🔝");
     } else {
       if (
@@ -345,7 +375,8 @@ function App() {
     if (levelFactory > 0) {
       alert("This level has already been purchased! ✅");
     } else {
-      if (
+      if (levelFactory === 0) {
+        if (
         window.confirm(
           "Buy it?"
         )
@@ -353,11 +384,11 @@ function App() {
         if (count >= priceLevelFactory1) {
           setCount(count - priceLevelFactory1);
           setLevelFactory(levelFactory + 1);
-          setFactoryBonus(factoryBonus + 0.5);
+          setFactoryBonus(factoryBonus + 1);
         } else {
           alert("Insufficient funds ❌");
         }
-      }
+      }}
     }
   };
     
@@ -366,17 +397,15 @@ function App() {
     if (levelFactory > 1) {
       alert("This level has already been purchased! ✅");
     } else {
-      if (
-        window.confirm(
-          "Buy it?"
-        )
-      ) {
-        if (count >= priceLevelFactory2) {
-          setCount(count - priceLevelFactory2);
-          setLevelFactory(levelFactory + 1);
-          setFactoryBonus(factoryBonus + 1)
-        } else {
-          alert("Insufficient funds ❌");
+      if (levelFactory === 1) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelFactory2) {
+            setCount(count - priceLevelFactory2);
+            setLevelFactory(levelFactory + 1);
+            setFactoryBonus(factoryBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
         }
       }
     }
@@ -387,17 +416,15 @@ function App() {
     if (levelFactory > 2) {
       alert("This level has already been purchased! ✅");
     } else {
-      if (
-        window.confirm(
-          "Buy it?"
-        )
-      ) {
-        if (count >= priceLevelFactory3) {
-          setCount(count - priceLevelFactory3);
-          setLevelFactory(levelFactory + 1);
-          setFactoryBonus(factoryBonus + 1.5)
-        } else {
-          alert("Insufficient funds ❌");
+      if (levelFactory === 2) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelFactory3) {
+            setCount(count - priceLevelFactory3);
+            setLevelFactory(levelFactory + 1);
+            setFactoryBonus(factoryBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
         }
       }
     }
@@ -408,13 +435,15 @@ function App() {
     if (levelFactory > 3) {
       alert("This level has already been purchased! ✅");
     } else {
-      if (window.confirm("Buy it?")) {
-        if (count >= priceLevelFactory4) {
-          setCount(count - priceLevelFactory4);
-          setLevelFactory(levelFactory + 1);
-          setFactoryBonus(factoryBonus + 0.5);
-        } else {
-          alert("Insufficient funds ❌");
+      if (levelFactory === 3) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelFactory4) {
+            setCount(count - priceLevelFactory4);
+            setLevelFactory(levelFactory + 1);
+            setFactoryBonus(factoryBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
         }
       }
     }
@@ -425,13 +454,15 @@ function App() {
     if (levelFactory > 4) {
       alert("This level has already been purchased! ✅");
     } else {
-      if (window.confirm("Buy it?")) {
-        if (count >= priceLevelFactory5) {
-          setCount(count - priceLevelFactory5);
-          setLevelFactory(levelFactory + 1);
-          setFactoryBonus(factoryBonus + 1);
-        } else {
-          alert("Insufficient funds ❌");
+      if (levelFactory === 4) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelFactory5) {
+            setCount(count - priceLevelFactory5);
+            setLevelFactory(levelFactory + 1);
+            setFactoryBonus(factoryBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
         }
       }
     }
@@ -440,6 +471,100 @@ function App() {
 
   //Powerstation
 
+  const levelPowerstation1 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelPowerstation > 0) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelPowerstation === 0) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelPowerstation1) {
+            setCount(count - priceLevelPowerstation1);
+            setLevelPowerstation(levelPowerstation + 1);
+            setCountTrueBonus(countTrueBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
+
+  const levelPowerstation2 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelPowerstation > 1) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelPowerstation === 1) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelPowerstation2) {
+            setCount(count - priceLevelPowerstation2);
+            setLevelPowerstation(levelPowerstation + 1);
+            setCountTrueBonus(countTrueBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
+
+  const levelPowerstation3 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelPowerstation > 2) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelPowerstation === 2) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelPowerstation3) {
+            setCount(count - priceLevelPowerstation3);
+            setLevelPowerstation(levelPowerstation + 1);
+            setCountTrueBonus(countTrueBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
+
+  const levelPowerstation4 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelPowerstation > 3) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelPowerstation === 3) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelPowerstation4) {
+            setCount(count - priceLevelPowerstation4);
+            setLevelPowerstation(levelPowerstation + 1);
+            setCountTrueBonus(countTrueBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
+
+  const levelPowerstation5 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelPowerstation > 4) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelPowerstation === 4) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelPowerstation5) {
+            setCount(count - priceLevelPowerstation5);
+            setLevelPowerstation(levelPowerstation + 1);
+            setCountTrueBonus(countTrueBonus + 1);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
   //Hotel
 
 
@@ -585,13 +710,20 @@ function App() {
             />
             <Route
               path="/monopoly/market-powerstation"
-              element={<MarketPowerStation levelPowerstation={levelPowerstation} />}
+              element={
+                <MarketPowerStation
+                  levelPowerstation={levelPowerstation}
+                  levelPowerstation1={levelPowerstation1}
+                  levelPowerstation2={levelPowerstation2}
+                  levelPowerstation3={levelPowerstation3}
+                  levelPowerstation4={levelPowerstation4}
+                  levelPowerstation5={levelPowerstation5}
+                />
+              }
             />
             <Route
               path="/monopoly/market-hotel"
-              element={
-                <MarketHotel levelHotel={levelHotel} />
-              }
+              element={<MarketHotel levelHotel={levelHotel} />}
             />
 
             <Route
