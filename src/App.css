@@ -551,6 +551,33 @@ position: absolute;
     color: rgb(255, 255, 255);
 }
 
+.task-box {
+    display: flex;
+    margin-top: 5%;
+    background-color: #507BEC;
+    width: 94%;
+    height: 100px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.task-price {
+    position: absolute;
+    margin-right: 7%;
+    margin-top: 20%;
+    right: 0;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    color: #ffffff;
+    display: flex;
+    
+}
+
 .Loading-page {
   position: absolute;
   top: 0;
