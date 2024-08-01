@@ -225,7 +225,7 @@ function App() {
   }, [countTrue]);
 
   useEffect(() => {
-    if (countTrue >= countTrueMax) {
+    if (countTrue > countTrueMax) {
       setCountTrue(countTrue === countTrueMax)
     }
   }, [countTrue])
