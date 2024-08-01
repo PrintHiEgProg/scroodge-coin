@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Main({count, countTrue, handleClick, canClick}) {
+function Main({count, countTrue, handleClick, canClick, messages, countBonus}) {
     const tg = window.Telegram.WebApp;
   const navigate = useNavigate();
     
@@ -32,14 +32,24 @@ function Main({count, countTrue, handleClick, canClick}) {
           </div>
           <div class="reflink-text">Ref link</div>
         </div>
-        <div class="coin-button-box">
-          <button
-            class="coin-button"
-            onClick={handleClick}
-            disabled={!canClick || countTrue === 0}
-          >
-            ...
-          </button>
+        <div
+          class="coin-button-box"
+          onClick={handleClick}
+          disabled={!canClick || countTrue === 0}
+        >
+          <button class="coin-button">...</button>
+          {messages.map((msg) => (
+            <div
+              key={msg.id}
+              className="message"
+              style={{
+                left: msg.x,
+                top: msg.y,
+              }}
+            >
+              +{countBonus}
+            </div>
+          ))}
         </div>
         <div class="count-box-box">
           <div class="count-box">

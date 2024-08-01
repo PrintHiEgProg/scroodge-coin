@@ -24,6 +24,7 @@ function App() {
   const userId = tg.initDataUnsafe.user.id;
 
   const [isConfettiActive, setIsConfettiActive] = useState(false);
+  const [messages, setMessages] = useState([]);
 
   const [count, setCount] = useState(() => {
     const savedCount = localStorage.getItem("count");
@@ -235,10 +236,22 @@ function App() {
     return () => clearInterval(interval);
   }, [count]);
 
-  const handleClick = () => {
+  const handleClick = (event) => {
     if (canClick) {
       const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
       setCount(count + countBonus);
+      const newMessage = {
+        id: Date.now(),
+        x: event.clientX,
+        y: event.clientY,
+      };
+
+      setMessages((prev) => [...prev, newMessage]);
+
+      // Удаляем сообщение через 5 секунд
+      setTimeout(() => {
+        setMessages((prev) => prev.filter((msg) => msg.id !== newMessage.id));
+      }, 5000);
       
       
 
@@ -253,33 +266,7 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    const handleOnline = () => {
-      console.log("Connected to the internet");
-    };
-
-    const handleOffline = () => {
-      alert("No connection network");
-      window.location.reload();
-    };
-
-    // Добавляем обработчики событий
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
-
-    // Проверка начального состояния
-    while (!navigator.onLine) {
-      alert("No connection network");
-      window.location.reload();
-    }
-
-    // Убираем обработчики событий при размонтировании компонента
-    return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
-    };
-  }, []);
-
+  
   useEffect(() => {
     if (countTrue === 0) {
       const HapticFeedbackError =
@@ -382,7 +369,7 @@ function App() {
         if (count >= priceLevelFactory1) {
           setCount(count - priceLevelFactory1);
           setLevelFactory(levelFactory + 1);
-          setFactoryBonus(factoryBonus + 1);
+          setFactoryBonus(factoryBonus + 500);
         } else {
           alert("Insufficient funds ❌");
         }
@@ -400,7 +387,7 @@ function App() {
           if (count >= priceLevelFactory2) {
             setCount(count - priceLevelFactory2);
             setLevelFactory(levelFactory + 1);
-            setFactoryBonus(factoryBonus + 1);
+            setFactoryBonus(factoryBonus + 1000);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -419,7 +406,7 @@ function App() {
           if (count >= priceLevelFactory3) {
             setCount(count - priceLevelFactory3);
             setLevelFactory(levelFactory + 1);
-            setFactoryBonus(factoryBonus + 1);
+            setFactoryBonus(factoryBonus + 2000);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -438,7 +425,7 @@ function App() {
           if (count >= priceLevelFactory4) {
             setCount(count - priceLevelFactory4);
             setLevelFactory(levelFactory + 1);
-            setFactoryBonus(factoryBonus + 1);
+            setFactoryBonus(factoryBonus + 5000);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -457,7 +444,7 @@ function App() {
           if (count >= priceLevelFactory5) {
             setCount(count - priceLevelFactory5);
             setLevelFactory(levelFactory + 1);
-            setFactoryBonus(factoryBonus + 1);
+            setFactoryBonus(factoryBonus + 10000);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -479,7 +466,7 @@ function App() {
           if (count >= priceLevelPowerstation1) {
             setCount(count - priceLevelPowerstation1);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 1);
+            setCountTrueBonus(countTrueBonus + 9);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -498,7 +485,7 @@ function App() {
           if (count >= priceLevelPowerstation2) {
             setCount(count - priceLevelPowerstation2);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 1);
+            setCountTrueBonus(countTrueBonus + 90);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -517,7 +504,7 @@ function App() {
           if (count >= priceLevelPowerstation3) {
             setCount(count - priceLevelPowerstation3);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 1);
+            setCountTrueBonus(countTrueBonus + 900);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -536,7 +523,7 @@ function App() {
           if (count >= priceLevelPowerstation4) {
             setCount(count - priceLevelPowerstation4);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 1);
+            setCountTrueBonus(countTrueBonus + 1000);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -555,7 +542,7 @@ function App() {
           if (count >= priceLevelPowerstation5) {
             setCount(count - priceLevelPowerstation5);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 1);
+            setCountTrueBonus(countTrueBonus + 3000);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -657,6 +644,8 @@ function App() {
                   handleClick={handleClick}
                   countTrue={countTrue}
                   canClick={canClick}
+                  messages={messages}
+                  countBonus={countBonus}
                 />
               }
             />
@@ -664,16 +653,9 @@ function App() {
               path="/boost"
               element={
                 <Boost
-                  count={count}
-                  moreClicks={moreClicks}
-                  priceMoreClicks={priceMoreClicks}
                   levelMoreClicks={levelMoreClicks}
-                  moreEnergy={moreEnergy}
-                  priceMoreEnergy={priceMoreEnergy}
                   levelMoreEnergy={levelMoreEnergy}
-                  MoreCountTrueBonus={MoreCountTrueBonus}
                   levelMoreCountTrueBonus={levelMoreCountTrueBonus}
-                  priceMoreCountTrueBonus={priceMoreCountTrueBonus}
                 />
               }
             />

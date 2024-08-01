@@ -28,9 +28,9 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory1}>
             <div class="product-level">lvl 1</div>
             <div class="product-description">
-              2000 coins/
+              500 coins/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               100K<div class="korona-price">...</div>
@@ -39,9 +39,9 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory2}>
             <div class="product-level">lvl 2</div>
             <div class="product-description">
-              4000 coins/
+              1000 coins/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               300K<div class="korona-price">...</div>
@@ -50,9 +50,9 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory3}>
             <div class="product-level">lvl 3</div>
             <div class="product-description">
-              8000 coins/
+              2000 coins/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               1KK<div class="korona-price">...</div>
@@ -61,9 +61,9 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory4}>
             <div class="product-level">lvl 4</div>
             <div class="product-description">
-              12000 coins/
+              5000 coins/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               3KK<div class="korona-price">...</div>
@@ -72,9 +72,9 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory5}>
             <div class="product-level">lvl 5</div>
             <div class="product-description">
-              16000 coins/
+              10000 coins/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               6KK<div class="korona-price">...</div>

@@ -2,16 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Boost({
-  count,
-  moreClicks,
-  priceMoreClicks,
   levelMoreClicks,
-  moreEnergy,
-  priceMoreEnergy,
   levelMoreEnergy,
-  MoreCountTrueBonus,
   levelMoreCountTrueBonus,
-  priceMoreCountTrueBonus,
 }) {
 
   const [currentIndex, setCurrentIndex] = useState(2);
