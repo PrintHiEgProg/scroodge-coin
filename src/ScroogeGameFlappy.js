@@ -95,7 +95,7 @@ const ScroogeGameFlappy = ({ countTrue, setCountTrue }) => {
       if (!gameOver && gameStarted) {
         setPipes((prev) => [
           ...prev,
-          { x: 400, y: Math.floor(Math.random() * 200) },
+          { x: 400, y: Math.floor(Math.random() * 100) },
         ]);
       }
     }, 2000);
