@@ -12,16 +12,16 @@ function Task({ JoinGame, TgPremium, TgChannel1, isConfettiActive }) {
   };
   return (
     <div className="Task">
+      {isConfettiActive && (
+        <Confetti
+          count={100}
+          size={20}
+          gravity={0.1}
+          colors={["#FF69B4", "#FFC67D", "#8BC34A"]}
+          style={{ width: "100%", height: "100vh" }}
+        />
+      )}
       <div class="header">
-        {isConfettiActive && (
-          <Confetti
-            count={100}
-            size={20}
-            gravity={0.1}
-            colors={["#FF69B4", "#FFC67D", "#8BC34A"]}
-            style={{ width: "100%", height: "100vh" }}
-          />
-        )}
         <div class="wallet-box">
           <div class="wallet-icon">...</div>
           <div class="wallet-text">Wallet</div>
