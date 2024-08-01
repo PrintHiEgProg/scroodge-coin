@@ -226,12 +226,6 @@ function App() {
   }, [countTrue]);
 
   useEffect(() => {
-    if (countTrue > countTrueMax) {
-      setCountTrue(countTrue === countTrueMax)
-    }
-  }, [countTrue])
-
-  useEffect(() => {
     const interval = setInterval(() => {
       if (factoryBonus > 0) {
         setCount((prevCount) => prevCount + factoryBonus);
