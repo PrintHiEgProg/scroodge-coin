@@ -35,7 +35,8 @@ const Monopoly = ({
     switch (currentIndex) {
       case 0:
           const hapticFeedbackSoft1 = tg.HapticFeedback.impactOccurred("soft");
-          navigate("/monopoly/market-hotel");
+          //navigate("/monopoly/market-hotel");
+          alert("Coming soon...");
         break;
       case 1:
           const hapticFeedbackSoft2 = tg.HapticFeedback.impactOccurred("soft");
