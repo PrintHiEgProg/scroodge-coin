@@ -139,8 +139,8 @@ const ScroogeGameFlappy = ({ countTrue, setCountTrue }) => {
             >
               Click anywhere to Restart
             </p>
-            <p>Ваш счет: {score}</p>
-            <p onClick={handleGameClick}>Выход</p>
+            <p>Score: {score}</p>
+            <p onClick={handleGameClick}>Exit</p>
           </div>
         </center>
       )}

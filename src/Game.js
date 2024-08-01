@@ -32,7 +32,7 @@ function Game() {
           <div class="task-box" onClick={handleFlappyScroogeClick}>
             <div class="product-level">Flappy Scrooge</div>
             <div class="task-price">
-              +Energy<div class="korona-price">...</div>
+              +Energy<div class="counttrue-icon">...</div>
             </div>
           </div>
         </div>
