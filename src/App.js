@@ -10,6 +10,7 @@ import MarketPowerStation from "./MarketPowerStation.js"
 import MarketHotel from "./MarketHotel.js"
 import ScroogeGameFlappy from "./ScroogeGameFlappy.js";
 import Confetti from "react-confetti";
+import Game from "./Game";
 
 import {
   BrowserRouter as Router,
@@ -735,7 +736,12 @@ function App() {
             />
 
             <Route
-              path="/games/flappy-scrooge"
+              path="/game"
+              element={<Game />}
+            />
+
+            <Route
+              path="/game/flappy-scrooge"
               element={
                 <ScroogeGameFlappy
                   countTrue={countTrue}

@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Main({count, countTrue, handleClick, canClick}) {
+    const tg = window.Telegram.WebApp;
+  const navigate = useNavigate();
     
+
+  const handleGameClick = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/game");
+  };
   return (
     <div className="Main">
       <div class="header">
@@ -19,7 +27,9 @@ function Main({count, countTrue, handleClick, canClick}) {
       </div>
       <div class="main-box">
         <div class="main-text">
-          <div class="education-text">Education</div>
+          <div class="education-text" onClick={handleGameClick}>
+            Games
+          </div>
           <div class="reflink-text">Ref link</div>
         </div>
         <div class="coin-button-box">

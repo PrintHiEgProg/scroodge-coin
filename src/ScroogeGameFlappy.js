@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Bird from "./Bird.js";
 import Pipes from "./Pipes.js";
 import "./App.css";
+import { useNavigate } from "react-router-dom";
 
 const ScroogeGameFlappy = (countTrue, setCountTrue) => {
   const [birdPosition, setBirdPosition] = useState({ x: 50, y: 200 });
@@ -9,6 +10,14 @@ const ScroogeGameFlappy = (countTrue, setCountTrue) => {
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
+  const tg = window.Telegram.WebApp;
+  const navigate = useNavigate();
+    
+
+  const handleGameClick = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/game");
+  };
 
   const jump = () => {
     if (!gameOver && gameStarted) {
@@ -131,6 +140,7 @@ const ScroogeGameFlappy = (countTrue, setCountTrue) => {
               Click anywhere to Restart
             </p>
             <p>Ваш счет: {score}</p>
+            <p onClick={handleGameClick}>Выход</p>
           </div>
         </center>
       )}
