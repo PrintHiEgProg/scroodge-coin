@@ -4,7 +4,7 @@ import Pipes from "./Pipes.js";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
 
-const ScroogeGameFlappy = (countTrue, setCountTrue) => {
+const ScroogeGameFlappy = ({ countTrue, setCountTrue }) => {
   const [birdPosition, setBirdPosition] = useState({ x: 50, y: 200 });
   const [pipes, setPipes] = useState([]);
   const [gameOver, setGameOver] = useState(false);
