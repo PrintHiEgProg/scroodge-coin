@@ -624,7 +624,6 @@ position: absolute;
   border-color: black;
   color: rgb(255, 255, 255);
   animation: rise 7s forwards;
-  padding-bottom: 500px;
   /*Анимацияподъема*/
 }
 
