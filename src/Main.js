@@ -38,6 +38,8 @@ function Main({count, countTrue, handleClick, canClick, messages, countBonus}) {
           disabled={!canClick || countTrue === 0}
         >
           <button class="coin-button">...</button>
+        </div>
+        <div class="count-box-box">
           {messages.map((msg) => (
             <div
               key={msg.id}
@@ -50,8 +52,6 @@ function Main({count, countTrue, handleClick, canClick, messages, countBonus}) {
               +{countBonus}
             </div>
           ))}
-        </div>
-        <div class="count-box-box">
           <div class="count-box">
             <div class="korona">...</div>
             <div class="count">{count}</div>
