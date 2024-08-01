@@ -581,7 +581,7 @@ function App() {
       setIsConfettiActive(true);
       setTimeout(() => {
         setIsConfettiActive(false);
-      }, 5000);
+      }, 7000);
       setLevelJoinGame(levelJoinGame + 1);
       setCount(count + 100000);
       alert("Welcome to the game!!! You get +100000 coins. 🎁");
