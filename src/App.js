@@ -9,6 +9,7 @@ import MarketFactory from "./MarketFactory.js";
 import MarketPowerStation from "./MarketPowerStation.js"
 import MarketHotel from "./MarketHotel.js"
 import ScroogeGameFlappy from "./ScroogeGameFlappy.js";
+import Confetti from "react-confetti";
 
 import {
   BrowserRouter as Router,
@@ -20,6 +21,8 @@ import {
 function App() {
   const tg = window.Telegram.WebApp;
   const userId = tg.initDataUnsafe.user.id;
+
+  const [isConfettiActive, setIsConfettiActive] = useState(false);
 
   const [count, setCount] = useState(() => {
     const savedCount = localStorage.getItem("count");
@@ -575,6 +578,10 @@ function App() {
     if (levelJoinGame === 1) {
       alert("You have already completed this task ✅");
     } else {
+      setIsConfettiActive(true);
+      setTimeout(() => {
+        setIsConfettiActive(false);
+      }, 5000);
       setLevelJoinGame(levelJoinGame + 1);
       setCount(count + 100000);
       alert("Welcome to the game!!! You get +100000 coins. 🎁");
@@ -682,6 +689,7 @@ function App() {
                   JoinGame={JoinGame}
                   TgPremium={TgPremium}
                   TgChannel1={TgChannel1}
+                  isConfettiActive={isConfettiActive}
                 />
               }
             />

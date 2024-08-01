@@ -10,7 +10,7 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
       const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
       navigate("/monopoly");
     };
-
+// 
   return (
     <div className="MarketFactory">
       <div class="header">
