@@ -23,7 +23,7 @@ function App() {
 
   const [count, setCount] = useState(() => {
     const savedCount = localStorage.getItem("count");
-    return savedCount !== null ? parseInt(savedCount, 10) : 1000;
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [countBonus, setCountBonus] = useState(() => {
     const savedCount = localStorage.getItem("countBonus");
