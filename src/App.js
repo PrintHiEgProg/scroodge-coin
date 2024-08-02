@@ -22,6 +22,7 @@ import {
 function App() {
   const tg = window.Telegram.WebApp;
   const userId = tg.initDataUnsafe.user.id;
+  const [fingerCount, setFingerCount] = useState(0);
 
   const [isConfettiActive, setIsConfettiActive] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -236,7 +237,10 @@ function App() {
     return () => clearInterval(interval);
   }, [count]);
 
-  const handleClick = (event) => {
+
+  const handleTouchStart = (event) => {
+    setFingerCount(event.touches.length);
+    //count...
     if (canClick) {
       const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
       setCount(count + countBonus);
@@ -252,8 +256,6 @@ function App() {
       setTimeout(() => {
         setMessages((prev) => prev.filter((msg) => msg.id !== newMessage.id));
       }, 5000);
-      
-      
 
       if (countTrue > 0) {
         setCountTrue(Math.max(countTrue - 1, 0));
@@ -265,6 +267,41 @@ function App() {
       }, 1);
     }
   };
+
+  const handleTouchMove = (event) => {
+    setFingerCount(event.touches.length);
+    //count...
+    if (canClick) {
+      const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
+      setCount(count + countBonus);
+      const newMessage = {
+        id: Date.now(),
+        x: event.clientX,
+        y: event.clientY,
+      };
+
+      setMessages((prev) => [...prev, newMessage]);
+
+      // Удаляем сообщение через 5 секунд
+      setTimeout(() => {
+        setMessages((prev) => prev.filter((msg) => msg.id !== newMessage.id));
+      }, 5000);
+
+      if (countTrue > 0) {
+        setCountTrue(Math.max(countTrue - 1, 0));
+      }
+
+      setCanClick(false);
+      setTimeout(() => {
+        setCanClick(true);
+      }, 1);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setFingerCount(0);
+  };
+
 
   
   useEffect(() => {
@@ -620,9 +657,7 @@ function App() {
     <div className="App">
       {loading ? (
         <div className="Loading-page">
-          <h1 className="title">
-            
-          </h1>
+          <h1 className="title"></h1>
           <img
             className="loading-wheel"
             src="https://printhiegprog.github.io/loading-wheel.png"
@@ -639,7 +674,9 @@ function App() {
               element={
                 <Main
                   count={count}
-                  handleClick={handleClick}
+                  handleTouchStart={handleTouchStart}
+                  handleTouchMove={handleTouchMove}
+                  handleTouchEnd={handleTouchEnd}
                   countTrue={countTrue}
                   canClick={canClick}
                   messages={messages}
@@ -709,10 +746,7 @@ function App() {
               element={<MarketHotel levelHotel={levelHotel} />}
             />
 
-            <Route
-              path="/game"
-              element={<Game />}
-            />
+            <Route path="/game" element={<Game />} />
 
             <Route
               path="/game/flappy-scrooge"

@@ -1,10 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Main({count, countTrue, handleClick, canClick, messages, countBonus}) {
-    const tg = window.Telegram.WebApp;
+function Main({
+  count,
+  countTrue,
+  handleTouchStart,
+  handleTouchMove,
+  handleTouchEnd,
+  canClick,
+  messages,
+  countBonus,
+}) {
+  const tg = window.Telegram.WebApp;
   const navigate = useNavigate();
-    
 
   const handleGameClick = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
@@ -34,7 +42,9 @@ function Main({count, countTrue, handleClick, canClick, messages, countBonus}) {
         </div>
         <div
           class="coin-button-box"
-          onClick={handleClick}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           disabled={!canClick || countTrue === 0}
         >
           <button class="coin-button">...</button>
