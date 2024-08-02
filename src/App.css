@@ -635,7 +635,7 @@ position: absolute;
   to {
     transform: translateY(-30vh);
     /*Поднимаемна50пикселей*/opacity: 0;
-    /*Исчезаем*/-webkit-transform: translateY(-100%);
+    /*Исчезаем*/-webkit-transform: translateY(-30vh);
     -moz-transform: translateY(-30vh);
     -ms-transform: translateY(-30vh);
     -o-transform: translateY(-30vh);
