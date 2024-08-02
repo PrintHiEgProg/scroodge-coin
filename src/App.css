@@ -633,13 +633,13 @@ position: absolute;
     opacity: 1;
   }
   to {
-    transform: translateY(-30vh);
+    transform: translateY(-100vh);
     /*Поднимаемна50пикселей*/opacity: 0;
     /*Исчезаем*/-webkit-transform: translateY(-30vh);
-    -moz-transform: translateY(-30vh);
-    -ms-transform: translateY(-30vh);
-    -o-transform: translateY(-30vh);
-    -webkit-transform: translateY(-30vh);
+    -moz-transform: translateY(-100vh);
+    -ms-transform: translateY(-100vh);
+    -o-transform: translateY(-100vh);
+    -webkit-transform: translateY(-100vh);
 }
 }
 
