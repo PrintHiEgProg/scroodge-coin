@@ -30,12 +30,12 @@ const MarketPowerStation = (
         </div>
       </div>
       <div class="monopoly-box">
-              <div class="title">Powerstation lvl {levelPowerstation}</div>
+        <div class="title">Powerstation lvl {levelPowerstation}</div>
         <div class="catalog">
           <div class="product-box" onClick={levelPowerstation1}>
             <div class="product-level">lvl 1</div>
             <div class="product-description">
-              + 10 energy/
+              +1.5 energy/
               <br />
               second
             </div>
@@ -46,45 +46,45 @@ const MarketPowerStation = (
           <div class="product-box" onClick={levelPowerstation2}>
             <div class="product-level">lvl 2</div>
             <div class="product-description">
-              + 100 energy/
+              +2 energy/
               <br />
               hour
             </div>
             <div class="product-price">
-              100K<div class="korona-price">...</div>
+              300K<div class="korona-price">...</div>
             </div>
           </div>
           <div class="product-box" onClick={levelPowerstation3}>
             <div class="product-level">lvl 3</div>
             <div class="product-description">
-              + 1000 energy/
+              +2.5 energy/
               <br />
               hour
             </div>
             <div class="product-price">
-              100K<div class="korona-price">...</div>
+              1KK<div class="korona-price">...</div>
             </div>
           </div>
           <div class="product-box" onClick={levelPowerstation4}>
             <div class="product-level">lvl 4</div>
             <div class="product-description">
-              + 2000 energy/
+              +3 energy/
               <br />
               hour
             </div>
             <div class="product-price">
-              100K<div class="korona-price">...</div>
+              3KK<div class="korona-price">...</div>
             </div>
           </div>
           <div class="product-box" onClick={levelPowerstation5}>
             <div class="product-level">lvl 5</div>
             <div class="product-description">
-              + 5000 energy/
+              +3.5 energy/
               <br />
               hour
             </div>
             <div class="product-price">
-              100K<div class="korona-price">...</div>
+              6KK<div class="korona-price">...</div>
             </div>
           </div>
         </div>
