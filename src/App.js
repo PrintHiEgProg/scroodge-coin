@@ -621,9 +621,7 @@ function App() {
       {loading ? (
         <div className="Loading-page">
           <h1 className="title">
-            Welcome
-            <br />
-            Quack Coin!
+            
           </h1>
           <img
             className="loading-wheel"
