@@ -48,7 +48,7 @@ const MarketPowerStation = (
             <div class="product-description">
               +2 energy/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               300K<div class="korona-price">...</div>
@@ -59,7 +59,7 @@ const MarketPowerStation = (
             <div class="product-description">
               +2.5 energy/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               1KK<div class="korona-price">...</div>
@@ -70,7 +70,7 @@ const MarketPowerStation = (
             <div class="product-description">
               +3 energy/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               3KK<div class="korona-price">...</div>
@@ -81,7 +81,7 @@ const MarketPowerStation = (
             <div class="product-description">
               +3.5 energy/
               <br />
-              hour
+              second
             </div>
             <div class="product-price">
               6KK<div class="korona-price">...</div>

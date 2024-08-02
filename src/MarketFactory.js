@@ -28,7 +28,7 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory1}>
             <div class="product-level">lvl 1</div>
             <div class="product-description">
-              500 coins/
+              +2 coins/
               <br />
               second
             </div>
@@ -39,7 +39,7 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory2}>
             <div class="product-level">lvl 2</div>
             <div class="product-description">
-              1000 coins/
+              +4 coins/
               <br />
               second
             </div>
@@ -50,7 +50,7 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory3}>
             <div class="product-level">lvl 3</div>
             <div class="product-description">
-              2000 coins/
+              +6 coins/
               <br />
               second
             </div>
@@ -61,7 +61,7 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory4}>
             <div class="product-level">lvl 4</div>
             <div class="product-description">
-              5000 coins/
+              +8 coins/
               <br />
               second
             </div>
@@ -72,7 +72,7 @@ const MarketFactory = ({levelFactory, levelFactory1, levelFactory2, levelFactory
           <div class="product-box" onClick={levelFactory5}>
             <div class="product-level">lvl 5</div>
             <div class="product-description">
-              10000 coins/
+              +10 coins/
               <br />
               second
             </div>
