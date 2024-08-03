@@ -40,14 +40,17 @@ function Main({
           </div>
           <div class="reflink-text">Ref link</div>
         </div>
-        <div
-          class="coin-button-box"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          disabled={!canClick || countTrue === 0}
-        >
-          <button class="coin-button">...</button>
+        <div class="coin-button-box">
+          <button
+            class="coin-button"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            disabled={countTrue === 0}
+            
+          >
+            ...
+          </button>
         </div>
         <div class="count-box-box">
           {messages.map((msg) => (
