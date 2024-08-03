@@ -223,7 +223,7 @@ position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: 6px 6px 6px 6px rgba(255, 102, 51, 0.2);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .count-box-box {
@@ -236,8 +236,8 @@ position: absolute;
     display: flex;
     justify-content: space-between;
     /*Размещаетэлементыпокраям*/align-items: center;
-    /*Выравниваниепоцентруповертикали*/width: 30%;
-    height: 100%;
+    /*Выравниваниепоцентруповертикали*/width: 20%;
+    height: 80%;
     background-color: #507BEC;
     border-radius: 80px;
     -webkit-border-radius: 80px;
