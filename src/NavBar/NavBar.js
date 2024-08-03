@@ -12,8 +12,7 @@ function NavBar() {
 
   const handleBoostClick = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    //navigate("/boost")
-    alert("Coming soon...");
+    navigate("/boost");
   };
 
   const handleMonopolyClick = () => {

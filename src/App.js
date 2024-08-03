@@ -202,7 +202,7 @@ function App() {
       setCount(count + countBonus);
       
       if (countTrue > 0) {
-        setCountTrue(Math.max(countTrue - 1, 0));
+        setCountTrue(Math.max(countTrue - countBonus, 0));
       }
 
       setCanClick(false);
@@ -222,7 +222,7 @@ function App() {
 
 
       if (countTrue > 0) {
-        setCountTrue(Math.max(countTrue - 1, 0));
+        setCountTrue(Math.max(countTrue - countBonus, 0));
       }
 
       setCanClick(false);

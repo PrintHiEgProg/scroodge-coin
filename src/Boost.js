@@ -10,11 +10,11 @@ function Boost({
   const [currentIndex, setCurrentIndex] = useState(2);
   const images = [
     // картинка номер три
-    "",
+    "https://printhiegprog.github.io/images-scrooge-coin/bonuses.webp",
     // картинка номер два
-    "",
+    "https://printhiegprog.github.io/images-scrooge-coin/clicks.webp",
     // картинка номер один
-    "",
+    "https://printhiegprog.github.io/images-scrooge-coin/energy.webp",
   ];
   const handleSwipe = (direction) => {
     if (direction === "left") {

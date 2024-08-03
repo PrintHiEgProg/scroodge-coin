@@ -10,11 +10,11 @@ const Monopoly = ({
   const [currentIndex, setCurrentIndex] = useState(2);
   const images = [
     //картинка номер три
-    "https://cdn1.picturebb.com/1/2024/07/30/7TDaN.webp",
+    "https://printhiegprog.github.io/images-scrooge-coin/hotel.webp",
     //картинка номер два
-    "https://cdn1.picturebb.com/1/2024/07/30/7TaOS.webp",
+    "https://printhiegprog.github.io/images-scrooge-coin/powerstation.webp",
     //картинка номер один
-    "https://cdn1.picturebb.com/1/2024/07/30/7TKnd.webp",
+    "https://printhiegprog.github.io/images-scrooge-coin/factory.webp",
   ];
   const handleSwipe = (direction) => {
     if (direction === "left") {
