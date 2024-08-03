@@ -551,7 +551,7 @@ function App() {
           if (count >= priceLevelPowerstation2) {
             setCount(count - priceLevelPowerstation2);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 0.5);
+            setCountTrueBonus(countTrueBonus + 2);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -570,7 +570,7 @@ function App() {
           if (count >= priceLevelPowerstation3) {
             setCount(count - priceLevelPowerstation3);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 0.5);
+            setCountTrueBonus(countTrueBonus + 2.5);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -589,7 +589,7 @@ function App() {
           if (count >= priceLevelPowerstation4) {
             setCount(count - priceLevelPowerstation4);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 0.5);
+            setCountTrueBonus(countTrueBonus + 3);
           } else {
             alert("Insufficient funds ❌");
           }
@@ -608,7 +608,7 @@ function App() {
           if (count >= priceLevelPowerstation5) {
             setCount(count - priceLevelPowerstation5);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 0.5);
+            setCountTrueBonus(countTrueBonus + 3.5);
           } else {
             alert("Insufficient funds ❌");
           }
