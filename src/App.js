@@ -244,19 +244,7 @@ function App() {
     if (canClick) {
       const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
       setCount(count + countBonus);
-      const newMessage = {
-        id: Date.now(),
-        x: event.clientX,
-        y: event.clientY,
-      };
-
-      setMessages((prev) => [...prev, newMessage]);
-
-      // Удаляем сообщение через 5 секунд
-      setTimeout(() => {
-        setMessages((prev) => prev.filter((msg) => msg.id !== newMessage.id));
-      }, 5000);
-
+      
       if (countTrue > 0) {
         setCountTrue(Math.max(countTrue - 1, 0));
       }
@@ -274,18 +262,7 @@ function App() {
     if (canClick) {
       const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
       setCount(count + countBonus);
-      const newMessage = {
-        id: Date.now(),
-        x: event.clientX,
-        y: event.clientY,
-      };
-
-      setMessages((prev) => [...prev, newMessage]);
-
-      // Удаляем сообщение через 5 секунд
-      setTimeout(() => {
-        setMessages((prev) => prev.filter((msg) => msg.id !== newMessage.id));
-      }, 5000);
+      
 
 
       if (countTrue > 0) {

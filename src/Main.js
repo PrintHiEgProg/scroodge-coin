@@ -8,7 +8,6 @@ function Main({
   handleTouchMove,
   handleTouchEnd,
   canClick,
-  messages,
   countBonus,
 }) {
   const tg = window.Telegram.WebApp;
@@ -53,18 +52,6 @@ function Main({
           </button>
         </div>
         <div class="count-box-box">
-          {messages.map((msg) => (
-            <div
-              key={msg.id}
-              className="message"
-              style={{
-                left: msg.x,
-                top: msg.y,
-              }}
-            >
-              +{countBonus}
-            </div>
-          ))}
           <div class="count-box">
             <div class="korona">...</div>
             <div class="count">{count}</div>
