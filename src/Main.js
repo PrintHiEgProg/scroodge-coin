@@ -51,12 +51,6 @@ function Main({
             ...
           </button>
         </div>
-        <div class="count-box-box">
-          <div class="count-box">
-            <div class="korona">...</div>
-            <div class="count">{count}</div>
-          </div>
-        </div>
       </div>
     </div>
   );
