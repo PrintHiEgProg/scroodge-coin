@@ -8,6 +8,8 @@ import Monopoly from "./Monopoly.js";
 import MarketFactory from "./MarketFactory.js";
 import MarketPowerStation from "./MarketPowerStation.js"
 import MarketHotel from "./MarketHotel.js"
+import MarketClicks from "./MarketClicks.js";
+import MarketEnergy from "./MarketEnergy.js";
 import ScroogeGameFlappy from "./ScroogeGameFlappy.js";
 import Confetti from "react-confetti";
 import Game from "./Game";
@@ -35,7 +37,7 @@ function App() {
     const savedCount = localStorage.getItem("countBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 1;
   });
-  const [countTrueMax, setcountTrueMax] = useState(() => {
+  const [countTrueMax, setCountTrueMax] = useState(() => {
     const savedCount = localStorage.getItem("countTrueMax");
     return savedCount !== null ? parseInt(savedCount, 10) : 1000;
   });
@@ -111,8 +113,13 @@ function App() {
   const [priceLevelMoreClicks2, setPriceLevelMoreClicks2] = useState(300000)
   const [priceLevelMoreClicks3, setPriceLevelMoreClicks3] = useState(1000000)
   const [priceLevelMoreClicks4, setPriceLevelMoreClicks4] = useState(3000000)
-  const [priceLevelMoreClicks5, setPriceLevelMoreClicks5] = useState(6000000)
+  const [priceLevelMoreClicks5, setPriceLevelMoreClicks5] = useState(6000000);
 
+  const priceLevelMoreEnergy1 = useState(100000);
+  const priceLevelMoreEnergy2 = useState(200000);
+  const priceLevelMoreEnergy3 = useState(1000000);
+  const priceLevelMoreEnergy4 = useState(200000);
+  const priceLevelMoreEnergy5 = useState(400000);
 
   const [factoryBonus, setFactoryBonus] = useState(() => {
     const savedCount = localStorage.getItem("factoryBonus");
@@ -307,7 +314,7 @@ function App() {
         if (window.confirm("Buy it?")) {
           if (count >= priceLevelMoreClicks3) {
             setCount(count - priceLevelMoreClicks3);
-            setLevelFactory(levelMoreClicks + 1);
+            setLevelMoreClicks(levelMoreClicks + 1);
             setCountBonus(countBonus + 2);
           } else {
             alert("Insufficient funds ❌");
@@ -326,7 +333,7 @@ function App() {
         if (window.confirm("Buy it?")) {
           if (count >= priceLevelMoreClicks4) {
             setCount(count - priceLevelMoreClicks4);
-            setLevelFactory(levelMoreClicks + 1);
+            setLevelMoreClicks(levelMoreClicks + 1);
             setCountBonus(countBonus + 2);
           } else {
             alert("Insufficient funds ❌");
@@ -343,9 +350,9 @@ function App() {
     } else {
       if (levelMoreClicks === 4) {
         if (window.confirm("Buy it?")) {
-          if (count >= priceLevelMoreClicks4) {
-            setCount(count - priceLevelMoreClicks4);
-            setLevelFactory(levelMoreClicks + 1);
+          if (count >= priceLevelMoreClicks5) {
+            setCount(count - priceLevelMoreClicks5);
+            setLevelMoreClicks(levelMoreClicks + 1);
             setCountBonus(countBonus + 2);
           } else {
             alert("Insufficient funds ❌");
@@ -355,6 +362,106 @@ function App() {
     }
   };
 
+
+  const levelMoreEnergy1 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelMoreEnergy > 0) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelMoreEnergy === 0) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelMoreEnergy1) {
+            setCount(count - priceLevelMoreEnergy1);
+            setLevelMoreEnergy(levelMoreEnergy + 1);
+            setCountTrue(countTrue + 500);
+            setCountTrueMax(countTrueMax + 500);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
+
+  const levelMoreEnergy2 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelMoreEnergy > 1) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelMoreEnergy === 1) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelMoreEnergy2) {
+            setCount(count - priceLevelMoreEnergy2);
+            setLevelMoreEnergy(levelMoreEnergy + 1);
+            setCountTrue(countTrue + 500);
+            setCountTrueMax(countTrueMax + 500);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
+
+  const levelMoreEnergy3 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelMoreEnergy > 2) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelMoreEnergy === 2) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelMoreEnergy3) {
+            setCount(count - priceLevelMoreEnergy3);
+            setLevelMoreEnergy(levelMoreEnergy + 1);
+            setCountTrue(countTrue + 500);
+            setCountTrueMax(countTrueMax + 500);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
+
+  const levelMoreEnergy4 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelMoreEnergy > 3) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelMoreEnergy === 3) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelMoreEnergy4) {
+            setCount(count - priceLevelMoreEnergy4);
+            setLevelMoreEnergy(levelMoreEnergy + 1);
+            setCountTrue(countTrue + 500);
+            setCountTrueMax(countTrueMax + 500);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
+
+  const levelMoreEnergy5 = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    if (levelMoreEnergy > 4) {
+      alert("This level has already been purchased! ✅");
+    } else {
+      if (levelMoreEnergy === 4) {
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelMoreEnergy5) {
+            setCount(count - priceLevelMoreEnergy5);
+            setLevelMoreEnergy(levelMoreEnergy + 1);
+            setCountTrue(countTrue + 500);
+            setCountTrueMax(countTrueMax + 500);
+          } else {
+            alert("Insufficient funds ❌");
+          }
+        }
+      }
+    }
+  };
 
   const moreClicks = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
@@ -369,26 +476,6 @@ function App() {
           setCountBonus(countBonus + 1);
           setLevelMoreClicks(levelMoreClicks + 1);
           setPriceMoreClicks(priceMoreClicks + 1000);
-          alert("Thanks for the purchase ✅");
-        } else {
-          alert("Insufficient funds ❌");
-        }
-      }
-    }
-  };
-
-  const moreEnergy = () => {
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    if (levelMoreEnergy === 7) {
-      alert("Max level 🔝");
-    } else {
-      if (window.confirm("Here you can buy more energy.\nBuy it?")) {
-        if (count >= priceMoreEnergy) {
-          setCount(count - priceMoreEnergy);
-          setCountTrue(countTrue + 1000);
-          setcountTrueMax(countTrueMax + 1000);
-          setLevelMoreEnergy(levelMoreEnergy + 1);
-          setPriceMoreEnergy(priceMoreEnergy + 1000);
           alert("Thanks for the purchase ✅");
         } else {
           alert("Insufficient funds ❌");
@@ -631,7 +718,8 @@ function App() {
         setIsConfettiActive(false);
       }, 7000);
       setLevelJoinGame(levelJoinGame + 1);
-      setCount(count + 100000);
+      // это строчка настоящая setCount(count + 100000);
+      setCount(count + 999999999999999999999999999)
       alert("Welcome to the game!!! You get +100000 coins. 🎁");
     }
   };
@@ -783,6 +871,32 @@ function App() {
                 <ScroogeGameFlappy
                   countTrue={countTrue}
                   setCountTrue={setCountTrue}
+                />
+              }
+            />
+            <Route
+              path="/boost/market-clicks"
+              element={
+                <MarketClicks
+                  levelMoreClicks={levelMoreClicks}
+                  levelMoreClicks1={levelMoreClicks1}
+                  levelMoreClicks2={levelMoreClicks2}
+                  levelMoreClicks3={levelMoreClicks3}
+                  levelMoreClicks4={levelMoreClicks4}
+                  levelMoreClicks5={levelMoreClicks5}
+                />
+              }
+            />
+            <Route
+              path="/boost/market-energy"
+              element={
+                <MarketEnergy
+                  levelMoreEnergy={levelMoreEnergy}
+                  levelMoreEnergy1={levelMoreEnergy1}
+                  levelMoreEnergy2={levelMoreEnergy2}
+                  levelMoreEnergy3={levelMoreEnergy3}
+                  levelMoreEnergy4={levelMoreEnergy4}
+                  levelMoreEnergy5={levelMoreEnergy5}
                 />
               }
             />

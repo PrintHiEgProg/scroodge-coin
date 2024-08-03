@@ -5,7 +5,7 @@ import React from "react";
 const Pipes = ({ pipePosition }) => {
   return (
     <img
-      src={"https://cdn1.picturebb.com/1/2024/08/01/O2d9r.png"}
+      src={"https://printhiegprog.github.io/images-scrooge-coin/pipe.webp"}
       alt="pipe"
       className="pipe"
       style={{

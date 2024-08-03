@@ -39,11 +39,13 @@ function Boost({
 
         break;
       case 1:
-        alert("More Energy");
+        const hapticFeedbackSoft2 = tg.HapticFeedback.impactOccurred("soft");
+        navigate("/boost/market-clicks");
 
         break;
       case 2:
-        alert("More clicks");
+        const hapticFeedbackSoft3 = tg.HapticFeedback.impactOccurred("soft");
+        navigate("/boost/market-energy");
 
         break;
       default:
@@ -84,8 +86,8 @@ function Boost({
         </div>
         <div className="monopoly-title">
           {currentIndex === 0 && `Fast energy lvl ${levelMoreCountTrueBonus}`}
-          {currentIndex === 1 && `More energy lvl ${levelMoreEnergy}`}
-          {currentIndex === 2 && `More clicks lvl ${levelMoreClicks}`}
+          {currentIndex === 1 && `Clicks lvl ${levelMoreClicks}`}
+          {currentIndex === 2 && `Energy lvl ${levelMoreEnergy}`}
         </div>
         <div class="upgrade-btn-box">
           <button class="upgrade-btn" onClick={handleButtonClick}>

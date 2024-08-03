@@ -4,7 +4,7 @@ import React from "react";
 const Bird = ({ birdPosition }) => {
   return (
     <img
-      src={"https://cdn1.picturebb.com/1/2024/07/31/Of0RZ.png"}
+      src={"https://printhiegprog.github.io/images-scrooge-coin/bird.webp"}
       alt="bird"
       className="bird"
       style={{
