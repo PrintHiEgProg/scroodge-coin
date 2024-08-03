@@ -31,9 +31,18 @@
 }
 
 .Monopoly {
+  position: fixed;
   height: 100vh;
   width: 100vw;
 }
+
+.Boost {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+
 
 .header {
     margin-top: 20px;
@@ -283,7 +292,7 @@ position: absolute;
         align-items: center;
 
   width: 100vw; /* Ширина кнопки в процентах от ширины экрана */
-  height: 25vw; /* Высота кнопки равна ширине для сохранения круглой формы *//* Максимальная высота кнопки */
+  height: 30vw; /* Высота кнопки равна ширине для сохранения круглой формы *//* Максимальная высота кнопки */
   background: #ffffff;
 }
 
