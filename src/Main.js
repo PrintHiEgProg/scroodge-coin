@@ -5,7 +5,6 @@ function Main({
   count,
   countTrue,
   handleTouchStart,
-  handleTouchMove,
   handleTouchEnd,
   canClick,
   countBonus,
@@ -43,7 +42,7 @@ function Main({
           <button
             class="coin-button"
             onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
+            
             onTouchEnd={handleTouchEnd}
             disabled={countTrue === 0}
             
