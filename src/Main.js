@@ -21,8 +21,8 @@ function Main({
     <div className="Main">
       <div class="header">
         <div class="wallet-box">
-          <div class="wallet-icon">...</div>
-          <div class="wallet-text">Wallet</div>
+          <div class="korona">...</div>
+          <div class="wallet-text">{count}</div>
         </div>
         <div class="counttrue-box">
           <div class="counttrue-icon">...</div>
