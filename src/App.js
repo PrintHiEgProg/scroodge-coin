@@ -532,7 +532,7 @@ function App() {
           if (count >= priceLevelPowerstation1) {
             setCount(count - priceLevelPowerstation1);
             setLevelPowerstation(levelPowerstation + 1);
-            setCountTrueBonus(countTrueBonus + 0.5);
+            setCountTrueBonus(countTrueBonus + 1.5);
           } else {
             alert("Insufficient funds ❌");
           }
