@@ -612,7 +612,7 @@ position: absolute;
 }
 
 .message {
-  margin-bottom: 300px;
+  margin: 0;
   position: absolute;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;

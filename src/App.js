@@ -287,6 +287,7 @@ function App() {
         setMessages((prev) => prev.filter((msg) => msg.id !== newMessage.id));
       }, 5000);
 
+
       if (countTrue > 0) {
         setCountTrue(Math.max(countTrue - 1, 0));
       }
