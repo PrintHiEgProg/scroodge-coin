@@ -35,7 +35,8 @@ function Boost({
   const handleButtonClick = () => {
     switch (currentIndex) {
       case 0:
-        alert("Fast Energy");
+        const hapticFeedbackSoft1 = tg.HapticFeedback.impactOccurred("soft");
+        alert("Comming soon...");
 
         break;
       case 1:
