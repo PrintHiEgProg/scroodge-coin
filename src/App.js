@@ -718,8 +718,7 @@ function App() {
         setIsConfettiActive(false);
       }, 7000);
       setLevelJoinGame(levelJoinGame + 1);
-      // это строчка настоящая setCount(count + 100000);
-      setCount(count + 999999999999999999999999999)
+      setCount(count + 100000);
       alert("Welcome to the game!!! You get +100000 coins. 🎁");
     }
   };
