@@ -223,6 +223,7 @@ position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: 6px 6px 6px 6px rgba(255, 102, 51, 0.2);
+  margin-bottom: 10px;
 }
 
 .count-box-box {

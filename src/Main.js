@@ -36,7 +36,7 @@ function Main({
           <div class="education-text" onClick={handleGameClick}>
             Games
           </div>
-          <div class="reflink-text">Ref link</div>
+          <div class="reflink-text" onClick={alert("Comming soon...")}>Ref link</div>
         </div>
         <div class="coin-button-box">
           <button
