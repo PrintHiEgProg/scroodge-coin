@@ -24,8 +24,8 @@ import {
 
 function App() {
   const tg = window.Telegram.WebApp;
-  const userId = tg.initDataUnsafe.user.id;
   const navigate = useNavigate();
+  const userId = tg.initDataUnsafe.user.id;
   const [fingerCount, setFingerCount] = useState(0);
 
   const [isConfettiActive, setIsConfettiActive] = useState(false);
@@ -465,10 +465,7 @@ function App() {
     }
   };
 
-  const handleGameClick = () => {
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    navigate("/game");
-  };
+  
 
   const moreClicks = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
@@ -914,7 +911,6 @@ function App() {
                 <Machine
                   count={count}
                   setCount={setCount}
-                  handleGameClick={handleGameClick}
                 />
               }
             />

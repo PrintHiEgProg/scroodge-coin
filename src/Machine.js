@@ -123,7 +123,7 @@ class Machine extends React.Component {
     );
   };
   play = () => {
-    const { count, setCount, handleGameClick } = this.props;
+    const { count, setCount } = this.props;
 
     if (count >= 500) {
       setCount(count - 500);
@@ -138,12 +138,19 @@ class Machine extends React.Component {
   handleClick = () => {
     this.play();
   };
+    
+    handleGameClick = () => {
+      const tg = window.Telegram.WebApp;
+      const navigate = useNavigate();
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/game");
+  }; 
   checkIfWon = () => {
     const hasWon = this.state.reels.every(
       (reel) => reel.fruit === this.state.reels[0].fruit
     );
     if (hasWon) {
-      const { count, setCount, handleGameClick } = this.props;
+      const { count, setCount } = this.props;
       setCount(count + 10000);
       console.log(count);
     }
@@ -171,7 +178,7 @@ class Machine extends React.Component {
     return (
       <div className="Machine">
         <div className="container-for-avtomat">
-          <div class="close-box" onClick={this.props.handleGameClick}>
+          <div class="close-box" onClick={this.handleGameClick}>
             <div class="close-icon">...</div>
           </div>
           <div className="text-price">
