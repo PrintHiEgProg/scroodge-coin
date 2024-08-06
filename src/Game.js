@@ -15,6 +15,11 @@ function Game() {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     navigate("/game/flappy-scrooge");
   };
+    
+   const handleSlotsScroogeClick = () => {
+     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+     navigate("/game/slots-scrooge");
+   }; 
   return (
     <div className="Game">
       <div class="header">
@@ -33,6 +38,12 @@ function Game() {
             <div class="product-level">Flappy Scrooge</div>
             <div class="task-price">
               +Energy<div class="counttrue-icon">...</div>
+            </div>
+          </div>
+          <div class="task-box" onClick={handleSlotsScroogeClick}>
+            <div class="product-level">Slots Scrooge</div>
+            <div class="task-price">
+              +Coins<div class="korona">...</div>
             </div>
           </div>
         </div>

@@ -12,7 +12,8 @@ import MarketClicks from "./MarketClicks.js";
 import MarketEnergy from "./MarketEnergy.js";
 import ScroogeGameFlappy from "./ScroogeGameFlappy.js";
 import Confetti from "react-confetti";
-import Game from "./Game";
+import Game from "./Game.js";
+import Machine from "./Machine.js";
 
 import {
   BrowserRouter as Router,
@@ -898,7 +899,8 @@ function App() {
                   levelMoreEnergy5={levelMoreEnergy5}
                 />
               }
-            />
+              />
+              <Route path="/game/slots-scrooge" element={<Machine count={count} setCount={setCount} />} />
           </Routes>
           <NavBar />
         </Router>
