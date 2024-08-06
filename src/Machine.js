@@ -180,7 +180,7 @@ class Machine extends React.Component {
             Price: 500<div className="korona-small">...</div>
           </div>
           <div className="text-win">
-            Win: 5K<div className="korona-small">...</div>
+            Win: 10K<div className="korona-small">...</div>
           </div>
           <div className="Avtomat">
             <Alarm hasWon={this.state.hasWon} />
