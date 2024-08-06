@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Casino.css";
 
-const fruits = ["🦆", "🪿", "🐥"];
+const fruits = ["🦆", "🪿", "🦜", "🦩", "🐓"];
 const prizes = [
   "💰",
   "🥧",
@@ -123,8 +123,8 @@ class Machine extends React.Component {
   play = () => {
     const { count, setCount } = this.props;
 
-    if (count >= 200) {
-      setCount(count - 200);
+    if (count >= 500) {
+      setCount(count - 500);
       console.log(count);
       this.setState({ playing: true, hasWon: false });
       setTimeout(this.getResults, 2000);
@@ -142,7 +142,7 @@ class Machine extends React.Component {
     );
     if (hasWon) {
       const { count, setCount } = this.props;
-      setCount(count + 10000);
+      setCount(count + 5000);
       console.log(count);
     }
     this.setState((prevState) => ({
