@@ -24,7 +24,7 @@ import {
 
 function App() {
   const tg = window.Telegram.WebApp;
-  const navigate = useNavigate();
+  
   const userId = tg.initDataUnsafe.user.id;
   const [fingerCount, setFingerCount] = useState(0);
 
@@ -911,7 +911,6 @@ function App() {
                 <Machine
                   count={count}
                   setCount={setCount}
-                  
                 />
               }
             />
