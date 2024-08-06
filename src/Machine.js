@@ -166,10 +166,10 @@ class Machine extends React.Component {
       <div className="Machine">
         <div className="container-for-avtomat">
           <div className="text-price">
-            Price: 200<div className="korona">...</div>
+            Price: 200<div className="korona-small">...</div>
           </div>
           <div className="text-win">
-            Win: 10K<div className="korona">...</div>
+            Win: 10K<div className="korona-small">...</div>
           </div>
           <div className="Avtomat">
             <Alarm hasWon={this.state.hasWon} />

@@ -30,7 +30,7 @@ body {
     display: flex;
 }
 
-.korona {
+.korona-small {
     width: 50%;
     height: 50%;
     background-image: url(https://printhiegprog.github.io/images-scrooge-coin/korona.webp);
@@ -205,7 +205,7 @@ body {
   border-radius: 8px;
 }
 
-button {
+.play {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #ea2f12;
@@ -220,19 +220,19 @@ button {
   outline: none;
 }
 
-button:hover,
-button:focus {
+.play:hover,
+.play:focus {
   cursor: pointer;
   box-shadow: -2px 1px 0px 1px #af200a, -2px 2px #af200a, -2px 2px #af200a;
   outline: none;
 }
 
-button:focus {
+.play:focus {
   border: 1px solid #af200a;
 }
 
-button:disabled,
-button[disabled] {
+.play:disabled,
+.play[disabled] {
   border: 1px solid #d3867b;
   background-color: #fba092;
   box-shadow: -2px 1px 0px 1px #d3867b, -2px 2px #d3867b, -2px 2px #d3867b;
