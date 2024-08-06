@@ -150,7 +150,7 @@ class Machine extends React.Component {
     this.setState((prevState) => ({
       hasWon,
       message: hasWon
-        ? `Congratulations! You win this awesome prize of 10K`
+        ? `Congratulations! You win this awesome prize of 5K`
         : "Sorry, try again!",
     }));
   };
