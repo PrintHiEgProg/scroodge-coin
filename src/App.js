@@ -465,6 +465,11 @@ function App() {
     }
   };
 
+  const handleGameClick = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/game");
+  };
+
   const moreClicks = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreClicks === 5) {
@@ -771,11 +776,7 @@ function App() {
     }
   };
 
-   const handleGameClick = () => {
-     const tg = window.Telegram.WebApp;
-     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-     navigate("/game");
-   };
+   
 
   return (
     <div className="App">

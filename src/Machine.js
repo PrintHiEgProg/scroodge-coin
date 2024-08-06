@@ -123,7 +123,7 @@ class Machine extends React.Component {
     );
   };
   play = () => {
-    const { count, setCount } = this.props;
+    const { count, setCount, handleGameClick } = this.props;
 
     if (count >= 500) {
       setCount(count - 500);
@@ -143,7 +143,7 @@ class Machine extends React.Component {
       (reel) => reel.fruit === this.state.reels[0].fruit
     );
     if (hasWon) {
-      const { count, setCount } = this.props;
+      const { count, setCount, handleGameClick } = this.props;
       setCount(count + 10000);
       console.log(count);
     }
@@ -163,8 +163,11 @@ class Machine extends React.Component {
         fruit={reel.fruit}
         index={index + 1}
         playing={this.state.playing}
-      />
+        />
+        
+        
     ));
+      
     return (
       <div className="Machine">
         <div className="container-for-avtomat">
