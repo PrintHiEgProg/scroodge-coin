@@ -911,7 +911,7 @@ function App() {
                 <Machine
                   count={count}
                   setCount={setCount}
-                  navigate={navigate}
+                  
                 />
               }
             />

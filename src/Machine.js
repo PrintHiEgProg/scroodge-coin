@@ -104,16 +104,7 @@ class Message extends React.Component {
 }
 
 class Machine extends React.Component {
-    constructor(props) {
-    super(props);
-    this.handleGameClick = this.handleGameClick.bind(this);
-  }
-
-    handleGameClick() {
-    const tg = window.Telegram.WebApp;
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    this.props.navigate("/game");
-  }
+    
     
   state = {
     reels: [{ fruit: "💲" }, { fruit: "💲" }, { fruit: "💲" }],
@@ -182,7 +173,7 @@ class Machine extends React.Component {
     return (
       <div className="Machine">
         <div className="container-for-avtomat">
-          <div class="close-box" onClick={this.handleGameClick}>
+          <div class="close-box">
             <div class="close-icon">...</div>
           </div>
           <div className="text-price">
