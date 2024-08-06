@@ -104,6 +104,17 @@ class Message extends React.Component {
 }
 
 class Machine extends React.Component {
+    constructor(props) {
+    super(props);
+    this.handleGameClick = this.handleGameClick.bind(this);
+  }
+
+    handleGameClick() {
+    const tg = window.Telegram.WebApp;
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    this.props.navigate("/game");
+  }
+    
   state = {
     reels: [{ fruit: "💲" }, { fruit: "💲" }, { fruit: "💲" }],
     message: "Try your luck and win some mad prizes!",
@@ -138,13 +149,8 @@ class Machine extends React.Component {
   handleClick = () => {
     this.play();
   };
-    
-    handleGameClick = () => {
-      const tg = window.Telegram.WebApp;
-      const navigate = useNavigate();
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    navigate("/game");
-  }; 
+  
+  
   checkIfWon = () => {
     const hasWon = this.state.reels.every(
       (reel) => reel.fruit === this.state.reels[0].fruit
@@ -162,19 +168,17 @@ class Machine extends React.Component {
     }));
   };
 
-    
-  render() {
+    render() {
+      
     const reels = this.state.reels.map((reel, index) => (
       <Reel
         key={index}
         fruit={reel.fruit}
         index={index + 1}
         playing={this.state.playing}
-        />
-        
-        
+      />
     ));
-      
+
     return (
       <div className="Machine">
         <div className="container-for-avtomat">
