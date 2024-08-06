@@ -144,23 +144,18 @@ class Machine extends React.Component {
     );
     if (hasWon) {
       const { count, setCount } = this.props;
-      setCount(count + 5000);
+      setCount(count + 10000);
       console.log(count);
     }
     this.setState((prevState) => ({
       hasWon,
       message: hasWon
-        ? `Congratulations! You win this awesome prize of 5K`
+        ? `Congratulations! You win this awesome prize of 10K`
         : "Sorry, try again!",
     }));
   };
 
-    handleGameClick = () => {
-      const tg = window.Telegram.WebApp;
-      const navigate = useNavigate();
-      const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-      navigate("/game");
-    };
+    
   render() {
     const reels = this.state.reels.map((reel, index) => (
       <Reel
@@ -173,6 +168,9 @@ class Machine extends React.Component {
     return (
       <div className="Machine">
         <div className="container-for-avtomat">
+          <div class="close-box" onClick={this.props.handleGameClick}>
+            <div class="close-icon">...</div>
+          </div>
           <div className="text-price">
             Price: 500<div className="korona-small">...</div>
           </div>
@@ -183,7 +181,11 @@ class Machine extends React.Component {
             <Alarm hasWon={this.state.hasWon} />
             <Lights />
             <div className="Reels">{reels}</div>
-            <button className="play" onClick={this.handleClick} disabled={this.state.playing}>
+            <button
+              className="play"
+              onClick={this.handleClick}
+              disabled={this.state.playing}
+            >
               Play
             </button>
             <Slot />

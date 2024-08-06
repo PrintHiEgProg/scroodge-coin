@@ -25,6 +25,7 @@ import {
 function App() {
   const tg = window.Telegram.WebApp;
   const userId = tg.initDataUnsafe.user.id;
+  const navigate = useNavigate();
   const [fingerCount, setFingerCount] = useState(0);
 
   const [isConfettiActive, setIsConfettiActive] = useState(false);
@@ -770,6 +771,12 @@ function App() {
     }
   };
 
+   const handleGameClick = () => {
+     const tg = window.Telegram.WebApp;
+     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+     navigate("/game");
+   };
+
   return (
     <div className="App">
       {loading ? (
@@ -899,8 +906,17 @@ function App() {
                   levelMoreEnergy5={levelMoreEnergy5}
                 />
               }
-              />
-              <Route path="/game/slots-scrooge" element={<Machine count={count} setCount={setCount} />} />
+            />
+            <Route
+              path="/game/slots-scrooge"
+              element={
+                <Machine
+                  count={count}
+                  setCount={setCount}
+                  handleGameClick={handleGameClick}
+                />
+              }
+            />
           </Routes>
           <NavBar />
         </Router>
