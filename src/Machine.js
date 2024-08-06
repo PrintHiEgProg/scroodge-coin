@@ -175,7 +175,7 @@ class Machine extends React.Component {
             <Alarm hasWon={this.state.hasWon} />
             <Lights />
             <div className="Reels">{reels}</div>
-            <button onClick={this.handleClick} disabled={this.state.playing}>
+            <button className="play" onClick={this.handleClick} disabled={this.state.playing}>
               Play
             </button>
             <Slot />
