@@ -173,9 +173,6 @@ class Machine extends React.Component {
     return (
       <div className="Machine">
         <div className="container-for-avtomat">
-          <div class="close-box">
-            <div class="close-icon">...</div>
-          </div>
           <div className="text-price">
             Price: 500<div className="korona-small">...</div>
           </div>
