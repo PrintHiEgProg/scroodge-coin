@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Casino.css";
+import { useNavigate } from "react-router-dom";
+
 
 const fruits = ["🦆", "🪿", "🦜", "🦩", "🐓"];
 const prizes = [
@@ -153,6 +155,12 @@ class Machine extends React.Component {
     }));
   };
 
+    handleGameClick = () => {
+      const tg = window.Telegram.WebApp;
+      const navigate = useNavigate();
+      const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+      navigate("/game");
+    };
   render() {
     const reels = this.state.reels.map((reel, index) => (
       <Reel
