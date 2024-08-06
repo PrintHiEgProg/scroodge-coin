@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Casino.css";
-import { useNavigate } from "react-router-dom";
+
 
 
 const fruits = ["🦆", "🪿", "🦜", "🦩", "🐓"];
