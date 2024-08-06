@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Casino.css";
-import Confetti from "react-confetti";
 
 const fruits = ["🦆", "🪿", "🐥"];
 const prizes = [
@@ -24,9 +23,6 @@ const prizes = [
   "🚲",
   "🛸",
 ];
-
-const [isConfettiActive, setIsConfettiActive] = false;
-
 
 // functions
 function getRandom(arr) {
@@ -93,6 +89,8 @@ class Slot extends React.Component {
 // Message comonent
 class Message extends React.Component {
   render() {
+    const { count, setCount } = this.props;
+    console.log(this.props);
     return (
       <div
         className={`Message ${!this.props.playing ? "Message-visible" : ""}`}
@@ -122,28 +120,30 @@ class Machine extends React.Component {
       () => this.checkIfWon()
     );
   };
-  play = ({count, setCount}) => {
-    if (count <= 200) {
+  play = () => {
+    const { count, setCount } = this.props;
+
+    if (count >= 200) {
       setCount(count - 200);
+      console.log(count);
       this.setState({ playing: true, hasWon: false });
       setTimeout(this.getResults, 2000);
     } else {
       alert("Insufficient funds ❌");
+      console.log(count);
     }
   };
   handleClick = () => {
     this.play();
   };
-  checkIfWon = ({count, setCount}) => {
+  checkIfWon = () => {
     const hasWon = this.state.reels.every(
       (reel) => reel.fruit === this.state.reels[0].fruit
     );
     if (hasWon) {
+      const { count, setCount } = this.props;
       setCount(count + 10000);
-      setIsConfettiActive(true);
-      setTimeout(() => {
-        setIsConfettiActive(false);
-      }, 7000);
+      console.log(count);
     }
     this.setState((prevState) => ({
       hasWon,
@@ -164,15 +164,6 @@ class Machine extends React.Component {
     ));
     return (
       <div className="Machine">
-        {isConfettiActive && (
-          <Confetti
-            count={100}
-            size={20}
-            gravity={0.1}
-            colors={["#FF69B4", "#FFC67D", "#8BC34A"]}
-            style={{ width: "100%", height: "100vh" }}
-          />
-        )}
         <div className="container-for-avtomat">
           <div className="text-price">
             Price: 200<div className="korona">...</div>

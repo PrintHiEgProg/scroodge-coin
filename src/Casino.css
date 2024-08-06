@@ -241,6 +241,7 @@ button[disabled] {
 }
 
 .Message {
+    padding-top: 10px;
   text-align: center;
   font-weight: bold;
   font-size: 14px;
@@ -305,7 +306,7 @@ button[disabled] {
 }
 
 .Message {
-    padding-top: 5px;
+    padding-top: 10px;
     font-size: 20px;
   position: absolute;
   bottom: -90px;
