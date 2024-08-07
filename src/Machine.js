@@ -107,7 +107,7 @@ const CloseForMachine = () => {
   const navigate = useNavigate()
   const handleGameClick = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    navigate("/monopoly");
+    navigate("/game");
   };
   return (
     <div class="close-box" onClick={handleGameClick}>
