@@ -14,6 +14,7 @@ import ScroogeGameFlappy from "./ScroogeGameFlappy.js";
 import Confetti from "react-confetti";
 import Game from "./Game.js";
 import Machine from "./Machine.js";
+import Loading from "./Loading.js";
 
 import {
   BrowserRouter as Router,
@@ -778,15 +779,7 @@ function App() {
   return (
     <div className="App">
       {loading ? (
-        <div className="Loading-page">
-          <h1 className="title"></h1>
-          <img
-            className="loading-wheel"
-            src="https://printhiegprog.github.io/loading-wheel.png"
-            alt="loading-wheel"
-          />
-          <div className="contact"></div>
-        </div>
+        <Loading />
       ) : (
         <Router>
           <Routes>
@@ -907,12 +900,7 @@ function App() {
             />
             <Route
               path="/game/slots-scrooge"
-              element={
-                <Machine
-                  count={count}
-                  setCount={setCount}
-                />
-              }
+              element={<Machine count={count} setCount={setCount} />}
             />
           </Routes>
           <NavBar />

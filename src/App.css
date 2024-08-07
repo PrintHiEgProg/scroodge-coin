@@ -13,10 +13,32 @@
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
 * {
+  -webkit-tap-highlight-color: transparent;
   -ms-user-select: none; 
 	-moz-user-select: none; 
 	-webkit-user-select: none; 
 	user-select: none; 
+}
+
+
+.Loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+width: 100vw;
+height: 100vh;
+background-image: url("https://printhiegprog.github.io/images-scrooge-coin/background-loading.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    
+
+}
+
+.loading-container {
+    margin-top: 50%;
+    text-align: center;
 }
 
 .App {
