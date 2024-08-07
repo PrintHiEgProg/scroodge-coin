@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Casino.css";
 
-
-
-const fruits = ["🦆", "🪿", "🦜", "🦩", "🐓"];
+const fruits = ["🦆", "🪿", "🦜", "🦩", "🐓", "🦢"];
 const prizes = [
   "💰",
   "🥧",
@@ -103,9 +102,21 @@ class Message extends React.Component {
   }
 }
 
+const CloseForMachine = () => {
+    const tg = window.Telegram.WebApp;
+  const navigate = useNavigate()
+  const handleGameClick = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/monopoly");
+  };
+  return (
+    <div class="close-box" onClick={handleGameClick}>
+      <div class="close-icon">...</div>
+    </div>
+  );
+};
+
 class Machine extends React.Component {
-    
-    
   state = {
     reels: [{ fruit: "💲" }, { fruit: "💲" }, { fruit: "💲" }],
     message: "Try your luck and win some mad prizes!",
@@ -140,27 +151,25 @@ class Machine extends React.Component {
   handleClick = () => {
     this.play();
   };
-  
-  
+
   checkIfWon = () => {
     const hasWon = this.state.reels.every(
       (reel) => reel.fruit === this.state.reels[0].fruit
     );
     if (hasWon) {
       const { count, setCount } = this.props;
-      setCount(count + 10000);
+      setCount(count + 50000);
       console.log(count);
     }
     this.setState((prevState) => ({
       hasWon,
       message: hasWon
-        ? `Congratulations! You win this awesome prize of 10K`
+        ? `Congratulations! You win this awesome prize of 50K`
         : "Sorry, try again!",
     }));
   };
 
-    render() {
-      
+  render() {
     const reels = this.state.reels.map((reel, index) => (
       <Reel
         key={index}
@@ -172,12 +181,13 @@ class Machine extends React.Component {
 
     return (
       <div className="Machine">
+        <CloseForMachine />
         <div className="container-for-avtomat">
           <div className="text-price">
             Price: 500<div className="korona-small">...</div>
           </div>
           <div className="text-win">
-            Win: 10K<div className="korona-small">...</div>
+            Win: 50K<div className="korona-small">...</div>
           </div>
           <div className="Avtomat">
             <Alarm hasWon={this.state.hasWon} />
