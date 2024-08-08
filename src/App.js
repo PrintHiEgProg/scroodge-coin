@@ -204,7 +204,13 @@ function App() {
     return () => clearInterval(interval);
   }, [count]);
 
-
+   useEffect(() => {
+     if (countTrue > countTrueMax) {
+       setCountTrue(countTrueMax);
+     }
+   }, [countTrue, countTrueMax]);
+  
+  
   const handleTouchStart = (event) => {
     setFingerCount(event.touches.length);
     //count...
