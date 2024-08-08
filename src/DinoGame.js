@@ -1,8 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
-import CloseForMachine from "./Machine.js"
 
+
+
+const CloseForMachine = () => {
+  const tg = window.Telegram.WebApp;
+  const navigate = useNavigate();
+  const handleGameClick = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/game");
+  };
+  return (
+    <div class="close-box" onClick={handleGameClick}>
+      <div class="close-icon">...</div>
+    </div>
+  );
+};
 
 const DinoGame = ({ count, setCount }) => {
   const navigate = useNavigate();
