@@ -15,11 +15,19 @@ function Game() {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     navigate("/game/flappy-scrooge");
   };
-    
-   const handleSlotsScroogeClick = () => {
-     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-     navigate("/game/slots-scrooge");
-   }; 
+
+  const handleSlotsScroogeClick = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/game/slots-scrooge");
+  };
+
+  const handleRunJumpScroogeClick = () => {
+    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
+    navigate("/game/runjump-scrooge");
+  };
+  
+
+
   return (
     <div className="Game">
       <div class="header">
@@ -42,6 +50,12 @@ function Game() {
           </div>
           <div class="task-box" onClick={handleSlotsScroogeClick}>
             <div class="product-level">Slots Scrooge</div>
+            <div class="task-price">
+              +Coins<div class="korona">...</div>
+            </div>
+          </div>
+          <div class="task-box" onClick={handleRunJumpScroogeClick}>
+            <div class="product-level">Run&Gump Scrooge</div>
             <div class="task-price">
               +Coins<div class="korona">...</div>
             </div>

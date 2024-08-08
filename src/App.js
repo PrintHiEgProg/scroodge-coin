@@ -15,6 +15,7 @@ import Confetti from "react-confetti";
 import Game from "./Game.js";
 import Machine from "./Machine.js";
 import Loading from "./Loading.js";
+import DinoGame from "./DinoGame.js";
 
 import {
   BrowserRouter as Router,
@@ -901,6 +902,10 @@ function App() {
             <Route
               path="/game/slots-scrooge"
               element={<Machine count={count} setCount={setCount} />}
+            />
+            <Route
+              path="/game/runjump-scrooge"
+              element={<DinoGame count={count} setCount={setCount} />}
             />
           </Routes>
           <NavBar />
