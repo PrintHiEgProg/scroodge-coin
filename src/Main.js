@@ -44,7 +44,7 @@ function Main({
             class="coin-button"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            disabled={countTrue === 0}
+            disabled={!canClick || countTrue === 0}
           >
             ...
           </button>
