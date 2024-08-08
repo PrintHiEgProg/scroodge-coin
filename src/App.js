@@ -257,12 +257,12 @@ function App() {
 
   
   useEffect(() => {
-    if (canClick === false || countTrue === 0) {
+    if (countTrue === 0) {
       const HapticFeedbackError =
         tg.HapticFeedback.notificationOccurred("warning");
       alert("Scrooge is tired... 😴");
     }
-  }, [canClick, countTrue]);
+  }, [countTrue]);
 
   const [loading, setLoading] = useState(true);
 
