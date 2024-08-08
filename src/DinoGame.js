@@ -55,8 +55,8 @@ const DinoGame = ({ count, setCount }) => {
         setScore(score - score);
         setCount(count + score);
         alert("Game Over!!!");
-        setIsAlive(false);
-        window.location.reload();
+        setIsAlive(true);
+        
       }
     };
 
