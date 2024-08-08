@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
+import CloseForMachine from "./Machine.js"
+
 
 const DinoGame = ({ count, setCount }) => {
   const navigate = useNavigate();
@@ -66,9 +68,7 @@ const DinoGame = ({ count, setCount }) => {
 
   return (
     <div className="DinoGame" onClick={jump}>
-      <div class="close-box" onClick={handleGameClick}>
-        <div class="close-icon">...</div>
-      </div>
+      <CloseForMachine />
       <div className="game">
         <div className="score-for-dinogame">Score: {score}</div>
         <div
