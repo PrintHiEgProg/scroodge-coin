@@ -138,8 +138,8 @@ class Machine extends React.Component {
   play = () => {
     const { count, setCount } = this.props;
 
-    if (count >= 500) {
-      setCount(count - 500);
+    if (count >= 1000) {
+      setCount(count - 1000);
       console.log(count);
       this.setState({ playing: true, hasWon: false });
       setTimeout(this.getResults, 2000);
@@ -184,7 +184,7 @@ class Machine extends React.Component {
         <CloseForMachine />
         <div className="container-for-avtomat">
           <div className="text-price">
-            Price: 500<div className="korona-small">...</div>
+            Price: 1000<div className="korona-small">...</div>
           </div>
           <div className="text-win">
             Win: 50K<div className="korona-small">...</div>
