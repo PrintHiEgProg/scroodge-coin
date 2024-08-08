@@ -69,7 +69,7 @@ const ScroogeGameFlappy = ({ countTrue, setCountTrue }) => {
         birdRight < pipeRight + 5
       ) {
         // Bird has passed through the pipe, increase score
-        setScore((prevScore) => prevScore + 1);
+        setScore(score + 1);
       }
     });
 

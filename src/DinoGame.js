@@ -3,21 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 
-
-const CloseForMachine = () => {
-  const tg = window.Telegram.WebApp;
-  const navigate = useNavigate();
-  const handleGameClick = () => {
-    const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
-    navigate("/game");
-  };
-  return (
-    <div class="close-box" onClick={handleGameClick}>
-      <div class="close-icon">...</div>
-    </div>
-  );
-};
-
 const DinoGame = ({ count, setCount }) => {
   const navigate = useNavigate();
   const tg = window.Telegram.WebApp;
@@ -82,7 +67,9 @@ const DinoGame = ({ count, setCount }) => {
 
   return (
     <div className="DinoGame" onClick={jump}>
-      <CloseForMachine />
+      <div class="close-box" onClick={handleGameClick}>
+        <div class="close-icon">...</div>
+      </div>
       <div className="game">
         <div className="score-for-dinogame">Score: {score}</div>
         <div
