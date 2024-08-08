@@ -40,6 +40,14 @@ function Main({
           <div class="reflink-text">Ref link</div>
         </div>
         <div class="coin-button-box">
+          <button
+            class="coin-button"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            disabled={countTrue === 0}
+          >
+            ...
+          </button>
           {messages.map((msg) => (
             <div
               key={msg.id}
@@ -52,14 +60,6 @@ function Main({
               +{countBonus}
             </div>
           ))}
-          <button
-            class="coin-button"
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-            disabled={countTrue === 0}
-          >
-            ...
-          </button>
         </div>
         <div class="count-box-box">
           <div class="count-box">
