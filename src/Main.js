@@ -6,6 +6,7 @@ function Main({
   countTrue,
   handleTouchStart,
   handleTouchEnd,
+  messages,
   canClick,
   countBonus,
 }) {
@@ -44,8 +45,19 @@ function Main({
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
             disabled={countTrue === 0}
-          >
-            ...
+          >...
+            {messages.map((msg) => (
+              <div
+                key={msg.id}
+                className="message"
+                style={{
+                  left: msg.x,
+                  top: msg.y,
+                }}
+              >
+                +{countBonus}
+              </div>
+            ))}
           </button>
         </div>
         <div class="count-box-box">
