@@ -40,24 +40,25 @@ function Main({
           <div class="reflink-text">Ref link</div>
         </div>
         <div class="coin-button-box">
+          {messages.map((msg) => (
+            <div
+              key={msg.id}
+              className="message"
+              style={{
+                left: msg.x,
+                top: msg.y,
+              }}
+            >
+              +{countBonus}
+            </div>
+          ))}
           <button
             class="coin-button"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
             disabled={countTrue === 0}
-          >...
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className="message"
-                style={{
-                  left: msg.x,
-                  top: msg.y,
-                }}
-              >
-                +{countBonus}
-              </div>
-            ))}
+          >
+            ...
           </button>
         </div>
         <div class="count-box-box">
