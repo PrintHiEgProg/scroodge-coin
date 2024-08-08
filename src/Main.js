@@ -48,18 +48,7 @@ function Main({
           >
             ...
           </button>
-          {messages.map((msg) => (
-            <div
-              key={msg.id}
-              className="message"
-              style={{
-                left: msg.x,
-                top: msg.y,
-              }}
-            >
-              +{countBonus}
-            </div>
-          ))}
+          
         </div>
         <div class="count-box-box">
           <div class="count-box">
