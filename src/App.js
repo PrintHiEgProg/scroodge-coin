@@ -26,7 +26,6 @@ import {
 
 function App() {
   const tg = window.Telegram.WebApp;
-  
   const userId = tg.initDataUnsafe.user.id;
   const [fingerCount, setFingerCount] = useState(0);
 
@@ -34,72 +33,72 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   const [count, setCount] = useState(() => {
-    const savedCount = localStorage.getItem("count");
+    const savedCount = tg.CloudStorage.getItem("count");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [countBonus, setCountBonus] = useState(() => {
-    const savedCount = localStorage.getItem("countBonus");
+    const savedCount = tg.CloudStorage.getItem("countBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 1;
   });
   const [countTrueMax, setCountTrueMax] = useState(() => {
-    const savedCount = localStorage.getItem("countTrueMax");
+    const savedCount = tg.CloudStorage.getItem("countTrueMax");
     return savedCount !== null ? parseInt(savedCount, 10) : 1000;
   });
   const [countTrueBonus, setCountTrueBonus] = useState(() => {
-    const savedCount = localStorage.getItem("countTrueBonus");
+    const savedCount = tg.CloudStorage.getItem("countTrueBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 1;
   });
   const [levelMoreClicks, setLevelMoreClicks] = useState(() => {
-    const savedCount = localStorage.getItem("levelMoreClicks");
+    const savedCount = tg.CloudStorage.getItem("levelMoreClicks");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelMoreEnergy, setLevelMoreEnergy] = useState(() => {
-    const savedCount = localStorage.getItem("levelMoreEnergy");
+    const savedCount = tg.CloudStorage.getItem("levelMoreEnergy");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelTgChannel1, setLevelTgChannel1] = useState(() => {
-    const savedCount = localStorage.getItem("levelTgChannel1");
+    const savedCount = tg.CloudStorage.getItem("levelTgChannel1");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelTgPremium, setlevelTgPremium] = useState(() => {
-    const savedCount = localStorage.getItem("levelTgPremium");
+    const savedCount = tg.CloudStorage.getItem("levelTgPremium");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelMoreCountTrueBonus, setLevelMoreCountTrueBonus] = useState(() => {
-    const savedCount = localStorage.getItem("levelMoreCountTrueBonus");
+    const savedCount = tg.CloudStorage.getItem("levelMoreCountTrueBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelFactory, setLevelFactory] = useState(() => {
-    const savedCount = localStorage.getItem("levelFactory");
+    const savedCount = tg.CloudStorage.getItem("levelFactory");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelHotel, setLevelHotel] = useState(() => {
-    const savedCount = localStorage.getItem("levelHotel");
+    const savedCount = tg.CloudStorage.getItem("levelHotel");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelPowerstation, setLevelPowerstation] = useState(() => {
-    const savedCount = localStorage.getItem("levelPowerstation");
+    const savedCount = tg.CloudStorage.getItem("levelPowerstation");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [levelJoinGame, setLevelJoinGame] = useState(() => {
-    const savedCount = localStorage.getItem("levelJoinGame");
+    const savedCount = tg.CloudStorage.getItem("levelJoinGame");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
   const [countTrue, setCountTrue] = useState(() => {
-    const savedCount = localStorage.getItem("countTrue");
+    const savedCount = tg.CloudStorage.getItem("countTrue");
     return savedCount !== null ? parseInt(savedCount, 10) : 1000;
   });
   const [canClick, setCanClick] = useState(true);
   const [priceMoreClicks, setPriceMoreClicks] = useState(() => {
-    const savedCount = localStorage.getItem("priceMoreClicks");
+    const savedCount = tg.CloudStorage.getItem("priceMoreClicks");
     return savedCount !== null ? parseInt(savedCount, 10) : 1000;
   });
   const [priceMoreEnergy, setPriceMoreEnergy] = useState(() => {
-    const savedCount = localStorage.getItem("priceMoreEnergy");
+    const savedCount = tg.CloudStorage.getItem("priceMoreEnergy");
     return savedCount !== null ? parseInt(savedCount, 10) : 2000;
   });
   const [priceMoreCountTrueBonus, setPriceMoreCountTrueBonus] = useState(() => {
-    const savedCount = localStorage.getItem("priceMoreCountTrueBonus");
+    const savedCount = tg.CloudStorage.getItem("priceMoreCountTrueBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 3000;
   });
   const [priceLevelFactory1, setPriceLevelFactory1] = useState(100000);
@@ -126,33 +125,33 @@ function App() {
   const priceLevelMoreEnergy5 = useState(400000);
 
   const [factoryBonus, setFactoryBonus] = useState(() => {
-    const savedCount = localStorage.getItem("factoryBonus");
+    const savedCount = tg.CloudStorage.getItem("factoryBonus");
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
 
-  // Загружаем сохраненное значение count из localStorage при инициализации состояния
+  // Загружаем сохраненное значение count из tg.CloudStorage при инициализации состояния
    
 
   useEffect(() => {
-    // Сохраняем значение count в localStorage при его изменении
-    localStorage.setItem("count", count);
-    localStorage.setItem("countBonus", countBonus);
-    localStorage.setItem("countTrueMax", countTrueMax);
-    localStorage.setItem("countTrueBonus", countTrueBonus);
-    localStorage.setItem("levelMoreClicks", levelMoreClicks);
-    localStorage.setItem("levelMoreEnergy", levelMoreEnergy);
-    localStorage.setItem("levelTgChannel1", levelTgChannel1);
-    localStorage.setItem("levelTgPremium", levelTgPremium);
-    localStorage.setItem("levelMoreCountTrueBonus", levelMoreCountTrueBonus);
-    localStorage.setItem("levelFactory", levelFactory);
-    localStorage.setItem("levelHotel", levelHotel);
-    localStorage.setItem("levelPowerstation", levelPowerstation);
-    localStorage.setItem("levelJoinGame", levelJoinGame);
-    localStorage.setItem("countTrue", countTrue);
-    localStorage.setItem("priceMoreClicks,", priceMoreClicks);
-    localStorage.setItem("priceMoreEnergy", priceMoreEnergy);
-    localStorage.setItem("priceMoreCountTrueBonus", priceMoreCountTrueBonus);
-    localStorage.setItem("factoryBonus", factoryBonus);
+    // Сохраняем значение count в tg.CloudStorage при его изменении
+    tg.CloudStorage.setItem("count", count);
+    tg.CloudStorage.setItem("countBonus", countBonus);
+    tg.CloudStorage.setItem("countTrueMax", countTrueMax);
+    tg.CloudStorage.setItem("countTrueBonus", countTrueBonus);
+    tg.CloudStorage.setItem("levelMoreClicks", levelMoreClicks);
+    tg.CloudStorage.setItem("levelMoreEnergy", levelMoreEnergy);
+    tg.CloudStorage.setItem("levelTgChannel1", levelTgChannel1);
+    tg.CloudStorage.setItem("levelTgPremium", levelTgPremium);
+    tg.CloudStorage.setItem("levelMoreCountTrueBonus", levelMoreCountTrueBonus);
+    tg.CloudStorage.setItem("levelFactory", levelFactory);
+    tg.CloudStorage.setItem("levelHotel", levelHotel);
+    tg.CloudStorage.setItem("levelPowerstation", levelPowerstation);
+    tg.CloudStorage.setItem("levelJoinGame", levelJoinGame);
+    tg.CloudStorage.setItem("countTrue", countTrue);
+    tg.CloudStorage.setItem("priceMoreClicks,", priceMoreClicks);
+    tg.CloudStorage.setItem("priceMoreEnergy", priceMoreEnergy);
+    tg.CloudStorage.setItem("priceMoreCountTrueBonus", priceMoreCountTrueBonus);
+    tg.CloudStorage.setItem("factoryBonus", factoryBonus);
   }, [
     count,
     countBonus,
