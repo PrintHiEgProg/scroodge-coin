@@ -26,6 +26,7 @@ import {
 
 function App() {
   const tg = window.Telegram.WebApp;
+  
   const userId = tg.initDataUnsafe.user.id;
   const [fingerCount, setFingerCount] = useState(0);
 
@@ -129,10 +130,11 @@ function App() {
     return savedCount !== null ? parseInt(savedCount, 10) : 0;
   });
 
-  // Загружаем сохраненное значение count из tg.CloudStorage при инициализации состояния
+  // Загружаем сохраненное значение count из localStorage при инициализации состояния
    
 
   useEffect(() => {
+
     // Сохраняем значение count в tg.CloudStorage при его изменении
     tg.CloudStorage.setItem("count", count);
     tg.CloudStorage.setItem("countBonus", countBonus);
