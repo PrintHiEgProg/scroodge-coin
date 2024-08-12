@@ -6,8 +6,8 @@ import Main from "./Main.js";
 import Task from "./Task.js";
 import Monopoly from "./Monopoly.js";
 import MarketFactory from "./MarketFactory.js";
-import MarketPowerStation from "./MarketPowerStation.js"
-import MarketHotel from "./MarketHotel.js"
+import MarketPowerStation from "./MarketPowerStation.js";
+import MarketHotel from "./MarketHotel.js";
 import MarketClicks from "./MarketClicks.js";
 import MarketEnergy from "./MarketEnergy.js";
 import ScroogeGameFlappy from "./ScroogeGameFlappy.js";
@@ -26,7 +26,7 @@ import {
 
 function App() {
   const tg = window.Telegram.WebApp;
-  
+
   const userId = tg.initDataUnsafe.user.id;
   const [fingerCount, setFingerCount] = useState(0);
 
@@ -107,23 +107,28 @@ function App() {
   const [priceLevelFactory3, setPriceLevelFactory3] = useState(1000000);
   const [priceLevelFactory4, setPriceLevelFactory4] = useState(3000000);
   const [priceLevelFactory5, setPriceLevelFactory5] = useState(6000000);
-  const [priceLevelPowerstation1, setPriceLevelPowerstation1] = useState(100000);
-  const [priceLevelPowerstation2, setPriceLevelPowerstation2] = useState(300000);
-  const [priceLevelPowerstation3, setPriceLevelPowerstation3] = useState(1000000);
-  const [priceLevelPowerstation4, setPriceLevelPowerstation4] = useState(3000000);
-  const [priceLevelPowerstation5, setPriceLevelPowerstation5] = useState(6000000);
+  const [priceLevelPowerstation1, setPriceLevelPowerstation1] =
+    useState(100000);
+  const [priceLevelPowerstation2, setPriceLevelPowerstation2] =
+    useState(300000);
+  const [priceLevelPowerstation3, setPriceLevelPowerstation3] =
+    useState(1000000);
+  const [priceLevelPowerstation4, setPriceLevelPowerstation4] =
+    useState(3000000);
+  const [priceLevelPowerstation5, setPriceLevelPowerstation5] =
+    useState(6000000);
 
-  const [priceLevelMoreClicks1, setPriceLevelMoreClicks1] = useState(100000)
-  const [priceLevelMoreClicks2, setPriceLevelMoreClicks2] = useState(300000)
-  const [priceLevelMoreClicks3, setPriceLevelMoreClicks3] = useState(1000000)
-  const [priceLevelMoreClicks4, setPriceLevelMoreClicks4] = useState(3000000)
+  const [priceLevelMoreClicks1, setPriceLevelMoreClicks1] = useState(100000);
+  const [priceLevelMoreClicks2, setPriceLevelMoreClicks2] = useState(300000);
+  const [priceLevelMoreClicks3, setPriceLevelMoreClicks3] = useState(1000000);
+  const [priceLevelMoreClicks4, setPriceLevelMoreClicks4] = useState(3000000);
   const [priceLevelMoreClicks5, setPriceLevelMoreClicks5] = useState(6000000);
 
-  const priceLevelMoreEnergy1 = useState(100000);
-  const priceLevelMoreEnergy2 = useState(200000);
-  const priceLevelMoreEnergy3 = useState(1000000);
-  const priceLevelMoreEnergy4 = useState(200000);
-  const priceLevelMoreEnergy5 = useState(400000);
+  const [priceLevelMoreEnergy1, setPriceLevelMoreEnergy1] = useState(100000);
+  const [priceLevelMoreEnergy2, setPriceLevelMoreEnergy2] = useState(200000);
+  const [priceLevelMoreEnergy3, setPriceLevelMoreEnergy3] = useState(1000000);
+  const [priceLevelMoreEnergy4, setPriceLevelMoreEnergy4] = useState(200000);
+  const [priceLevelMoreEnergy5, setPriceLevelMoreEnergy5] = useState(400000);
 
   const [factoryBonus, setFactoryBonus] = useState(() => {
     const savedCount = localStorage.getItem("factoryBonus");
@@ -131,10 +136,8 @@ function App() {
   });
 
   // Загружаем сохраненное значение count из localStorage при инициализации состояния
-   
 
   useEffect(() => {
-
     // Сохраняем значение count в localStorage при его изменении
     localStorage.setItem("count", count);
     localStorage.setItem("countBonus", countBonus);
@@ -182,7 +185,7 @@ function App() {
     priceLevelPowerstation3,
     priceLevelPowerstation4,
     priceLevelPowerstation5,
-    factoryBonus
+    factoryBonus,
   ]); // Зависимость от переменных, чтобы эффект срабатывал при их изменении
 
   useEffect(() => {
@@ -205,20 +208,19 @@ function App() {
     return () => clearInterval(interval);
   }, [count]);
 
-   useEffect(() => {
-     if (countTrue > countTrueMax) {
-       setCountTrue(countTrueMax);
-     }
-   }, [countTrue, countTrueMax]);
-  
-  
+  useEffect(() => {
+    if (countTrue > countTrueMax) {
+      setCountTrue(countTrueMax);
+    }
+  }, [countTrue, countTrueMax]);
+
   const handleTouchStart = (event) => {
     setFingerCount(event.touches.length);
     //count...
     if (canClick) {
       const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
       setCount(count + countBonus);
-      
+
       if (countTrue > 0) {
         setCountTrue(Math.max(countTrue - countBonus, 0));
       }
@@ -236,9 +238,6 @@ function App() {
     if (canClick) {
       const hapticFeedbackLight = tg.HapticFeedback.impactOccurred("light");
       setCount(count + countBonus);
-      
-      
-
 
       if (countTrue > 0) {
         setCountTrue(Math.max(countTrue - countBonus, 0));
@@ -255,8 +254,6 @@ function App() {
     setFingerCount(0);
   };
 
-
-  
   useEffect(() => {
     if (countTrue === 0) {
       const HapticFeedbackError =
@@ -276,8 +273,6 @@ function App() {
     // Здесь можно добавить логику для загрузки данных с сервера или другие операции
   }, []);
 
-  
-
   //Boosts
   const levelMoreClicks1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
@@ -289,14 +284,14 @@ function App() {
           if (count >= priceLevelMoreClicks1) {
             setCount(count - priceLevelMoreClicks1);
             setLevelMoreClicks(levelMoreClicks + 1);
-            setCountBonus(countBonus + 1)
+            setCountBonus(countBonus + 1);
           } else {
             alert("Insufficient funds ❌");
           }
         }
       }
     }
-  }
+  };
 
   const levelMoreClicks2 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
@@ -373,7 +368,6 @@ function App() {
       }
     }
   };
-
 
   const levelMoreEnergy1 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
@@ -475,8 +469,6 @@ function App() {
     }
   };
 
-  
-
   const moreClicks = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelMoreClicks === 5) {
@@ -528,22 +520,19 @@ function App() {
       alert("This level has already been purchased! ✅");
     } else {
       if (levelFactory === 0) {
-        if (
-        window.confirm(
-          "Buy it?"
-        )
-      ) {
-        if (count >= priceLevelFactory1) {
-          setCount(count - priceLevelFactory1);
-          setLevelFactory(levelFactory + 1);
-          setFactoryBonus(factoryBonus + 2);
-        } else {
-          alert("Insufficient funds ❌");
+        if (window.confirm("Buy it?")) {
+          if (count >= priceLevelFactory1) {
+            setCount(count - priceLevelFactory1);
+            setLevelFactory(levelFactory + 1);
+            setFactoryBonus(factoryBonus + 2);
+          } else {
+            alert("Insufficient funds ❌");
+          }
         }
-      }}
+      }
     }
   };
-    
+
   const levelFactory2 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 1) {
@@ -562,7 +551,7 @@ function App() {
       }
     }
   };
-  
+
   const levelFactory3 = () => {
     const hapticFeedbackSoft = tg.HapticFeedback.impactOccurred("soft");
     if (levelFactory > 2) {
@@ -619,7 +608,6 @@ function App() {
       }
     }
   };
-
 
   //Powerstation
 
@@ -719,7 +707,6 @@ function App() {
   };
   //Hotel
 
-
   //Tasks
 
   const JoinGame = () => {
@@ -777,13 +764,10 @@ function App() {
         ) {
           setCount(count + 20000);
           tg.openTelegramLink("https://t.me/deanon_team_blog");
-          
         }
       }
     }
   };
-
-   
 
   return (
     <div className="App">
